@@ -1,0 +1,12 @@
+patch:
+  # 核心：中英文切换键设置
+  "ascii_composer/switch_key":
+    Shift_L: commit_code      # 左Shift：将已打的拼音上屏，并切换英文（防误触神器）
+    Shift_R: inline_ascii    # 右Shift：临时输入英文，不切换状态
+    Caps_Lock: clear         # CapsLock：仅切换大小写，不干扰输入法
+    Control_L: noop          # 禁用左Ctrl，防止误触
+    Control_R: noop          # 禁用右Ctrl，防止误触
+
+  # 可选：优化界面
+  "style/horizontal": true   # 横排显示候选词
+  "menu/page_size": 9        # 每页显示9个词

@@ -1,0 +1,218 @@
+{
+  "disable": [],
+  "select_default": "",
+  "recent": [
+    {
+      "groupid": "f72748d5-861a-481f-bcde-6aca6d1fed65",
+      "attach": "",
+      "latency": "",
+      "outlet_ip": "",
+      "outlet_region": "",
+      "type": "vless",
+      "tag": "🇸🇬新加坡01 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "domain_resolver": "local",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sgp1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg1",
+        "headers": {
+          "Host": [
+            "sgp1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "groupid": "f72748d5-861a-481f-bcde-6aca6d1fed65",
+      "attach": "",
+      "latency": "",
+      "outlet_ip": "",
+      "outlet_region": "",
+      "tag": "🇺🇸美国01-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us1.globals-download.com",
+      "domain_resolver": "local",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com"
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2"
+    },
+    {
+      "groupid": "f72748d5-861a-481f-bcde-6aca6d1fed65",
+      "attach": "",
+      "latency": "",
+      "outlet_ip": "",
+      "outlet_region": "",
+      "type": "vless",
+      "tag": "🇸🇬新加坡04-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "domain_resolver": "local",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg4p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg4",
+        "headers": {
+          "Host": [
+            "sg4p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "groupid": "f72748d5-861a-481f-bcde-6aca6d1fed65",
+      "attach": "",
+      "latency": "",
+      "outlet_ip": "",
+      "outlet_region": "",
+      "type": "vless",
+      "tag": "🇸🇬新加坡01-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "domain_resolver": "local",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg1p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg1",
+        "headers": {
+          "Host": [
+            "sg1p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "groupid": "f72748d5-861a-481f-bcde-6aca6d1fed65",
+      "attach": "",
+      "latency": "",
+      "outlet_ip": "",
+      "outlet_region": "",
+      "type": "vless",
+      "tag": "🇸🇬AWS新加坡05 | 电信移动联通推荐",
+      "server": "pq.aws67.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "domain_resolver": "local",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "iusZvFfHH5OJ6sAPFF6e7Km9WP0nmWfjXXfhTQuSR24",
+          "short_id": "8b6e932c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      }
+    }
+  ],
+  "fav": [],
+  "geosite": [],
+  "geoip": [],
+  "acl": [],
+  "ruleset_direct_download": [],
+  "diversion_group": [
+    {
+      "diversion_groupid": "custom",
+      "diversion_name": "🍎 苹果服务",
+      "server_groupid": "direct",
+      "server_name": "direct_out",
+      "dns_servers": []
+    },
+    {
+      "diversion_groupid": "custom",
+      "diversion_name": "🌏 Google Play",
+      "server_groupid": "currentSelected",
+      "server_name": "",
+      "dns_servers": []
+    },
+    {
+      "diversion_groupid": "custom",
+      "diversion_name": "🌏 Google",
+      "server_groupid": "currentSelected",
+      "server_name": "",
+      "dns_servers": []
+    },
+    {
+      "diversion_groupid": "custom",
+      "diversion_name": "📺 哔哩哔哩",
+      "server_groupid": "direct",
+      "server_name": "direct_out",
+      "dns_servers": []
+    },
+    {
+      "diversion_groupid": "custom",
+      "diversion_name": "🎯 国内直连",
+      "server_groupid": "direct",
+      "server_name": "direct_out",
+      "dns_servers": []
+    },
+    {
+      "diversion_groupid": "custom",
+      "diversion_name": "🌏 国外穿墙",
+      "server_groupid": "currentSelected",
+      "server_name": "",
+      "dns_servers": []
+    },
+    {
+      "diversion_groupid": "final",
+      "diversion_name": "",
+      "server_groupid": "currentSelected",
+      "server_name": "",
+      "dns_servers": []
+    }
+  ],
+  "server_select_search_select": [],
+  "add_profile_select": []
+}

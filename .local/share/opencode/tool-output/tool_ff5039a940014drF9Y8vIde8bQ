@@ -1,0 +1,1948 @@
+Text in ratatui::text - Rust
+
+  
+
+[Docs.rs](/)
+
+-   [ratatui-0.30.2](# "A library that's all about cooking up terminal user interfaces")
+    
+    -   ratatui 0.30.2
+    -   [Permalink](/ratatui/0.30.2/ratatui/text/struct.Text.html "Get a link to this specific version")
+    -   [Docs.rs crate page](/crate/ratatui/latest "See ratatui in docs.rs")
+    -   [MIT](https://spdx.org/licenses/MIT)
+    -   19 June 2026
+    
+    -   Links
+    -   [Homepage](https://ratatui.rs)
+    -   [Repository](https://github.com/ratatui/ratatui)
+    -   [crates.io](https://crates.io/crates/ratatui "See ratatui in crates.io")
+    -   [Source](/crate/ratatui/latest/source/ "Browse source of ratatui-0.30.2")
+    
+    -   Owners
+    -   [orhun](https://crates.io/users/orhun)
+    -   [kdheepak](https://crates.io/users/kdheepak)
+    -   [joshka](https://crates.io/users/joshka)
+    -   [github:ratatui:core](https://crates.io/teams/github:ratatui:core)
+    
+    -   Dependencies
+    -   -   [document-features ^0.2 *normal* *optional*](/document-features/^0.2/)
+        -   [instability ^0.3 *normal*](/instability/^0.3/)
+        -   [palette ^0.7.6 *normal* *optional*](/palette/^0.7.6/)
+        -   [ratatui-core ^0.1.2 *normal*](/ratatui-core/^0.1.2/)
+        -   [ratatui-crossterm ^0.1.2 *normal* *optional*](/ratatui-crossterm/^0.1.2/)
+        -   [ratatui-macros ^0.7.2 *normal* *optional*](/ratatui-macros/^0.7.2/)
+        -   [ratatui-termina ^0.1.0 *normal* *optional*](/ratatui-termina/^0.1.0/)
+        -   [ratatui-termwiz ^0.1.2 *normal* *optional*](/ratatui-termwiz/^0.1.2/)
+        -   [ratatui-widgets ^0.3.2 *normal*](/ratatui-widgets/^0.3.2/)
+        -   [serde ^1 *normal* *optional*](/serde/^1/)
+        -   [criterion ^0.8 *dev*](/criterion/^0.8/)
+        -   [crossterm ^0.29 *dev*](/crossterm/^0.29/)
+        -   [fakeit ^1 *dev*](/fakeit/^1/)
+        -   [indoc ^2 *dev*](/indoc/^2/)
+        -   [pretty\_assertions ^1 *dev*](/pretty_assertions/^1/)
+        -   [rand ^0.10 *dev*](/rand/^0.10/)
+        -   [rstest ^0.26 *dev*](/rstest/^0.26/)
+        -   [serde\_json ^1 *dev*](/serde_json/^1/)
+        -   [time ^0.3.47 *dev*](/time/^0.3.47/)
+        -   [ratatui-termion ^0.1.2 *normal* *optional*](/ratatui-termion/^0.1.2/)
+        
+    
+    -   Versions
+    
+    -   [**100%** of the crate is documented](/crate/ratatui/latest)
+    
+-   [Platform](#)
+    -   [x86\_64-unknown-linux-gnu](/crate/ratatui/latest/target-redirect/ratatui/text/struct.Text.html)
+-   [Feature flags](/crate/ratatui/latest/features "Browse available feature flags of ratatui-0.30.2")
+
+-   [docs.rs](#)
+    -   [About docs.rs](/about)
+    -   [Badges](/about/badges)
+    -   [Builds](/about/builds)
+    -   [Metadata](/about/metadata)
+    -   [Shorthand URLs](/about/redirections)
+    -   [Download](/about/download)
+    -   [Rustdoc JSON](/about/rustdoc-json)
+    -   [Build queue](/releases/queue)
+    -   [Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+-   [Rust](#)
+    -   [Rust website](https://www.rust-lang.org/)
+    -   [The Book](https://doc.rust-lang.org/book/)
+    -   [Standard Library API Reference](https://doc.rust-lang.org/std/)
+    -   [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+    -   [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+    -   [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+[Skip to main content](#main-content)
+
+## [Text](#)
+
+[![logo](https://raw.githubusercontent.com/ratatui/ratatui/main/assets/logo.png)](../../ratatui/index.html)
+
+## [ratatui](../../ratatui/index.html)0.30.2
+
+## [Text](#)
+
+### [Sections](#)
+
+-   [Constructor Methods](#constructor-methods "Constructor Methods")
+-   [Conversion Methods](#conversion-methods "Conversion Methods")
+-   [Setter Methods](#setter-methods "Setter Methods")
+-   [Iteration Methods](#iteration-methods "Iteration Methods")
+-   [Other Methods](#other-methods "Other Methods")
+-   [Examples](#examples "Examples")
+    -   [Creating Text](#creating-text "Creating Text")
+    -   [Styling Text](#styling-text "Styling Text")
+    -   [Aligning Text](#aligning-text "Aligning Text")
+    -   [Rendering Text](#rendering-text "Rendering Text")
+    -   [Rendering Text with a Paragraph Widget](#rendering-text-with-a-paragraph-widget "Rendering Text with a Paragraph Widget")
+
+### [Fields](#fields)
+
+-   [alignment](#structfield.alignment "alignment")
+-   [lines](#structfield.lines "lines")
+-   [style](#structfield.style "style")
+
+### [Associated Functions](#implementations)
+
+-   [raw](#method.raw "raw")
+-   [styled](#method.styled "styled")
+
+### [Methods](#implementations)
+
+-   [alignment](#method.alignment "alignment")
+-   [centered](#method.centered "centered")
+-   [height](#method.height "height")
+-   [iter](#method.iter "iter")
+-   [iter\_mut](#method.iter_mut "iter_mut")
+-   [left\_aligned](#method.left_aligned "left_aligned")
+-   [patch\_style](#method.patch_style "patch_style")
+-   [push\_line](#method.push_line "push_line")
+-   [push\_span](#method.push_span "push_span")
+-   [reset\_style](#method.reset_style "reset_style")
+-   [right\_aligned](#method.right_aligned "right_aligned")
+-   [style](#method.style "style")
+-   [width](#method.width "width")
+
+### [Trait Implementations](#trait-implementations)
+
+-   [Add](#impl-Add-for-Text%3C'_%3E "Add")
+-   [Add<Line<'a>>](#impl-Add%3CLine%3C'a%3E%3E-for-Text%3C'a%3E "Add<Line<'a>>")
+-   [AddAssign](#impl-AddAssign-for-Text%3C'_%3E "AddAssign")
+-   [AddAssign<Line<'a>>](#impl-AddAssign%3CLine%3C'a%3E%3E-for-Text%3C'a%3E "AddAssign<Line<'a>>")
+-   [Clone](#impl-Clone-for-Text%3C'a%3E "Clone")
+-   [Debug](#impl-Debug-for-Text%3C'_%3E "Debug")
+-   [Default](#impl-Default-for-Text%3C'a%3E "Default")
+-   [Display](#impl-Display-for-Text%3C'_%3E "Display")
+-   [Eq](#impl-Eq-for-Text%3C'a%3E "Eq")
+-   [Extend<T>](#impl-Extend%3CT%3E-for-Text%3C'a%3E "Extend<T>")
+-   [From<&'a Masked<'\_>>](#impl-From%3C%26Masked%3C'_%3E%3E-for-Text%3C'a%3E "From<&'a Masked<'_>>")
+-   [From<&'a str>](#impl-From%3C%26str%3E-for-Text%3C'a%3E "From<&'a str>")
+-   [From<&'b \[T\]>](#impl-From%3C%26%5BT%5D%3E-for-Text%3C'a%3E "From<&'b [T]>")
+-   [From<Cow<'a, str>>](#impl-From%3CCow%3C'a,+str%3E%3E-for-Text%3C'a%3E "From<Cow<'a, str>>")
+-   [From<Line<'a>>](#impl-From%3CLine%3C'a%3E%3E-for-Text%3C'a%3E "From<Line<'a>>")
+-   [From<Masked<'a>>](#impl-From%3CMasked%3C'a%3E%3E-for-Text%3C'a%3E "From<Masked<'a>>")
+-   [From<Span<'a>>](#impl-From%3CSpan%3C'a%3E%3E-for-Text%3C'a%3E "From<Span<'a>>")
+-   [From<String>](#impl-From%3CString%3E-for-Text%3C'_%3E "From<String>")
+-   [From<Vec<Line<'a>>>](#impl-From%3CVec%3CLine%3C'a%3E%3E%3E-for-Text%3C'a%3E "From<Vec<Line<'a>>>")
+-   [FromIterator<T>](#impl-FromIterator%3CT%3E-for-Text%3C'a%3E "FromIterator<T>")
+-   [Hash](#impl-Hash-for-Text%3C'a%3E "Hash")
+-   [IntoIterator](#impl-IntoIterator-for-%26Text%3C'a%3E "IntoIterator")
+-   [IntoIterator](#impl-IntoIterator-for-%26mut+Text%3C'a%3E "IntoIterator")
+-   [IntoIterator](#impl-IntoIterator-for-Text%3C'a%3E "IntoIterator")
+-   [PartialEq](#impl-PartialEq-for-Text%3C'a%3E "PartialEq")
+-   [StructuralPartialEq](#impl-StructuralPartialEq-for-Text%3C'a%3E "StructuralPartialEq")
+-   [Styled](#impl-Styled-for-Text%3C'_%3E "Styled")
+-   [UnicodeWidthStr](#impl-UnicodeWidthStr-for-Text%3C'_%3E "UnicodeWidthStr")
+-   [Widget](#impl-Widget-for-%26Text%3C'_%3E "Widget")
+-   [Widget](#impl-Widget-for-Text%3C'_%3E "Widget")
+
+### [Auto Trait Implementations](#synthetic-implementations)
+
+-   [Freeze](#impl-Freeze-for-Text%3C'a%3E "Freeze")
+-   [RefUnwindSafe](#impl-RefUnwindSafe-for-Text%3C'a%3E "RefUnwindSafe")
+-   [Send](#impl-Send-for-Text%3C'a%3E "Send")
+-   [Sync](#impl-Sync-for-Text%3C'a%3E "Sync")
+-   [Unpin](#impl-Unpin-for-Text%3C'a%3E "Unpin")
+-   [UnsafeUnpin](#impl-UnsafeUnpin-for-Text%3C'a%3E "UnsafeUnpin")
+-   [UnwindSafe](#impl-UnwindSafe-for-Text%3C'a%3E "UnwindSafe")
+
+### [Blanket Implementations](#blanket-implementations)
+
+-   [AdaptInto<D, Swp, Dwp, T>](#impl-AdaptInto%3CD,+Swp,+Dwp,+T%3E-for-S "AdaptInto<D, Swp, Dwp, T>")
+-   [Any](#impl-Any-for-T "Any")
+-   [ArraysFrom<C>](#impl-ArraysFrom%3CC%3E-for-T "ArraysFrom<C>")
+-   [ArraysInto<C>](#impl-ArraysInto%3CC%3E-for-T "ArraysInto<C>")
+-   [Borrow<T>](#impl-Borrow%3CT%3E-for-T "Borrow<T>")
+-   [BorrowMut<T>](#impl-BorrowMut%3CT%3E-for-T "BorrowMut<T>")
+-   [Cam16IntoUnclamped<WpParam, T>](#impl-Cam16IntoUnclamped%3CWpParam,+T%3E-for-U "Cam16IntoUnclamped<WpParam, T>")
+-   [CloneToUninit](#impl-CloneToUninit-for-T "CloneToUninit")
+-   [ComponentsFrom<C>](#impl-ComponentsFrom%3CC%3E-for-T "ComponentsFrom<C>")
+-   [Equivalent<K>](#impl-Equivalent%3CK%3E-for-Q "Equivalent<K>")
+-   [From<T>](#impl-From%3CT%3E-for-T "From<T>")
+-   [FromAngle<T>](#impl-FromAngle%3CT%3E-for-T "FromAngle<T>")
+-   [FromStimulus<U>](#impl-FromStimulus%3CU%3E-for-T "FromStimulus<U>")
+-   [Into<U>](#impl-Into%3CU%3E-for-T "Into<U>")
+-   [IntoAngle<U>](#impl-IntoAngle%3CU%3E-for-T "IntoAngle<U>")
+-   [IntoCam16Unclamped<WpParam, T>](#impl-IntoCam16Unclamped%3CWpParam,+T%3E-for-U "IntoCam16Unclamped<WpParam, T>")
+-   [IntoColor<U>](#impl-IntoColor%3CU%3E-for-T "IntoColor<U>")
+-   [IntoColorUnclamped<U>](#impl-IntoColorUnclamped%3CU%3E-for-T "IntoColorUnclamped<U>")
+-   [IntoEither](#impl-IntoEither-for-T "IntoEither")
+-   [IntoStimulus<T>](#impl-IntoStimulus%3CT%3E-for-T "IntoStimulus<T>")
+-   [Same](#impl-Same-for-T "Same")
+-   [Stylize<'\_, T>](#impl-Stylize%3C'_,+T%3E-for-U "Stylize<'_, T>")
+-   [ToCompactString](#impl-ToCompactString-for-T "ToCompactString")
+-   [ToLine](#impl-ToLine-for-T "ToLine")
+-   [ToOwned](#impl-ToOwned-for-T "ToOwned")
+-   [ToSpan](#impl-ToSpan-for-T "ToSpan")
+-   [ToString](#impl-ToString-for-T "ToString")
+-   [ToText](#impl-ToText-for-T "ToText")
+-   [TryComponentsInto<C>](#impl-TryComponentsInto%3CC%3E-for-T "TryComponentsInto<C>")
+-   [TryFrom<U>](#impl-TryFrom%3CU%3E-for-T "TryFrom<U>")
+-   [TryInto<U>](#impl-TryInto%3CU%3E-for-T "TryInto<U>")
+-   [TryIntoColor<U>](#impl-TryIntoColor%3CU%3E-for-T "TryIntoColor<U>")
+-   [UintsFrom<C>](#impl-UintsFrom%3CC%3E-for-U "UintsFrom<C>")
+-   [UintsInto<C>](#impl-UintsInto%3CC%3E-for-U "UintsInto<C>")
+
+## [In ratatui::text](index.html)
+
+[ratatui](../index.html)::[text](index.html)
+
+# Struct Text Copy item path
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#197)
+
+```
+pub struct Text<'a> {
+    pub alignment: Option<HorizontalAlignment>,
+    pub style: Style,
+    pub lines: Vec<Line<'a>>,
+}
+```
+
+Expand description
+
+A string split over one or more lines.
+
+[`Text`](../prelude/struct.Text.html "struct ratatui::prelude::Text") is used wherever text is displayed in the terminal and represents one or more [`Line`](../prelude/struct.Line.html "struct ratatui::prelude::Line")s of text. When a [`Text`](../prelude/struct.Text.html "struct ratatui::prelude::Text") is rendered, each line is rendered as a single line of text from top to bottom of the area. The text can be styled and aligned.
+
+## [§](#constructor-methods)Constructor Methods
+
+-   [`Text::raw`](../prelude/struct.Text.html#method.raw "associated function ratatui::prelude::Text::raw") creates a `Text` (potentially multiple lines) with no style.
+-   [`Text::styled`](../prelude/struct.Text.html#method.styled "associated function ratatui::prelude::Text::styled") creates a `Text` (potentially multiple lines) with a style.
+-   [`Text::default`](../prelude/struct.Text.html#method.default "associated function ratatui::prelude::Text::default") creates a `Text` with empty content and the default style.
+
+## [§](#conversion-methods)Conversion Methods
+
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a `String`.
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a `&str`.
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a `Cow<str>`.
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a [`Span`](../prelude/struct.Span.html "struct ratatui::prelude::Span").
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a [`Line`](../prelude/struct.Line.html "struct ratatui::prelude::Line").
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a `Vec<Line>`.
+-   [`Text::from`](../prelude/struct.Text.html#method.from "associated function ratatui::prelude::Text::from") creates a `Text` from a `&[Into<Line>]`.
+-   [`Text::from_iter`](../prelude/struct.Text.html#method.from_iter "associated function ratatui::prelude::Text::from_iter") creates a `Text` from an iterator of items that can be converted into `Line`.
+
+## [§](#setter-methods)Setter Methods
+
+These methods are fluent setters. They return a `Text` with the property set.
+
+-   [`Text::style`](../prelude/struct.Text.html#method.style "method ratatui::prelude::Text::style") sets the style of this `Text`.
+-   [`Text::alignment`](../prelude/struct.Text.html#method.alignment "method ratatui::prelude::Text::alignment") sets the alignment for this `Text`.
+-   [`Text::left_aligned`](../prelude/struct.Text.html#method.left_aligned "method ratatui::prelude::Text::left_aligned") sets the alignment to [`Alignment::Left`](../prelude/type.Alignment.html#variant.Left "variant ratatui::prelude::Alignment::Left").
+-   [`Text::centered`](../prelude/struct.Text.html#method.centered "method ratatui::prelude::Text::centered") sets the alignment to [`Alignment::Center`](../prelude/type.Alignment.html#variant.Center "variant ratatui::prelude::Alignment::Center").
+-   [`Text::right_aligned`](../prelude/struct.Text.html#method.right_aligned "method ratatui::prelude::Text::right_aligned") sets the alignment to [`Alignment::Right`](../prelude/type.Alignment.html#variant.Right "variant ratatui::prelude::Alignment::Right").
+
+## [§](#iteration-methods)Iteration Methods
+
+-   [`Text::iter`](../prelude/struct.Text.html#method.iter "method ratatui::prelude::Text::iter") returns an iterator over the lines of the text.
+-   [`Text::iter_mut`](../prelude/struct.Text.html#method.iter_mut "method ratatui::prelude::Text::iter_mut") returns an iterator that allows modifying each line.
+-   [`Text::into_iter`](../prelude/struct.Text.html#method.into_iter "method ratatui::prelude::Text::into_iter") returns an iterator over the lines of the text.
+
+## [§](#other-methods)Other Methods
+
+-   [`Text::width`](../prelude/struct.Text.html#method.width "method ratatui::prelude::Text::width") returns the max width of all the lines.
+-   [`Text::height`](../prelude/struct.Text.html#method.height "method ratatui::prelude::Text::height") returns the height.
+-   [`Text::patch_style`](../prelude/struct.Text.html#method.patch_style "method ratatui::prelude::Text::patch_style") patches the style of this `Text`, adding modifiers from the given style.
+-   [`Text::reset_style`](../prelude/struct.Text.html#method.reset_style "method ratatui::prelude::Text::reset_style") resets the style of the `Text`.
+-   [`Text::push_line`](../prelude/struct.Text.html#method.push_line "method ratatui::prelude::Text::push_line") adds a line to the text.
+-   [`Text::push_span`](../prelude/struct.Text.html#method.push_span "method ratatui::prelude::Text::push_span") adds a span to the last line of the text.
+
+## [§](#examples)Examples
+
+### [§](#creating-text)Creating Text
+
+A [`Text`](../prelude/struct.Text.html "struct ratatui::prelude::Text"), like a [`Line`](../prelude/struct.Line.html "struct ratatui::prelude::Line"), can be constructed using one of the many `From` implementations or via the [`Text::raw`](../prelude/struct.Text.html#method.raw "associated function ratatui::prelude::Text::raw") and [`Text::styled`](../prelude/struct.Text.html#method.styled "associated function ratatui::prelude::Text::styled") methods. Helpfully, [`Text`](../prelude/struct.Text.html "struct ratatui::prelude::Text") also implements [`core::iter::Extend`](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html "trait core::iter::traits::collect::Extend") which enables the concatenation of several [`Text`](../prelude/struct.Text.html "struct ratatui::prelude::Text") blocks.
+
+```
+use std::borrow::Cow;
+use std::iter;
+
+use ratatui_core::style::{Color, Modifier, Style, Stylize};
+use ratatui_core::text::{Line, Span, Text};
+
+let style = Style::new().yellow().italic();
+let text = Text::raw("The first line\nThe second line").style(style);
+let text = Text::styled("The first line\nThe second line", style);
+let text = Text::styled(
+    "The first line\nThe second line",
+    (Color::Yellow, Modifier::ITALIC),
+);
+
+let text = Text::from("The first line\nThe second line");
+let text = Text::from(String::from("The first line\nThe second line"));
+let text = Text::from(Cow::Borrowed("The first line\nThe second line"));
+let text = Text::from(Span::styled("The first line\nThe second line", style));
+let text = Text::from(Line::from("The first line"));
+let text = Text::from(vec![
+    Line::from("The first line"),
+    Line::from("The second line"),
+]);
+let text = Text::from_iter(iter::once("The first line").chain(iter::once("The second line")));
+
+let mut text = Text::default();
+text.extend(vec![
+    Line::from("The first line"),
+    Line::from("The second line"),
+]);
+text.extend(Text::from("The third line\nThe fourth line"));
+```
+
+### [§](#styling-text)Styling Text
+
+The text’s [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style") is used by the rendering widget to determine how to style the text. Each [`Line`](../prelude/struct.Line.html "struct ratatui::prelude::Line") in the text will be styled with the [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style") of the text, and then with its own [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style"). `Text` also implements [`Styled`](../style/trait.Styled.html "trait ratatui::style::Styled") which means you can use the methods of the [`Stylize`](../prelude/trait.Stylize.html "trait ratatui::prelude::Stylize") trait.
+
+```
+use ratatui_core::style::{Color, Modifier, Style, Stylize};
+use ratatui_core::text::{Line, Text};
+
+let text = Text::from("The first line\nThe second line").style(Style::new().yellow().italic());
+let text = Text::from("The first line\nThe second line")
+    .yellow()
+    .italic();
+let text = Text::from(vec![
+    Line::from("The first line").yellow(),
+    Line::from("The second line").yellow(),
+])
+.italic();
+```
+
+### [§](#aligning-text)Aligning Text
+
+The text’s [`Alignment`](../prelude/type.Alignment.html "type ratatui::prelude::Alignment") can be set using [`Text::alignment`](../prelude/struct.Text.html#method.alignment "method ratatui::prelude::Text::alignment") or the related helper methods. Lines composing the text can also be individually aligned with [`Line::alignment`](../prelude/struct.Line.html#method.alignment "method ratatui::prelude::Line::alignment").
+
+```
+use ratatui_core::layout::Alignment;
+use ratatui_core::text::{Line, Text};
+
+let text = Text::from("The first line\nThe second line").alignment(Alignment::Right);
+let text = Text::from("The first line\nThe second line").right_aligned();
+let text = Text::from(vec![
+    Line::from("The first line").left_aligned(),
+    Line::from("The second line").right_aligned(),
+    Line::from("The third line"),
+])
+.centered();
+```
+
+### [§](#rendering-text)Rendering Text
+
+`Text` implements the [`Widget`](../prelude/trait.Widget.html "trait ratatui::prelude::Widget") trait, which means it can be rendered to a [`Buffer`](../prelude/struct.Buffer.html "struct ratatui::prelude::Buffer") or to a `Frame`.
+
+```
+use ratatui_core::text::Text;
+use ratatui_core::widgets::Widget;
+
+// within another widget's `render` method:
+let text = Text::from("The first line\nThe second line");
+text.render(area, buf);
+```
+
+Or you can use the `render_widget` method on a `Frame` within a `Terminal::draw` closure.
+
+[ⓘ](# "This example is not tested")
+
+```
+let text = Text::from("The first line\nThe second line");
+frame.render_widget(text, area);
+```
+
+### [§](#rendering-text-with-a-paragraph-widget)Rendering Text with a Paragraph Widget
+
+Usually apps will use the `Paragraph` widget instead of rendering a `Text` directly as it provides more functionality.
+
+[ⓘ](# "This example is not tested")
+
+```
+use ratatui::{
+    buffer::Buffer,
+    layout::Rect,
+    text::Text,
+    widgets::{Paragraph, Widget, Wrap},
+};
+
+let text = Text::from("The first line\nThe second line");
+let paragraph = Paragraph::new(text)
+    .wrap(Wrap { trim: true })
+    .scroll((1, 1))
+    .render(area, buf);
+```
+
+## Fields[§](#fields)
+
+[§](#structfield.alignment)`alignment: [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<[HorizontalAlignment](../prelude/enum.HorizontalAlignment.html "enum ratatui::prelude::HorizontalAlignment")>`
+
+The alignment of this text.
+
+[§](#structfield.style)`style: [Style](../prelude/struct.Style.html "struct ratatui::prelude::Style")`
+
+The style of this text.
+
+[§](#structfield.lines)`lines: [Vec](https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html "struct alloc::vec::Vec")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>`
+
+The lines that make up this piece of text.
+
+## Implementations[§](#implementations)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#228)[§](#impl-Text%3C'a%3E)
+
+### impl<'a> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#239-241)
+
+#### pub fn [raw](#method.raw)<T>(content: T) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Cow](https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html "enum alloc::borrow::Cow")<'a, [str](https://doc.rust-lang.org/nightly/std/primitive.str.html)\>>,
+
+Create some text (potentially multiple lines) with no style.
+
+##### [§](#examples-1)Examples
+
+```
+use ratatui_core::text::Text;
+
+Text::raw("The first line\nThe second line");
+Text::raw(String::from("The first line\nThe second line"));
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#271-274)
+
+#### pub fn [styled](#method.styled)<T, S>(content: T, style: S) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Cow](https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html "enum alloc::borrow::Cow")<'a, [str](https://doc.rust-lang.org/nightly/std/primitive.str.html)\>>, S: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Style](../prelude/struct.Style.html "struct ratatui::prelude::Style")\>,
+
+Create some text (potentially multiple lines) with a style.
+
+`style` accepts any type that is convertible to [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style") (e.g. [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style"), [`Color`](../prelude/enum.Color.html "enum ratatui::prelude::Color"), or your own type that implements [`Into<Style>`](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")).
+
+##### [§](#examples-2)Examples
+
+```
+use ratatui_core::style::{Color, Modifier, Style};
+use ratatui_core::text::Text;
+
+let style = Style::default()
+    .fg(Color::Yellow)
+    .add_modifier(Modifier::ITALIC);
+Text::styled("The first line\nThe second line", style);
+Text::styled(String::from("The first line\nThe second line"), style);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#289)
+
+#### pub fn [width](#method.width)(&self) -> [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)
+
+Returns the max width of all the lines.
+
+##### [§](#examples-3)Examples
+
+```
+use ratatui_core::text::Text;
+
+let text = Text::from("The first line\nThe second line");
+assert_eq!(15, text.width());
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#303)
+
+#### pub const fn [height](#method.height)(&self) -> [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)
+
+Returns the height.
+
+##### [§](#examples-4)Examples
+
+```
+use ratatui_core::text::Text;
+
+let text = Text::from("The first line\nThe second line");
+assert_eq!(2, text.height());
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#328)
+
+#### pub fn [style](#method.style)<S>(self, style: S) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where S: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Style](../prelude/struct.Style.html "struct ratatui::prelude::Style")\>,
+
+Sets the style of this text.
+
+Defaults to [`Style::default()`](../prelude/struct.Style.html#method.default "associated function ratatui::prelude::Style::default").
+
+Note: This field was added in v0.26.0. Prior to that, the style of a text was determined only by the style of each [`Line`](../prelude/struct.Line.html "struct ratatui::prelude::Line") contained in the line. For this reason, this field may not be supported by all widgets (outside of the `ratatui` crate itself).
+
+`style` accepts any type that is convertible to [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style") (e.g. [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style"), [`Color`](../prelude/enum.Color.html "enum ratatui::prelude::Color"), or your own type that implements [`Into<Style>`](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")).
+
+##### [§](#examples-5)Examples
+
+```
+use ratatui_core::style::{Style, Stylize};
+use ratatui_core::text::Text;
+
+let mut line = Text::from("foo").style(Style::new().red());
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#367)
+
+#### pub fn [patch\_style](#method.patch_style)<S>(self, style: S) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where S: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Style](../prelude/struct.Style.html "struct ratatui::prelude::Style")\>,
+
+Patches the style of this Text, adding modifiers from the given style.
+
+This is useful for when you want to apply a style to a text that already has some styling. In contrast to [`Text::style`](../prelude/struct.Text.html#method.style "method ratatui::prelude::Text::style"), this method will not overwrite the existing style, but instead will add the given style’s modifiers to this text’s style.
+
+`Text` also implements [`Styled`](../style/trait.Styled.html "trait ratatui::style::Styled") which means you can use the methods of the [`Stylize`](../prelude/trait.Stylize.html "trait ratatui::prelude::Stylize") trait.
+
+`style` accepts any type that is convertible to [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style") (e.g. [`Style`](../prelude/struct.Style.html "struct ratatui::prelude::Style"), [`Color`](../prelude/enum.Color.html "enum ratatui::prelude::Color"), or your own type that implements [`Into<Style>`](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")).
+
+This is a fluent setter method which must be chained or used as it consumes self
+
+##### [§](#examples-6)Examples
+
+```
+use ratatui_core::style::{Color, Modifier};
+use ratatui_core::text::Text;
+
+let raw_text = Text::styled("The first line\nThe second line", Modifier::ITALIC);
+let styled_text = Text::styled(
+    String::from("The first line\nThe second line"),
+    (Color::Yellow, Modifier::ITALIC),
+);
+assert_ne!(raw_text, styled_text);
+
+let raw_text = raw_text.patch_style(Color::Yellow);
+assert_eq!(raw_text, styled_text);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#393)
+
+#### pub fn [reset\_style](#method.reset_style)(self) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Resets the style of the Text.
+
+Equivalent to calling [`patch_style(Style::reset())`](../prelude/struct.Text.html#method.patch_style "method ratatui::prelude::Text::patch_style").
+
+This is a fluent setter method which must be chained or used as it consumes self
+
+##### [§](#examples-7)Examples
+
+```
+use ratatui_core::style::{Color, Modifier, Style};
+use ratatui_core::text::Text;
+
+let text = Text::styled(
+    "The first line\nThe second line",
+    (Color::Yellow, Modifier::ITALIC),
+);
+
+let text = text.reset_style();
+assert_eq!(Style::reset(), text.style);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#445)
+
+#### pub fn [alignment](#method.alignment)(self, alignment: [HorizontalAlignment](../prelude/enum.HorizontalAlignment.html "enum ratatui::prelude::HorizontalAlignment")) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Sets the alignment for this text.
+
+Defaults to: [`None`](https://doc.rust-lang.org/nightly/core/option/enum.Option.html#variant.None "variant core::option::Option::None"), meaning the alignment is determined by the rendering widget. Setting the alignment of a Text generally overrides the alignment of its parent Widget.
+
+Alignment can be set individually on each line to override this text’s alignment.
+
+##### [§](#examples-8)Examples
+
+Set alignment to the whole text.
+
+```
+use ratatui_core::layout::Alignment;
+use ratatui_core::text::Text;
+
+let mut text = Text::from("Hi, what's up?");
+assert_eq!(None, text.alignment);
+assert_eq!(
+    Some(Alignment::Right),
+    text.alignment(Alignment::Right).alignment
+)
+```
+
+Set a default alignment and override it on a per line basis.
+
+```
+use ratatui_core::layout::Alignment;
+use ratatui_core::text::{Line, Text};
+
+let text = Text::from(vec![
+    Line::from("left").alignment(Alignment::Left),
+    Line::from("default"),
+    Line::from("default"),
+    Line::from("right").alignment(Alignment::Right),
+])
+.alignment(Alignment::Center);
+```
+
+Will render the following
+
+```
+left
+  default
+  default
+      right
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#468)
+
+#### pub fn [left\_aligned](#method.left_aligned)(self) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Left-aligns the whole text.
+
+Convenience shortcut for `Text::alignment(Alignment::Left)`. Setting the alignment of a Text generally overrides the alignment of its parent Widget, with the default alignment being inherited from the parent.
+
+Alignment can be set individually on each line to override this text’s alignment.
+
+##### [§](#examples-9)Examples
+
+```
+use ratatui_core::text::Text;
+
+let text = Text::from("Hi, what's up?").left_aligned();
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#488)
+
+#### pub fn [centered](#method.centered)(self) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Center-aligns the whole text.
+
+Convenience shortcut for `Text::alignment(Alignment::Center)`. Setting the alignment of a Text generally overrides the alignment of its parent Widget, with the default alignment being inherited from the parent.
+
+Alignment can be set individually on each line to override this text’s alignment.
+
+##### [§](#examples-10)Examples
+
+```
+use ratatui_core::text::Text;
+
+let text = Text::from("Hi, what's up?").centered();
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#508)
+
+#### pub fn [right\_aligned](#method.right_aligned)(self) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Right-aligns the whole text.
+
+Convenience shortcut for `Text::alignment(Alignment::Right)`. Setting the alignment of a Text generally overrides the alignment of its parent Widget, with the default alignment being inherited from the parent.
+
+Alignment can be set individually on each line to override this text’s alignment.
+
+##### [§](#examples-11)Examples
+
+```
+use ratatui_core::text::Text;
+
+let text = Text::from("Hi, what's up?").right_aligned();
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#513)
+
+#### pub fn [iter](#method.iter)(&self) -> [Iter](https://doc.rust-lang.org/nightly/core/slice/iter/struct.Iter.html "struct core::slice::iter::Iter")<'\_, [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>
+
+Returns an iterator over the lines of the text.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#518)
+
+#### pub fn [iter\_mut](#method.iter_mut)(&mut self) -> [IterMut](https://doc.rust-lang.org/nightly/core/slice/iter/struct.IterMut.html "struct core::slice::iter::IterMut")<'\_, [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>
+
+Returns an iterator that allows modifying each line.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#537)
+
+#### pub fn [push\_line](#method.push_line)<T>(&mut self, line: T)
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>,
+
+Adds a line to the text.
+
+`line` can be any type that can be converted into a `Line`. For example, you can pass a `&str`, a `String`, a `Span`, or a `Line`.
+
+##### [§](#examples-12)Examples
+
+```
+use ratatui_core::text::{Line, Span, Text};
+
+let mut text = Text::from("Hello, world!");
+text.push_line(Line::from("How are you?"));
+text.push_line(Span::from("How are you?"));
+text.push_line("How are you?");
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#555)
+
+#### pub fn [push\_span](#method.push_span)<T>(&mut self, span: T)
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Span](../prelude/struct.Span.html "struct ratatui::prelude::Span")<'a>>,
+
+Adds a span to the last line of the text.
+
+`span` can be any type that is convertible into a `Span`. For example, you can pass a `&str`, a `String`, or a `Span`.
+
+##### [§](#examples-13)Examples
+
+```
+use ratatui_core::text::{Span, Text};
+
+let mut text = Text::from("Hello, world!");
+text.push_span(Span::from("How are you?"));
+text.push_span("How are you?");
+```
+
+## Trait Implementations[§](#trait-implementations)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#693)[§](#impl-Add-for-Text%3C'_%3E)
+
+### impl [Add](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html "trait core::ops::arith::Add") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+Adds two `Text` together.
+
+This ignores the style and alignment of the second `Text`.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#694)[§](#associatedtype.Output)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#associatedtype.Output) = [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+The resulting type after applying the `+` operator.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#696)[§](#method.add)
+
+#### fn [add](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#tymethod.add)(self, text: [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>) -> <[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_> as [Add](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html "trait core::ops::arith::Add")\>::[Output](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#associatedtype.Output "type core::ops::arith::Add::Output")
+
+Performs the `+` operation. [Read more](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#tymethod.add)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#681)[§](#impl-Add%3CLine%3C'a%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [Add](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html "trait core::ops::arith::Add")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#682)[§](#associatedtype.Output-1)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#associatedtype.Output) = [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+The resulting type after applying the `+` operator.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#684)[§](#method.add-1)
+
+#### fn [add](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#tymethod.add)(self, line: [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>) -> <[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a> as [Add](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html "trait core::ops::arith::Add")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>>::[Output](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#associatedtype.Output "type core::ops::arith::Add::Output")
+
+Performs the `+` operation. [Read more](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Add.html#tymethod.add)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#705)[§](#impl-AddAssign-for-Text%3C'_%3E)
+
+### impl [AddAssign](https://doc.rust-lang.org/nightly/core/ops/arith/trait.AddAssign.html "trait core::ops::arith::AddAssign") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+Adds two `Text` together.
+
+This ignores the style and alignment of the second `Text`.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#706)[§](#method.add_assign)
+
+#### fn [add\_assign](https://doc.rust-lang.org/nightly/core/ops/arith/trait.AddAssign.html#tymethod.add_assign)(&mut self, rhs: [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>)
+
+Performs the `+=` operation. [Read more](https://doc.rust-lang.org/nightly/core/ops/arith/trait.AddAssign.html#tymethod.add_assign)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#711)[§](#impl-AddAssign%3CLine%3C'a%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [AddAssign](https://doc.rust-lang.org/nightly/core/ops/arith/trait.AddAssign.html "trait core::ops::arith::AddAssign")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#712)[§](#method.add_assign-1)
+
+#### fn [add\_assign](https://doc.rust-lang.org/nightly/core/ops/arith/trait.AddAssign.html#tymethod.add_assign)(&mut self, line: [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>)
+
+Performs the `+=` operation. [Read more](https://doc.rust-lang.org/nightly/core/ops/arith/trait.AddAssign.html#tymethod.add_assign)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#impl-Clone-for-Text%3C'a%3E)
+
+### impl<'a> [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#method.clone)
+
+#### fn [clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)(&self) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Returns a duplicate of the value. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)
+
+1.0.0 (const: [unstable](https://github.com/rust-lang/rust/issues/142757 "Tracking issue for const_clone")) · [Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#245-247)[§](#method.clone_from)
+
+#### fn [clone\_from](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)(&mut self, source: &Self)
+
+Performs copy-assignment from `source`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#206)[§](#impl-Debug-for-Text%3C'_%3E)
+
+### impl [Debug](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html "trait core::fmt::Debug") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#207)[§](#method.fmt)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#impl-Default-for-Text%3C'a%3E)
+
+### impl<'a> [Default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html "trait core::default::Default") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#method.default)
+
+#### fn [default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)() -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Returns the “default value” for a type. [Read more](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#750)[§](#impl-Display-for-Text%3C'_%3E)
+
+### impl [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#751)[§](#method.fmt-1)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#impl-Eq-for-Text%3C'a%3E)
+
+### impl<'a> [Eq](https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html "trait core::cmp::Eq") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#717-719)[§](#impl-Extend%3CT%3E-for-Text%3C'a%3E)
+
+### impl<'a, T> [Extend](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html "trait core::iter::traits::collect::Extend")<T> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>,
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#721)[§](#method.extend)
+
+#### fn [extend](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#tymethod.extend)<I>(&mut self, iter: I)
+
+where I: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")<Item = T>,
+
+Extends a collection with the contents of an iterator. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#tymethod.extend)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/iter/traits/collect.rs.html#420)[§](#method.extend_one)
+
+#### fn [extend\_one](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#method.extend_one)(&mut self, item: A)
+
+🔬This is a nightly-only experimental API. (`extend_one`)
+
+Extends a collection with exactly one element.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/iter/traits/collect.rs.html#428)[§](#method.extend_reserve)
+
+#### fn [extend\_reserve](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#method.extend_reserve)(&mut self, additional: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html))
+
+🔬This is a nightly-only experimental API. (`extend_one`)
+
+Reserves capacity in a collection for the given number of additional elements. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#method.extend_reserve)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/masked.rs.html#77)[§](#impl-From%3C%26Masked%3C'_%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<&'a [Masked](../prelude/struct.Masked.html "struct ratatui::prelude::Masked")<'\_>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/masked.rs.html#78)[§](#method.from)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(masked: &'a [Masked](../prelude/struct.Masked.html "struct ratatui::prelude::Masked")<'\_>) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#617)[§](#impl-From%3C%26str%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<&'a [str](https://doc.rust-lang.org/nightly/std/primitive.str.html)\> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#618)[§](#method.from-1)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(s: &'a [str](https://doc.rust-lang.org/nightly/std/primitive.str.html)) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#656-658)[§](#impl-From%3C%26%5BT%5D%3E-for-Text%3C'a%3E)
+
+### impl<'a, 'b, T> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<&'b [\[T\]](https://doc.rust-lang.org/nightly/std/primitive.slice.html)\> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>> + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#660)[§](#method.from-2)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(value: &'b [\[T\]](https://doc.rust-lang.org/nightly/std/primitive.slice.html)) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#623)[§](#impl-From%3CCow%3C'a,+str%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Cow](https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html "enum alloc::borrow::Cow")<'a, [str](https://doc.rust-lang.org/nightly/std/primitive.str.html)\>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#624)[§](#method.from-3)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(s: [Cow](https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html "enum alloc::borrow::Cow")<'a, [str](https://doc.rust-lang.org/nightly/std/primitive.str.html)\>) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#638)[§](#impl-From%3CLine%3C'a%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#639)[§](#method.from-4)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(line: [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/masked.rs.html#83)[§](#impl-From%3CMasked%3C'a%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Masked](../prelude/struct.Masked.html "struct ratatui::prelude::Masked")<'a>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/masked.rs.html#84)[§](#method.from-5)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(masked: [Masked](../prelude/struct.Masked.html "struct ratatui::prelude::Masked")<'a>) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#629)[§](#impl-From%3CSpan%3C'a%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Span](../prelude/struct.Span.html "struct ratatui::prelude::Span")<'a>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#630)[§](#method.from-6)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(span: [Span](../prelude/struct.Span.html "struct ratatui::prelude::Span")<'a>) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#611)[§](#impl-From%3CString%3E-for-Text%3C'_%3E)
+
+### impl [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[String](https://doc.rust-lang.org/nightly/alloc/string/struct.String.html "struct alloc::string::String")\> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#612)[§](#method.from-7)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(s: [String](https://doc.rust-lang.org/nightly/alloc/string/struct.String.html "struct alloc::string::String")) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#647)[§](#impl-From%3CVec%3CLine%3C'a%3E%3E%3E-for-Text%3C'a%3E)
+
+### impl<'a> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Vec](https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html "struct alloc::vec::Vec")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#648)[§](#method.from-8)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(lines: [Vec](https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html "struct alloc::vec::Vec")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#668-670)[§](#impl-FromIterator%3CT%3E-for-Text%3C'a%3E)
+
+### impl<'a, T> [FromIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.FromIterator.html "trait core::iter::traits::collect::FromIterator")<T> for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>,
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#672)[§](#method.from_iter)
+
+#### fn [from\_iter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.FromIterator.html#tymethod.from_iter)<I>(iter: I) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+where I: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")<Item = T>,
+
+Creates a value from an iterator. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.FromIterator.html#tymethod.from_iter)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#impl-Hash-for-Text%3C'a%3E)
+
+### impl<'a> [Hash](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html "trait core::hash::Hash") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#method.hash)
+
+#### fn [hash](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash)<\_\_H>(&self, state: [&mut \_\_H](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+where \_\_H: [Hasher](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"),
+
+Feeds this value into the given [`Hasher`](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"). [Read more](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash)
+
+1.3.0 · [Source](https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#234-236)[§](#method.hash_slice)
+
+#### fn [hash\_slice](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice)<H>(data: &\[Self\], state: [&mut H](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+where H: [Hasher](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"), Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Feeds a slice of this type into the given [`Hasher`](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"). [Read more](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#584)[§](#impl-IntoIterator-for-Text%3C'a%3E)
+
+### impl<'a> [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#585)[§](#associatedtype.Item)
+
+#### type [Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item) = [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>
+
+The type of the elements being iterated over.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#586)[§](#associatedtype.IntoIter)
+
+#### type [IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter) = [IntoIter](https://doc.rust-lang.org/nightly/alloc/vec/into_iter/struct.IntoIter.html "struct alloc::vec::into_iter::IntoIter")<<[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a> as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item "type core::iter::traits::collect::IntoIterator::Item")\>
+
+Which kind of iterator are we turning this into?
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#588)[§](#method.into_iter)
+
+#### fn [into\_iter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)(self) -> <[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a> as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter "type core::iter::traits::collect::IntoIterator::IntoIter")
+
+Creates an iterator from a value. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#593)[§](#impl-IntoIterator-for-%26Text%3C'a%3E)
+
+### impl<'a> [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator") for &'a [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#594)[§](#associatedtype.Item-1)
+
+#### type [Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item) = &'a [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>
+
+The type of the elements being iterated over.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#595)[§](#associatedtype.IntoIter-1)
+
+#### type [IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter) = [Iter](https://doc.rust-lang.org/nightly/core/slice/iter/struct.Iter.html "struct core::slice::iter::Iter")<'a, [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>
+
+Which kind of iterator are we turning this into?
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#597)[§](#method.into_iter-1)
+
+#### fn [into\_iter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)(self) -> <&'a [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a> as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter "type core::iter::traits::collect::IntoIterator::IntoIter")
+
+Creates an iterator from a value. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#602)[§](#impl-IntoIterator-for-%26mut+Text%3C'a%3E)
+
+### impl<'a> [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator") for &'a mut [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#603)[§](#associatedtype.Item-2)
+
+#### type [Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item) = &'a mut [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>
+
+The type of the elements being iterated over.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#604)[§](#associatedtype.IntoIter-2)
+
+#### type [IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter) = [IterMut](https://doc.rust-lang.org/nightly/core/slice/iter/struct.IterMut.html "struct core::slice::iter::IterMut")<'a, [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'a>>
+
+Which kind of iterator are we turning this into?
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#606)[§](#method.into_iter-2)
+
+#### fn [into\_iter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)(self) -> <&'a mut [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a> as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter "type core::iter::traits::collect::IntoIterator::IntoIter")
+
+Creates an iterator from a value. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#impl-PartialEq-for-Text%3C'a%3E)
+
+### impl<'a> [PartialEq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html "trait core::cmp::PartialEq") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#method.eq)
+
+#### fn [eq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq)(&self, other: &[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `self` and `other` values to be equal, and is used by `==`.
+
+1.0.0 (const: [unstable](https://github.com/rust-lang/rust/issues/143800 "Tracking issue for const_cmp")) · [Source](https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#263)[§](#method.ne)
+
+#### fn [ne](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne)(&self, other: [&Rhs](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `!=`. The default implementation is almost always sufficient, and should not be overridden without very good reason.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#196)[§](#impl-StructuralPartialEq-for-Text%3C'a%3E)
+
+### impl<'a> [StructuralPartialEq](https://doc.rust-lang.org/nightly/core/marker/trait.StructuralPartialEq.html "trait core::marker::StructuralPartialEq") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#778)[§](#impl-Styled-for-Text%3C'_%3E)
+
+### impl [Styled](../style/trait.Styled.html "trait ratatui::style::Styled") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#779)[§](#associatedtype.Item-3)
+
+#### type [Item](../style/trait.Styled.html#associatedtype.Item) = [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#781)[§](#method.style-1)
+
+#### fn [style](../style/trait.Styled.html#tymethod.style)(&self) -> [Style](../prelude/struct.Style.html "struct ratatui::prelude::Style")
+
+Returns the style of the object.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#785)[§](#method.set_style)
+
+#### fn [set\_style](../style/trait.Styled.html#tymethod.set_style)<S>(self, style: S) -> <[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_> as [Styled](../style/trait.Styled.html "trait ratatui::style::Styled")\>::[Item](../style/trait.Styled.html#associatedtype.Item "type ratatui::style::Styled::Item")
+
+where S: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Style](../prelude/struct.Style.html "struct ratatui::prelude::Style")\>,
+
+Sets the style of the object. [Read more](../style/trait.Styled.html#tymethod.set_style)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#565)[§](#impl-UnicodeWidthStr-for-Text%3C'_%3E)
+
+### impl [UnicodeWidthStr](https://docs.rs/unicode-width/0.2.2/x86_64-unknown-linux-gnu/unicode_width/trait.UnicodeWidthStr.html "trait unicode_width::UnicodeWidthStr") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#567)[§](#method.width-1)
+
+#### fn [width](https://docs.rs/unicode-width/0.2.2/x86_64-unknown-linux-gnu/unicode_width/trait.UnicodeWidthStr.html#tymethod.width)(&self) -> [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)
+
+Returns the max width of all the lines.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#575)[§](#method.width_cjk)
+
+#### fn [width\_cjk](https://docs.rs/unicode-width/0.2.2/x86_64-unknown-linux-gnu/unicode_width/trait.UnicodeWidthStr.html#tymethod.width_cjk)(&self) -> [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)
+
+Available on **crate feature `cjk`** only.
+
+Returns the string’s displayed width in columns. [Read more](https://docs.rs/unicode-width/0.2.2/x86_64-unknown-linux-gnu/unicode_width/trait.UnicodeWidthStr.html#tymethod.width_cjk)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#762)[§](#impl-Widget-for-Text%3C'_%3E)
+
+### impl [Widget](../prelude/trait.Widget.html "trait ratatui::prelude::Widget") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#763)[§](#method.render)
+
+#### fn [render](../prelude/trait.Widget.html#tymethod.render)(self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect"), buf: &mut [Buffer](../prelude/struct.Buffer.html "struct ratatui::prelude::Buffer"))
+
+Draws the current state of the widget in the given buffer. That is the only method required to implement a custom widget.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#768)[§](#impl-Widget-for-%26Text%3C'_%3E)
+
+### impl [Widget](../prelude/trait.Widget.html "trait ratatui::prelude::Widget") for &[Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#769)[§](#method.render-1)
+
+#### fn [render](../prelude/trait.Widget.html#tymethod.render)(self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect"), buf: &mut [Buffer](../prelude/struct.Buffer.html "struct ratatui::prelude::Buffer"))
+
+Draws the current state of the widget in the given buffer. That is the only method required to implement a custom widget.
+
+## Auto Trait Implementations[§](#synthetic-implementations)
+
+[§](#impl-Freeze-for-Text%3C'a%3E)
+
+### impl<'a> [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[§](#impl-RefUnwindSafe-for-Text%3C'a%3E)
+
+### impl<'a> [RefUnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html "trait core::panic::unwind_safe::RefUnwindSafe") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[§](#impl-Send-for-Text%3C'a%3E)
+
+### impl<'a> [Send](https://doc.rust-lang.org/nightly/core/marker/trait.Send.html "trait core::marker::Send") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[§](#impl-Sync-for-Text%3C'a%3E)
+
+### impl<'a> [Sync](https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html "trait core::marker::Sync") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[§](#impl-Unpin-for-Text%3C'a%3E)
+
+### impl<'a> [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[§](#impl-UnsafeUnpin-for-Text%3C'a%3E)
+
+### impl<'a> [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+[§](#impl-UnwindSafe-for-Text%3C'a%3E)
+
+### impl<'a> [UnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html "trait core::panic::unwind_safe::UnwindSafe") for [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'a>
+
+## Blanket Implementations[§](#blanket-implementations)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#205-210)[§](#impl-AdaptInto%3CD,+Swp,+Dwp,+T%3E-for-S)
+
+### impl<S, D, Swp, Dwp, T> [AdaptInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html "trait palette::chromatic_adaptation::AdaptInto")<D, Swp, Dwp, T> for S
+
+where T: [Real](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Real.html "trait palette::num::Real") + [Zero](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Zero.html "trait palette::num::Zero") + [Arithmetics](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Arithmetics.html "trait palette::num::Arithmetics") + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"), Swp: [WhitePoint](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/white_point/trait.WhitePoint.html "trait palette::white_point::WhitePoint")<T>, Dwp: [WhitePoint](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/white_point/trait.WhitePoint.html "trait palette::white_point::WhitePoint")<T>, D: [AdaptFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptFrom.html "trait palette::chromatic_adaptation::AdaptFrom")<S, Swp, Dwp, T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#213)[§](#method.adapt_into_using)
+
+#### fn [adapt\_into\_using](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html#tymethod.adapt_into_using)<M>(self, method: M) -> D
+
+where M: [TransformMatrix](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.TransformMatrix.html "trait palette::chromatic_adaptation::TransformMatrix")<T>,
+
+Convert the source color to the destination color using the specified method.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#196)[§](#method.adapt_into)
+
+#### fn [adapt\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html#method.adapt_into)(self) -> D
+
+Convert the source color to the destination color using the bradford method by default.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#141)[§](#impl-Any-for-T)
+
+### impl<T> [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") for T
+
+where T: 'static + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#142)[§](#method.type_id)
+
+#### fn [type\_id](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)(&self) -> [TypeId](https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html "struct core::any::TypeId")
+
+Gets the `TypeId` of `self`. [Read more](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#271-273)[§](#impl-ArraysFrom%3CC%3E-for-T)
+
+### impl<T, C> [ArraysFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysFrom.html "trait palette::cast::from_into_arrays_traits::ArraysFrom")<C> for T
+
+where C: [IntoArrays](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.IntoArrays.html "trait palette::cast::from_into_arrays_traits::IntoArrays")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#276)[§](#method.arrays_from)
+
+#### fn [arrays\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysFrom.html#tymethod.arrays_from)(colors: C) -> T
+
+Cast a collection of colors into a collection of arrays.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#329-331)[§](#impl-ArraysInto%3CC%3E-for-T)
+
+### impl<T, C> [ArraysInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysInto.html "trait palette::cast::from_into_arrays_traits::ArraysInto")<C> for T
+
+where C: [FromArrays](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.FromArrays.html "trait palette::cast::from_into_arrays_traits::FromArrays")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#334)[§](#method.arrays_into)
+
+#### fn [arrays\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysInto.html#tymethod.arrays_into)(self) -> C
+
+Cast this collection of arrays into a collection of colors.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#212)[§](#impl-Borrow%3CT%3E-for-T)
+
+### impl<T> [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#214)[§](#method.borrow)
+
+#### fn [borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Immutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#221)[§](#impl-BorrowMut%3CT%3E-for-T)
+
+### impl<T> [BorrowMut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html "trait core::borrow::BorrowMut")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#222)[§](#method.borrow_mut)
+
+#### fn [borrow\_mut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)(&mut self) -> [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#143-145)[§](#impl-Cam16IntoUnclamped%3CWpParam,+T%3E-for-U)
+
+### impl<WpParam, T, U> [Cam16IntoUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html "trait palette::cam16::Cam16IntoUnclamped")<WpParam, T> for U
+
+where T: [FromCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html "trait palette::cam16::FromCam16Unclamped")<WpParam, U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#147)[§](#associatedtype.Scalar)
+
+#### type [Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#associatedtype.Scalar) = <T as [FromCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html "trait palette::cam16::FromCam16Unclamped")<WpParam, U>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html#associatedtype.Scalar "type palette::cam16::FromCam16Unclamped::Scalar")
+
+The number type that’s used in `parameters` when converting.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#149)[§](#method.cam16_into_unclamped)
+
+#### fn [cam16\_into\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#tymethod.cam16_into_unclamped)( self, parameters: [BakedParameters](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/parameters/struct.BakedParameters.html "struct palette::cam16::parameters::BakedParameters")<WpParam, <U as [Cam16IntoUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html "trait palette::cam16::Cam16IntoUnclamped")<WpParam, T>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#associatedtype.Scalar "type palette::cam16::Cam16IntoUnclamped::Scalar")\>, ) -> T
+
+Converts `self` into `C`, using the provided parameters.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#648)[§](#impl-CloneToUninit-for-T)
+
+### impl<T> [CloneToUninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html "trait core::clone::CloneToUninit") for T
+
+where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#650)[§](#method.clone_to_uninit)
+
+#### unsafe fn [clone\_to\_uninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)(&self, dest: [\*mut](https://doc.rust-lang.org/nightly/std/primitive.pointer.html) [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html))
+
+🔬This is a nightly-only experimental API. (`clone_to_uninit`)
+
+Performs copy-assignment from `self` to `dest`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#414-416)[§](#impl-ComponentsFrom%3CC%3E-for-T)
+
+### impl<T, C> [ComponentsFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.ComponentsFrom.html "trait palette::cast::from_into_components_traits::ComponentsFrom")<C> for T
+
+where C: [IntoComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.IntoComponents.html "trait palette::cast::from_into_components_traits::IntoComponents")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#419)[§](#method.components_from)
+
+#### fn [components\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.ComponentsFrom.html#tymethod.components_from)(colors: C) -> T
+
+Cast a collection of colors into a collection of color components.
+
+[Source](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/src/equivalent/lib.rs.html#82-85)[§](#impl-Equivalent%3CK%3E-for-Q)
+
+### impl<Q, K> [Equivalent](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/equivalent/trait.Equivalent.html "trait equivalent::Equivalent")<K> for Q
+
+where Q: [Eq](https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html "trait core::cmp::Eq") + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"), K: [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<Q> + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/src/equivalent/lib.rs.html#88)[§](#method.equivalent)
+
+#### fn [equivalent](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/equivalent/trait.Equivalent.html#tymethod.equivalent)(&self, key: [&K](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Compare self to `key` and return `true` if they are equal.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#787)[§](#impl-From%3CT%3E-for-T)
+
+### impl<T> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for T
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#790)[§](#method.from-9)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(t: T) -> T
+
+Returns the argument unchanged.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#65)[§](#impl-FromAngle%3CT%3E-for-T)
+
+### impl<T> [FromAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html "trait palette::angle::FromAngle")<T> for T
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#67)[§](#method.from_angle)
+
+#### fn [from\_angle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html#tymethod.from_angle)(angle: T) -> T
+
+Performs a conversion from `angle`.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#85)[§](#impl-FromStimulus%3CU%3E-for-T)
+
+### impl<T, U> [FromStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.FromStimulus.html "trait palette::stimulus::FromStimulus")<U> for T
+
+where U: [IntoStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html "trait palette::stimulus::IntoStimulus")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#87)[§](#method.from_stimulus)
+
+#### fn [from\_stimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.FromStimulus.html#tymethod.from_stimulus)(other: U) -> T
+
+Converts `other` into `Self`, while performing the appropriate scaling, rounding and clamping.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#769-771)[§](#impl-Into%3CU%3E-for-T)
+
+### impl<T, U> [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<U> for T
+
+where U: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#779)[§](#method.into)
+
+#### fn [into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into)(self) -> U
+
+Calls `U::from(self)`.
+
+That is, this conversion is whatever the implementation of `[From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for U` chooses to do.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#78-80)[§](#impl-IntoAngle%3CU%3E-for-T)
+
+### impl<T, U> [IntoAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.IntoAngle.html "trait palette::angle::IntoAngle")<U> for T
+
+where U: [FromAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html "trait palette::angle::FromAngle")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#83)[§](#method.into_angle)
+
+#### fn [into\_angle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.IntoAngle.html#tymethod.into_angle)(self) -> U
+
+Performs a conversion into `T`.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#114-116)[§](#impl-IntoCam16Unclamped%3CWpParam,+T%3E-for-U)
+
+### impl<WpParam, T, U> [IntoCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html "trait palette::cam16::IntoCam16Unclamped")<WpParam, T> for U
+
+where T: [Cam16FromUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html "trait palette::cam16::Cam16FromUnclamped")<WpParam, U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#118)[§](#associatedtype.Scalar-1)
+
+#### type [Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#associatedtype.Scalar) = <T as [Cam16FromUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html "trait palette::cam16::Cam16FromUnclamped")<WpParam, U>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html#associatedtype.Scalar "type palette::cam16::Cam16FromUnclamped::Scalar")
+
+The number type that’s used in `parameters` when converting.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#120)[§](#method.into_cam16_unclamped)
+
+#### fn [into\_cam16\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#tymethod.into_cam16_unclamped)( self, parameters: [BakedParameters](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/parameters/struct.BakedParameters.html "struct palette::cam16::parameters::BakedParameters")<WpParam, <U as [IntoCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html "trait palette::cam16::IntoCam16Unclamped")<WpParam, T>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#associatedtype.Scalar "type palette::cam16::IntoCam16Unclamped::Scalar")\>, ) -> T
+
+Converts `self` into `C`, using the provided parameters.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color.rs.html#129-131)[§](#impl-IntoColor%3CU%3E-for-T)
+
+### impl<T, U> [IntoColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html "trait palette::convert::from_into_color::IntoColor")<U> for T
+
+where U: [FromColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.FromColor.html "trait palette::convert::from_into_color::FromColor")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color.rs.html#134)[§](#method.into_color)
+
+#### fn [into\_color](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html#tymethod.into_color)(self) -> U
+
+Convert into T with values clamped to the color defined bounds [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html#tymethod.into_color)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color_unclamped.rs.html#95-97)[§](#impl-IntoColorUnclamped%3CU%3E-for-T)
+
+### impl<T, U> [IntoColorUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html "trait palette::convert::from_into_color_unclamped::IntoColorUnclamped")<U> for T
+
+where U: [FromColorUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.FromColorUnclamped.html "trait palette::convert::from_into_color_unclamped::FromColorUnclamped")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color_unclamped.rs.html#100)[§](#method.into_color_unclamped)
+
+#### fn [into\_color\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html#tymethod.into_color_unclamped)(self) -> U
+
+Convert into T. The resulting color might be invalid in its color space [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html#tymethod.into_color_unclamped)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#64)[§](#impl-IntoEither-for-T)
+
+### impl<T> [IntoEither](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html "trait either::into_either::IntoEither") for T
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#29)[§](#method.into_either)
+
+#### fn [into\_either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)(self, into\_left: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left` is `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#55-57)[§](#method.into_either_with)
+
+#### fn [into\_either\_with](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)<F>(self, into\_left: F) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+where F: [FnOnce](https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html "trait core::ops::function::FnOnce")(&Self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html),
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left(&self)` returns `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#109)[§](#impl-IntoStimulus%3CT%3E-for-T)
+
+### impl<T> [IntoStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html "trait palette::stimulus::IntoStimulus")<T> for T
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#111)[§](#method.into_stimulus)
+
+#### fn [into\_stimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html#tymethod.into_stimulus)(self) -> T
+
+Converts `self` into `T`, while performing the appropriate scaling, rounding and clamping.
+
+[Source](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#34)[§](#impl-Same-for-T)
+
+### impl<T> [Same](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html "trait typenum::type_operators::Same") for T
+
+[Source](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#35)[§](#associatedtype.Output-2)
+
+#### type [Output](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html#associatedtype.Output) = T
+
+Should always be `Self`
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#273-275)[§](#impl-Stylize%3C'_,+T%3E-for-U)
+
+### impl<T, U> [Stylize](../prelude/trait.Stylize.html "trait ratatui::prelude::Stylize")<'\_, T> for U
+
+where U: [Styled](../style/trait.Styled.html "trait ratatui::style::Styled")<Item = T>,
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#277)[§](#method.bg)
+
+#### fn [bg](../prelude/trait.Stylize.html#tymethod.bg)<C>(self, color: C) -> T
+
+where C: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Color](../prelude/enum.Color.html "enum ratatui::prelude::Color")\>,
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#282)[§](#method.fg)
+
+#### fn [fg](../prelude/trait.Stylize.html#tymethod.fg)<C>(self, color: C) -> T
+
+where C: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Color](../prelude/enum.Color.html "enum ratatui::prelude::Color")\>,
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#287)[§](#method.add_modifier)
+
+#### fn [add\_modifier](../prelude/trait.Stylize.html#tymethod.add_modifier)(self, modifier: [Modifier](../prelude/struct.Modifier.html "struct ratatui::prelude::Modifier")) -> T
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#292)[§](#method.remove_modifier)
+
+#### fn [remove\_modifier](../prelude/trait.Stylize.html#tymethod.remove_modifier)(self, modifier: [Modifier](../prelude/struct.Modifier.html "struct ratatui::prelude::Modifier")) -> T
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#297)[§](#method.reset)
+
+#### fn [reset](../prelude/trait.Stylize.html#tymethod.reset)(self) -> T
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#245)[§](#method.black)
+
+#### fn [black](../prelude/trait.Stylize.html#method.black)(self) -> T
+
+Sets the foreground color to [`black`](../prelude/enum.Color.html#variant.Black "variant ratatui::prelude::Color::Black").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#245)[§](#method.on_black)
+
+#### fn [on\_black](../prelude/trait.Stylize.html#method.on_black)(self) -> T
+
+Sets the background color to [`black`](../prelude/enum.Color.html#variant.Black "variant ratatui::prelude::Color::Black").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#246)[§](#method.red)
+
+#### fn [red](../prelude/trait.Stylize.html#method.red)(self) -> T
+
+Sets the foreground color to [`red`](../prelude/enum.Color.html#variant.Red "variant ratatui::prelude::Color::Red").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#246)[§](#method.on_red)
+
+#### fn [on\_red](../prelude/trait.Stylize.html#method.on_red)(self) -> T
+
+Sets the background color to [`red`](../prelude/enum.Color.html#variant.Red "variant ratatui::prelude::Color::Red").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#247)[§](#method.green)
+
+#### fn [green](../prelude/trait.Stylize.html#method.green)(self) -> T
+
+Sets the foreground color to [`green`](../prelude/enum.Color.html#variant.Green "variant ratatui::prelude::Color::Green").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#247)[§](#method.on_green)
+
+#### fn [on\_green](../prelude/trait.Stylize.html#method.on_green)(self) -> T
+
+Sets the background color to [`green`](../prelude/enum.Color.html#variant.Green "variant ratatui::prelude::Color::Green").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#248)[§](#method.yellow)
+
+#### fn [yellow](../prelude/trait.Stylize.html#method.yellow)(self) -> T
+
+Sets the foreground color to [`yellow`](../prelude/enum.Color.html#variant.Yellow "variant ratatui::prelude::Color::Yellow").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#248)[§](#method.on_yellow)
+
+#### fn [on\_yellow](../prelude/trait.Stylize.html#method.on_yellow)(self) -> T
+
+Sets the background color to [`yellow`](../prelude/enum.Color.html#variant.Yellow "variant ratatui::prelude::Color::Yellow").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#249)[§](#method.blue)
+
+#### fn [blue](../prelude/trait.Stylize.html#method.blue)(self) -> T
+
+Sets the foreground color to [`blue`](../prelude/enum.Color.html#variant.Blue "variant ratatui::prelude::Color::Blue").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#249)[§](#method.on_blue)
+
+#### fn [on\_blue](../prelude/trait.Stylize.html#method.on_blue)(self) -> T
+
+Sets the background color to [`blue`](../prelude/enum.Color.html#variant.Blue "variant ratatui::prelude::Color::Blue").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#250)[§](#method.magenta)
+
+#### fn [magenta](../prelude/trait.Stylize.html#method.magenta)(self) -> T
+
+Sets the foreground color to [`magenta`](../prelude/enum.Color.html#variant.Magenta "variant ratatui::prelude::Color::Magenta").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#250)[§](#method.on_magenta)
+
+#### fn [on\_magenta](../prelude/trait.Stylize.html#method.on_magenta)(self) -> T
+
+Sets the background color to [`magenta`](../prelude/enum.Color.html#variant.Magenta "variant ratatui::prelude::Color::Magenta").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#251)[§](#method.cyan)
+
+#### fn [cyan](../prelude/trait.Stylize.html#method.cyan)(self) -> T
+
+Sets the foreground color to [`cyan`](../prelude/enum.Color.html#variant.Cyan "variant ratatui::prelude::Color::Cyan").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#251)[§](#method.on_cyan)
+
+#### fn [on\_cyan](../prelude/trait.Stylize.html#method.on_cyan)(self) -> T
+
+Sets the background color to [`cyan`](../prelude/enum.Color.html#variant.Cyan "variant ratatui::prelude::Color::Cyan").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#252)[§](#method.gray)
+
+#### fn [gray](../prelude/trait.Stylize.html#method.gray)(self) -> T
+
+Sets the foreground color to [`gray`](../prelude/enum.Color.html#variant.Gray "variant ratatui::prelude::Color::Gray").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#252)[§](#method.on_gray)
+
+#### fn [on\_gray](../prelude/trait.Stylize.html#method.on_gray)(self) -> T
+
+Sets the background color to [`gray`](../prelude/enum.Color.html#variant.Gray "variant ratatui::prelude::Color::Gray").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#253)[§](#method.dark_gray)
+
+#### fn [dark\_gray](../prelude/trait.Stylize.html#method.dark_gray)(self) -> T
+
+Sets the foreground color to [`dark_gray`](../prelude/enum.Color.html#variant.DarkGray "variant ratatui::prelude::Color::DarkGray").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#253)[§](#method.on_dark_gray)
+
+#### fn [on\_dark\_gray](../prelude/trait.Stylize.html#method.on_dark_gray)(self) -> T
+
+Sets the background color to [`dark_gray`](../prelude/enum.Color.html#variant.DarkGray "variant ratatui::prelude::Color::DarkGray").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#254)[§](#method.light_red)
+
+#### fn [light\_red](../prelude/trait.Stylize.html#method.light_red)(self) -> T
+
+Sets the foreground color to [`light_red`](../prelude/enum.Color.html#variant.LightRed "variant ratatui::prelude::Color::LightRed").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#254)[§](#method.on_light_red)
+
+#### fn [on\_light\_red](../prelude/trait.Stylize.html#method.on_light_red)(self) -> T
+
+Sets the background color to [`light_red`](../prelude/enum.Color.html#variant.LightRed "variant ratatui::prelude::Color::LightRed").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#255)[§](#method.light_green)
+
+#### fn [light\_green](../prelude/trait.Stylize.html#method.light_green)(self) -> T
+
+Sets the foreground color to [`light_green`](../prelude/enum.Color.html#variant.LightGreen "variant ratatui::prelude::Color::LightGreen").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#255)[§](#method.on_light_green)
+
+#### fn [on\_light\_green](../prelude/trait.Stylize.html#method.on_light_green)(self) -> T
+
+Sets the background color to [`light_green`](../prelude/enum.Color.html#variant.LightGreen "variant ratatui::prelude::Color::LightGreen").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#256)[§](#method.light_yellow)
+
+#### fn [light\_yellow](../prelude/trait.Stylize.html#method.light_yellow)(self) -> T
+
+Sets the foreground color to [`light_yellow`](../prelude/enum.Color.html#variant.LightYellow "variant ratatui::prelude::Color::LightYellow").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#256)[§](#method.on_light_yellow)
+
+#### fn [on\_light\_yellow](../prelude/trait.Stylize.html#method.on_light_yellow)(self) -> T
+
+Sets the background color to [`light_yellow`](../prelude/enum.Color.html#variant.LightYellow "variant ratatui::prelude::Color::LightYellow").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#257)[§](#method.light_blue)
+
+#### fn [light\_blue](../prelude/trait.Stylize.html#method.light_blue)(self) -> T
+
+Sets the foreground color to [`light_blue`](../prelude/enum.Color.html#variant.LightBlue "variant ratatui::prelude::Color::LightBlue").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#257)[§](#method.on_light_blue)
+
+#### fn [on\_light\_blue](../prelude/trait.Stylize.html#method.on_light_blue)(self) -> T
+
+Sets the background color to [`light_blue`](../prelude/enum.Color.html#variant.LightBlue "variant ratatui::prelude::Color::LightBlue").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#258)[§](#method.light_magenta)
+
+#### fn [light\_magenta](../prelude/trait.Stylize.html#method.light_magenta)(self) -> T
+
+Sets the foreground color to [`light_magenta`](../prelude/enum.Color.html#variant.LightMagenta "variant ratatui::prelude::Color::LightMagenta").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#258)[§](#method.on_light_magenta)
+
+#### fn [on\_light\_magenta](../prelude/trait.Stylize.html#method.on_light_magenta)(self) -> T
+
+Sets the background color to [`light_magenta`](../prelude/enum.Color.html#variant.LightMagenta "variant ratatui::prelude::Color::LightMagenta").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#259)[§](#method.light_cyan)
+
+#### fn [light\_cyan](../prelude/trait.Stylize.html#method.light_cyan)(self) -> T
+
+Sets the foreground color to [`light_cyan`](../prelude/enum.Color.html#variant.LightCyan "variant ratatui::prelude::Color::LightCyan").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#259)[§](#method.on_light_cyan)
+
+#### fn [on\_light\_cyan](../prelude/trait.Stylize.html#method.on_light_cyan)(self) -> T
+
+Sets the background color to [`light_cyan`](../prelude/enum.Color.html#variant.LightCyan "variant ratatui::prelude::Color::LightCyan").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#260)[§](#method.white)
+
+#### fn [white](../prelude/trait.Stylize.html#method.white)(self) -> T
+
+Sets the foreground color to [`white`](../prelude/enum.Color.html#variant.White "variant ratatui::prelude::Color::White").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#260)[§](#method.on_white)
+
+#### fn [on\_white](../prelude/trait.Stylize.html#method.on_white)(self) -> T
+
+Sets the background color to [`white`](../prelude/enum.Color.html#variant.White "variant ratatui::prelude::Color::White").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#262)[§](#method.bold)
+
+#### fn [bold](../prelude/trait.Stylize.html#method.bold)(self) -> T
+
+Adds the [`bold`](../prelude/struct.Modifier.html#associatedconstant.BOLD "associated constant ratatui::prelude::Modifier::BOLD") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#262)[§](#method.not_bold)
+
+#### fn [not\_bold](../prelude/trait.Stylize.html#method.not_bold)(self) -> T
+
+Removes the [`bold`](../prelude/struct.Modifier.html#associatedconstant.BOLD "associated constant ratatui::prelude::Modifier::BOLD") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#263)[§](#method.dim)
+
+#### fn [dim](../prelude/trait.Stylize.html#method.dim)(self) -> T
+
+Adds the [`dim`](../prelude/struct.Modifier.html#associatedconstant.DIM "associated constant ratatui::prelude::Modifier::DIM") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#263)[§](#method.not_dim)
+
+#### fn [not\_dim](../prelude/trait.Stylize.html#method.not_dim)(self) -> T
+
+Removes the [`dim`](../prelude/struct.Modifier.html#associatedconstant.DIM "associated constant ratatui::prelude::Modifier::DIM") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#264)[§](#method.italic)
+
+#### fn [italic](../prelude/trait.Stylize.html#method.italic)(self) -> T
+
+Adds the [`italic`](../prelude/struct.Modifier.html#associatedconstant.ITALIC "associated constant ratatui::prelude::Modifier::ITALIC") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#264)[§](#method.not_italic)
+
+#### fn [not\_italic](../prelude/trait.Stylize.html#method.not_italic)(self) -> T
+
+Removes the [`italic`](../prelude/struct.Modifier.html#associatedconstant.ITALIC "associated constant ratatui::prelude::Modifier::ITALIC") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#265)[§](#method.underlined)
+
+#### fn [underlined](../prelude/trait.Stylize.html#method.underlined)(self) -> T
+
+Adds the [`underlined`](../prelude/struct.Modifier.html#associatedconstant.UNDERLINED "associated constant ratatui::prelude::Modifier::UNDERLINED") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#265)[§](#method.not_underlined)
+
+#### fn [not\_underlined](../prelude/trait.Stylize.html#method.not_underlined)(self) -> T
+
+Removes the [`underlined`](../prelude/struct.Modifier.html#associatedconstant.UNDERLINED "associated constant ratatui::prelude::Modifier::UNDERLINED") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#266)[§](#method.slow_blink)
+
+#### fn [slow\_blink](../prelude/trait.Stylize.html#method.slow_blink)(self) -> T
+
+Adds the [`slow_blink`](../prelude/struct.Modifier.html#associatedconstant.SLOW_BLINK "associated constant ratatui::prelude::Modifier::SLOW_BLINK") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#266)[§](#method.not_slow_blink)
+
+#### fn [not\_slow\_blink](../prelude/trait.Stylize.html#method.not_slow_blink)(self) -> T
+
+Removes the [`slow_blink`](../prelude/struct.Modifier.html#associatedconstant.SLOW_BLINK "associated constant ratatui::prelude::Modifier::SLOW_BLINK") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#267)[§](#method.rapid_blink)
+
+#### fn [rapid\_blink](../prelude/trait.Stylize.html#method.rapid_blink)(self) -> T
+
+Adds the [`rapid_blink`](../prelude/struct.Modifier.html#associatedconstant.RAPID_BLINK "associated constant ratatui::prelude::Modifier::RAPID_BLINK") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#267)[§](#method.not_rapid_blink)
+
+#### fn [not\_rapid\_blink](../prelude/trait.Stylize.html#method.not_rapid_blink)(self) -> T
+
+Removes the [`rapid_blink`](../prelude/struct.Modifier.html#associatedconstant.RAPID_BLINK "associated constant ratatui::prelude::Modifier::RAPID_BLINK") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#268)[§](#method.reversed)
+
+#### fn [reversed](../prelude/trait.Stylize.html#method.reversed)(self) -> T
+
+Adds the [`reversed`](../prelude/struct.Modifier.html#associatedconstant.REVERSED "associated constant ratatui::prelude::Modifier::REVERSED") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#268)[§](#method.not_reversed)
+
+#### fn [not\_reversed](../prelude/trait.Stylize.html#method.not_reversed)(self) -> T
+
+Removes the [`reversed`](../prelude/struct.Modifier.html#associatedconstant.REVERSED "associated constant ratatui::prelude::Modifier::REVERSED") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#269)[§](#method.hidden)
+
+#### fn [hidden](../prelude/trait.Stylize.html#method.hidden)(self) -> T
+
+Adds the [`hidden`](../prelude/struct.Modifier.html#associatedconstant.HIDDEN "associated constant ratatui::prelude::Modifier::HIDDEN") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#269)[§](#method.not_hidden)
+
+#### fn [not\_hidden](../prelude/trait.Stylize.html#method.not_hidden)(self) -> T
+
+Removes the [`hidden`](../prelude/struct.Modifier.html#associatedconstant.HIDDEN "associated constant ratatui::prelude::Modifier::HIDDEN") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#270)[§](#method.crossed_out)
+
+#### fn [crossed\_out](../prelude/trait.Stylize.html#method.crossed_out)(self) -> T
+
+Adds the [`crossed_out`](../prelude/struct.Modifier.html#associatedconstant.CROSSED_OUT "associated constant ratatui::prelude::Modifier::CROSSED_OUT") modifier.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/style/stylize.rs.html#270)[§](#method.not_crossed_out)
+
+#### fn [not\_crossed\_out](../prelude/trait.Stylize.html#method.not_crossed_out)(self) -> T
+
+Removes the [`crossed_out`](../prelude/struct.Modifier.html#associatedconstant.CROSSED_OUT "associated constant ratatui::prelude::Modifier::CROSSED_OUT") modifier.
+
+[Source](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/src/compact_str/traits.rs.html#76)[§](#impl-ToCompactString-for-T)
+
+### impl<T> [ToCompactString](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/traits/trait.ToCompactString.html "trait compact_str::traits::ToCompactString") for T
+
+where T: [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display"),
+
+[Source](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/src/compact_str/traits.rs.html#78)[§](#method.try_to_compact_string)
+
+#### fn [try\_to\_compact\_string](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/traits/trait.ToCompactString.html#tymethod.try_to_compact_string)(&self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[CompactString](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/struct.CompactString.html "struct compact_str::CompactString"), [ToCompactStringError](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/enum.ToCompactStringError.html "enum compact_str::ToCompactStringError")\>
+
+Fallible version of [`ToCompactString::to_compact_string()`](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/traits/trait.ToCompactString.html#method.to_compact_string "method compact_str::traits::ToCompactString::to_compact_string") [Read more](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/traits/trait.ToCompactString.html#tymethod.try_to_compact_string)
+
+[Source](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/src/compact_str/traits.rs.html#39)[§](#method.to_compact_string)
+
+#### fn [to\_compact\_string](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/traits/trait.ToCompactString.html#method.to_compact_string)(&self) -> [CompactString](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/struct.CompactString.html "struct compact_str::CompactString")
+
+Converts the given value to a [`CompactString`](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/struct.CompactString.html "struct compact_str::CompactString"). [Read more](https://docs.rs/compact_str/0.9.1/x86_64-unknown-linux-gnu/compact_str/traits/trait.ToCompactString.html#method.to_compact_string)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/line.rs.html#833)[§](#impl-ToLine-for-T)
+
+### impl<T> [ToLine](trait.ToLine.html "trait ratatui::text::ToLine") for T
+
+where T: [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display"),
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/line.rs.html#834)[§](#method.to_line)
+
+#### fn [to\_line](trait.ToLine.html#tymethod.to_line)(&self) -> [Line](../prelude/struct.Line.html "struct ratatui::prelude::Line")<'\_>
+
+Converts the value to a [`Line`](../prelude/struct.Line.html "struct ratatui::prelude::Line").
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#72-74)[§](#impl-ToOwned-for-T)
+
+### impl<T> [ToOwned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html "trait alloc::borrow::ToOwned") for T
+
+where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#76)[§](#associatedtype.Owned)
+
+#### type [Owned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#associatedtype.Owned) = T
+
+The resulting type after obtaining ownership.
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#77)[§](#method.to_owned)
+
+#### fn [to\_owned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned)(&self) -> T
+
+Creates owned data from borrowed data, usually by cloning. [Read more](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned)
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#81)[§](#method.clone_into)
+
+#### fn [clone\_into](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into)(&self, target: [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+Uses borrowed data to replace owned data, usually by cloning. [Read more](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/span.rs.html#491)[§](#impl-ToSpan-for-T)
+
+### impl<T> [ToSpan](trait.ToSpan.html "trait ratatui::text::ToSpan") for T
+
+where T: [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display"),
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/span.rs.html#492)[§](#method.to_span)
+
+#### fn [to\_span](trait.ToSpan.html#tymethod.to_span)(&self) -> [Span](../prelude/struct.Span.html "struct ratatui::prelude::Span")<'\_>
+
+Converts the value to a [`Span`](../prelude/struct.Span.html "struct ratatui::prelude::Span").
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/string.rs.html#2900)[§](#impl-ToString-for-T)
+
+### impl<T> [ToString](https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html "trait alloc::string::ToString") for T
+
+where T: [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display") + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/string.rs.html#2902)[§](#method.to_string)
+
+#### fn [to\_string](https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html#tymethod.to_string)(&self) -> [String](https://doc.rust-lang.org/nightly/alloc/string/struct.String.html "struct alloc::string::String")
+
+Converts the given value to a `String`. [Read more](https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html#tymethod.to_string)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#744)[§](#impl-ToText-for-T)
+
+### impl<T> [ToText](trait.ToText.html "trait ratatui::text::ToText") for T
+
+where T: [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display"),
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/text/text.rs.html#745)[§](#method.to_text)
+
+#### fn [to\_text](trait.ToText.html#tymethod.to_text)(&self) -> [Text](../prelude/struct.Text.html "struct ratatui::prelude::Text")<'\_>
+
+Converts the value to a [`Text`](../prelude/struct.Text.html "struct ratatui::prelude::Text").
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#584-586)[§](#impl-TryComponentsInto%3CC%3E-for-T)
+
+### impl<T, C> [TryComponentsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html "trait palette::cast::from_into_components_traits::TryComponentsInto")<C> for T
+
+where C: [TryFromComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html "trait palette::cast::from_into_components_traits::TryFromComponents")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#588)[§](#associatedtype.Error)
+
+#### type [Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#associatedtype.Error) = <C as [TryFromComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html "trait palette::cast::from_into_components_traits::TryFromComponents")<T>>::[Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html#associatedtype.Error "type palette::cast::from_into_components_traits::TryFromComponents::Error")
+
+The error for when `try_into_colors` fails to cast.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#591)[§](#method.try_components_into)
+
+#### fn [try\_components\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#tymethod.try_components_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<C, <T as [TryComponentsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html "trait palette::cast::from_into_components_traits::TryComponentsInto")<C>>::[Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#associatedtype.Error "type palette::cast::from_into_components_traits::TryComponentsInto::Error")\>
+
+Try to cast this collection of color components into a collection of colors. [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#tymethod.try_components_into)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#829-831)[§](#impl-TryFrom%3CU%3E-for-T)
+
+### impl<T, U> [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U> for T
+
+where U: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#833)[§](#associatedtype.Error-1)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error) = [Infallible](https://doc.rust-lang.org/nightly/core/convert/enum.Infallible.html "enum core::convert::Infallible")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#836)[§](#method.try_from)
+
+#### fn [try\_from](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#tymethod.try_from)(value: U) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<T, <T as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#813-815)[§](#impl-TryInto%3CU%3E-for-T)
+
+### impl<T, U> [TryInto](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html "trait core::convert::TryInto")<U> for T
+
+where U: [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#817)[§](#associatedtype.Error-2)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#associatedtype.Error) = <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#820)[§](#method.try_into)
+
+#### fn [try\_into](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#tymethod.try_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/try_from_into_color.rs.html#110-112)[§](#impl-TryIntoColor%3CU%3E-for-T)
+
+### impl<T, U> [TryIntoColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html "trait palette::convert::try_from_into_color::TryIntoColor")<U> for T
+
+where U: [TryFromColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryFromColor.html "trait palette::convert::try_from_into_color::TryFromColor")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/try_from_into_color.rs.html#115)[§](#method.try_into_color)
+
+#### fn [try\_into\_color](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html#tymethod.try_into_color)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, [OutOfBounds](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/struct.OutOfBounds.html "struct palette::convert::try_from_into_color::OutOfBounds")<U>>
+
+Convert into T, returning ok if the color is inside of its defined range, otherwise an `OutOfBounds` error is returned which contains the unclamped color. [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html#tymethod.try_into_color)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#325-327)[§](#impl-UintsFrom%3CC%3E-for-U)
+
+### impl<C, U> [UintsFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsFrom.html "trait palette::cast::from_into_uints_traits::UintsFrom")<C> for U
+
+where C: [IntoUints](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.IntoUints.html "trait palette::cast::from_into_uints_traits::IntoUints")<U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#330)[§](#method.uints_from)
+
+#### fn [uints\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsFrom.html#tymethod.uints_from)(colors: C) -> U
+
+Cast a collection of colors into a collection of unsigned integers.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#401-403)[§](#impl-UintsInto%3CC%3E-for-U)
+
+### impl<C, U> [UintsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsInto.html "trait palette::cast::from_into_uints_traits::UintsInto")<C> for U
+
+where C: [FromUints](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.FromUints.html "trait palette::cast::from_into_uints_traits::FromUints")<U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#406)[§](#method.uints_into)
+
+#### fn [uints\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsInto.html#tymethod.uints_into)(self) -> C
+
+Cast this collection of unsigned integers into a collection of colors.

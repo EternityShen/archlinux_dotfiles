@@ -1,0 +1,69 @@
+{
+  "$schema": "./config.schema.json",
+  "overview": {
+    "rows": 3,
+    "columns": 3,
+    "scale": 0.18,
+    "orderRightLeft": false,
+    "orderBottomUp": false,
+    "centerIcons": true,
+    "showAppIcons": true,
+    "showWorkspaceNumbers": true
+  },
+  "appearance": {
+    "backdropOpacity": 0.7,
+    "windowCornerRadius": 8,
+    "activeWorkspaceBorderWidth": 2,
+    "animationDuration": 200,
+    "colors": {
+      "backgroundColor": "#1a0a14",
+      "workspaceColor": "#2d1225",
+      "workspaceHoverColor": "#3d1a38",
+      "activeBorderColor": "#ff6bb5",
+      "workspaceNumberColor": "#c080a8"
+    }
+  },
+  "iconMappings": {
+    "net-runelite-client-RuneLite": "runelite"
+  },
+  "stashTrays": {
+    "enabled": true,
+    "trays": [
+      {
+        "name": "quick",
+        "label": "Quick Stash"
+      },
+      {
+        "name": "later",
+        "label": "For Later"
+      }
+    ],
+    "modifierKey": "Shift",
+    "secondaryModifier": "Control",
+    "showEmptyTrays": false,
+    "position": "bottom",
+    "verticalFillMode": "centered",
+    "previewScale": 1,
+    "showAppIcons": true
+  },
+  "activeMode": "board",
+  "initialSetupDone": true,
+  "boardMode": {
+    "scale": 0.2,
+    "minClusterSize": 150,
+    "maxClusterSize": 600,
+    "clusterSpacing": 30,
+    "showEmptyWorkspaces": true,
+    "padding": 40
+  },
+  "modifiers": {
+    "clusterDrag": "Ctrl"
+  },
+  "workspaceVisibility": {
+    "revealKey": "=",
+    "hideKey": "-",
+    "hideMethod": "stack",
+    "dynamicWorkspacePrefix": "hyo-ws",
+    "workspacesConfigPath": ""
+  }
+}

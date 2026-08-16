@@ -1,0 +1,7 @@
+# Rime user dictionary
+#@/db_name	luna_pinyin
+#@/db_type	userdb
+#@/rime_version	1.16.1
+#@/tick	1
+#@/user_id	3c50fe5c-947f-4062-8078-d2182b48e8ff
+zen me ban 	怎麼辦	c=1 d=1 t=1

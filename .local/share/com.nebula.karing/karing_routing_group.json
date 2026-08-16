@@ -1,0 +1,86 @@
+{
+  "items": [
+    {
+      "groupid": "custom",
+      "urlOrPath": "",
+      "remark": "",
+      "editAble": true,
+      "groups": [
+        {
+          "groupid": "custom",
+          "name": "🍎 苹果服务",
+          "type": "",
+          "or": true,
+          "rule_set_build_in": [
+            "geosite:apple",
+            "geosite:apple@ads",
+            "geosite:apple-dev",
+            "geosite:apple-pki",
+            "geosite:apple-update"
+          ]
+        },
+        {
+          "groupid": "custom",
+          "name": "🌏 Google Play",
+          "type": "",
+          "or": true,
+          "rule_set_build_in": [
+            "geosite:google-play"
+          ],
+          "package": [
+            "com.android.vending"
+          ]
+        },
+        {
+          "groupid": "custom",
+          "name": "🌏 Google",
+          "type": "",
+          "or": true,
+          "rule_set_build_in": [
+            "geosite:google",
+            "geoip:google"
+          ]
+        },
+        {
+          "groupid": "custom",
+          "name": "📺 哔哩哔哩",
+          "type": "",
+          "or": true,
+          "rule_set_build_in": [
+            "acl:BilibiliHMT",
+            "acl:Bilibili"
+          ]
+        },
+        {
+          "groupid": "custom",
+          "name": "🎯 国内直连",
+          "type": "",
+          "or": true,
+          "rule_set_build_in": [
+            "acl:ChinaIp",
+            "acl:ChinaDomain",
+            "acl:ChinaCompanyIp",
+            "acl:UnBan",
+            "acl:SteamCN",
+            "acl:Download",
+            "acl:ChinaMedia"
+          ]
+        },
+        {
+          "groupid": "custom",
+          "name": "🌏 国外穿墙",
+          "type": "",
+          "or": true,
+          "rule_set_build_in": [
+            "geosite:geolocation-!cn",
+            "geosite:google",
+            "geoip:google",
+            "acl:ProxyGFWlist",
+            "acl:ProxyMedia"
+          ]
+        }
+      ]
+    }
+  ],
+  "rule_set_items": []
+}

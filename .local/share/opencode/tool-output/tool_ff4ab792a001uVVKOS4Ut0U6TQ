@@ -1,0 +1,655 @@
+Button in iced::widget::button - Rust
+
+  
+
+[Docs.rs](/)
+
+-   [iced-0.14.0](# "A cross-platform GUI library inspired by Elm")
+    
+    -   iced 0.14.0
+    -   [Permalink](/iced/0.14.0/iced/widget/button/struct.Button.html "Get a link to this specific version")
+    -   [Docs.rs crate page](/crate/iced/latest "See iced in docs.rs")
+    -   [MIT](https://spdx.org/licenses/MIT)
+    -   12 June 2026
+    
+    -   Links
+    -   [Homepage](https://iced.rs)
+    -   [Repository](https://github.com/iced-rs/iced)
+    -   [crates.io](https://crates.io/crates/iced "See iced in crates.io")
+    -   [Source](/crate/iced/latest/source/ "Browse source of iced-0.14.0")
+    
+    -   Owners
+    -   [hecrj](https://crates.io/users/hecrj)
+    
+    -   Dependencies
+    -   -   [iced\_core ^0.14.0 *normal*](/iced_core/^0.14.0/)
+        -   [iced\_debug ^0.14.0 *normal*](/iced_debug/^0.14.0/)
+        -   [iced\_devtools ^0.14.0 *normal* *optional*](/iced_devtools/^0.14.0/)
+        -   [iced\_futures ^0.14.0 *normal*](/iced_futures/^0.14.0/)
+        -   [iced\_highlighter ^0.14.0 *normal* *optional*](/iced_highlighter/^0.14.0/)
+        -   [iced\_renderer ^0.14.0 *normal*](/iced_renderer/^0.14.0/)
+        -   [iced\_runtime ^0.14.0 *normal*](/iced_runtime/^0.14.0/)
+        -   [iced\_tester ^0.14.0 *normal* *optional*](/iced_tester/^0.14.0/)
+        -   [iced\_widget ^0.14.0 *normal*](/iced_widget/^0.14.0/)
+        -   [iced\_winit ^0.14.0 *normal*](/iced_winit/^0.14.0/)
+        -   [image ^0.25 *normal* *optional*](/image/^0.25/)
+        -   [thiserror ^2 *normal*](/thiserror/^2/)
+        -   [criterion ^0.5 *dev*](/criterion/^0.5/)
+        -   [iced\_wgpu ^0.14.0 *dev*](/iced_wgpu/^0.14.0/)
+        
+    
+    -   Versions
+    
+    -   [**100%** of the crate is documented](/crate/iced/latest)
+    
+-   [Platform](#)
+    -   [x86\_64-unknown-linux-gnu](/crate/iced/latest/target-redirect/iced/widget/button/struct.Button.html)
+-   [Feature flags](/crate/iced/latest/features "Browse available feature flags of iced-0.14.0")
+
+-   [docs.rs](#)
+    -   [About docs.rs](/about)
+    -   [Badges](/about/badges)
+    -   [Builds](/about/builds)
+    -   [Metadata](/about/metadata)
+    -   [Shorthand URLs](/about/redirections)
+    -   [Download](/about/download)
+    -   [Rustdoc JSON](/about/rustdoc-json)
+    -   [Build queue](/releases/queue)
+    -   [Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+-   [Rust](#)
+    -   [Rust website](https://www.rust-lang.org/)
+    -   [The Book](https://doc.rust-lang.org/book/)
+    -   [Standard Library API Reference](https://doc.rust-lang.org/std/)
+    -   [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+    -   [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+    -   [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+[Skip to main content](#main-content)
+
+## [Button](#)
+
+[![logo](https://raw.githubusercontent.com/iced-rs/iced/bdf0430880f5c29443f5f0a0ae4895866dfef4c6/docs/logo.svg)](../../../iced/index.html)
+
+## [iced](../../../iced/index.html)0.14.0
+
+## [Button](#)
+
+### [Sections](#)
+
+-   [Example](#example "Example")
+
+### [Associated Functions](#implementations)
+
+-   [new](#method.new "new")
+
+### [Methods](#implementations)
+
+-   [class](#method.class "class")
+-   [clip](#method.clip "clip")
+-   [height](#method.height "height")
+-   [on\_press](#method.on_press "on_press")
+-   [on\_press\_maybe](#method.on_press_maybe "on_press_maybe")
+-   [on\_press\_with](#method.on_press_with "on_press_with")
+-   [padding](#method.padding "padding")
+-   [style](#method.style "style")
+-   [width](#method.width "width")
+
+### [Trait Implementations](#trait-implementations)
+
+-   [From<Button<'a, Message, Theme, Renderer>>](#impl-From%3CButton%3C'a,+Message,+Theme,+Renderer%3E%3E-for-Element%3C'a,+Message,+Theme,+Renderer%3E "From<Button<'a, Message, Theme, Renderer>>")
+-   [Widget<Message, Theme, Renderer>](#impl-Widget%3CMessage,+Theme,+Renderer%3E-for-Button%3C'a,+Message,+Theme,+Renderer%3E "Widget<Message, Theme, Renderer>")
+
+### [Auto Trait Implementations](#synthetic-implementations)
+
+-   [!RefUnwindSafe](#impl-RefUnwindSafe-for-Button%3C'a,+Message,+Theme,+Renderer%3E "!RefUnwindSafe")
+-   [!Send](#impl-Send-for-Button%3C'a,+Message,+Theme,+Renderer%3E "!Send")
+-   [!Sync](#impl-Sync-for-Button%3C'a,+Message,+Theme,+Renderer%3E "!Sync")
+-   [!UnwindSafe](#impl-UnwindSafe-for-Button%3C'a,+Message,+Theme,+Renderer%3E "!UnwindSafe")
+-   [Freeze](#impl-Freeze-for-Button%3C'a,+Message,+Theme,+Renderer%3E "Freeze")
+-   [Unpin](#impl-Unpin-for-Button%3C'a,+Message,+Theme,+Renderer%3E "Unpin")
+-   [UnsafeUnpin](#impl-UnsafeUnpin-for-Button%3C'a,+Message,+Theme,+Renderer%3E "UnsafeUnpin")
+
+### [Blanket Implementations](#blanket-implementations)
+
+-   [Any](#impl-Any-for-T "Any")
+-   [Borrow<T>](#impl-Borrow%3CT%3E-for-T "Borrow<T>")
+-   [BorrowMut<T>](#impl-BorrowMut%3CT%3E-for-T "BorrowMut<T>")
+-   [Downcast](#impl-Downcast-for-T "Downcast")
+-   [Downcast<T>](#impl-Downcast%3CT%3E-for-T "Downcast<T>")
+-   [From<T>](#impl-From%3CT%3E-for-T "From<T>")
+-   [Instrument](#impl-Instrument-for-T "Instrument")
+-   [Into<U>](#impl-Into%3CU%3E-for-T "Into<U>")
+-   [IntoBoot<State, Message>](#impl-IntoBoot%3CState,+Message%3E-for-State "IntoBoot<State, Message>")
+-   [IntoEither](#impl-IntoEither-for-T "IntoEither")
+-   [Pointable](#impl-Pointable-for-T "Pointable")
+-   [Same](#impl-Same-for-T "Same")
+-   [TryFrom<U>](#impl-TryFrom%3CU%3E-for-T "TryFrom<U>")
+-   [TryInto<U>](#impl-TryInto%3CU%3E-for-T "TryInto<U>")
+-   [Upcast<T>](#impl-Upcast%3CT%3E-for-T "Upcast<T>")
+-   [VZip<V>](#impl-VZip%3CV%3E-for-T "VZip<V>")
+-   [WithSubscriber](#impl-WithSubscriber-for-T "WithSubscriber")
+
+## [In iced::widget::button](index.html)
+
+[iced](../../index.html)::[widget](../index.html)::[button](index.html)
+
+# Struct Button Copy item path
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#71)
+
+```
+pub struct Button<'a, Message, Theme = Theme, Renderer = Renderer<Renderer, Renderer>>where
+    Renderer: Renderer,
+    Theme: Catalog,{ /* private fields */ }
+```
+
+Expand description
+
+A generic widget that produces a message when pressed.
+
+## [§](#example)Example
+
+```
+use iced::widget::button;
+
+#[derive(Clone)]
+enum Message {
+    ButtonPressed,
+}
+
+fn view(state: &State) -> Element<'_, Message> {
+    button("Press me!").on_press(Message::ButtonPressed).into()
+}
+```
+
+If a [`Button::on_press`](../struct.Button.html#method.on_press "method iced::widget::Button::on_press") handler is not set, the resulting [`Button`](../struct.Button.html "struct iced::widget::Button") will be disabled:
+
+```
+use iced::widget::button;
+
+#[derive(Clone)]
+enum Message {
+    ButtonPressed,
+}
+
+fn view(state: &State) -> Element<'_, Message> {
+    button("I am disabled!").into()
+}
+```
+
+## Implementations[§](#implementations)
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#100-103)[§](#impl-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme, Renderer> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where Renderer: [Renderer](../../advanced/trait.Renderer.html "trait iced::advanced::Renderer"), Theme: [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog"),
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#106-108)
+
+#### pub fn [new](#method.new)( content: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Element](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/element/struct.Element.html "struct iced_core::element::Element")<'a, Message, Theme, Renderer>>, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Creates a new [`Button`](../struct.Button.html "struct iced::widget::Button") with the given content.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#125)
+
+#### pub fn [width](#method.width)( self, width: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Length](../../enum.Length.html "enum iced::Length")\>, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Sets the width of the [`Button`](../struct.Button.html "struct iced::widget::Button").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#131)
+
+#### pub fn [height](#method.height)( self, height: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Length](../../enum.Length.html "enum iced::Length")\>, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Sets the height of the [`Button`](../struct.Button.html "struct iced::widget::Button").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#137)
+
+#### pub fn [padding](#method.padding)<P>(self, padding: P) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where P: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Padding](../../struct.Padding.html "struct iced::Padding")\>,
+
+Sets the [`Padding`](../../struct.Padding.html "struct iced::Padding") of the [`Button`](../struct.Button.html "struct iced::widget::Button").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#145)
+
+#### pub fn [on\_press](#method.on_press)(self, on\_press: Message) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Sets the message that will be produced when the [`Button`](../struct.Button.html "struct iced::widget::Button") is pressed.
+
+Unless `on_press` is called, the [`Button`](../struct.Button.html "struct iced::widget::Button") will be disabled.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#158-161)
+
+#### pub fn [on\_press\_with](#method.on_press_with)( self, on\_press: impl [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")() -> Message + 'a, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Sets the message that will be produced when the [`Button`](../struct.Button.html "struct iced::widget::Button") is pressed.
+
+This is analogous to [`Button::on_press`](../struct.Button.html#method.on_press "method iced::widget::Button::on_press"), but using a closure to produce the message.
+
+This closure will only be called when the [`Button`](../struct.Button.html "struct iced::widget::Button") is actually pressed and, therefore, this method is useful to reduce overhead if creating the resulting message is slow.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#170)
+
+#### pub fn [on\_press\_maybe](#method.on_press_maybe)( self, on\_press: [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<Message>, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Sets the message that will be produced when the [`Button`](../struct.Button.html "struct iced::widget::Button") is pressed, if `Some`.
+
+If `None`, the [`Button`](../struct.Button.html "struct iced::widget::Button") will be disabled.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#177)
+
+#### pub fn [clip](#method.clip)(self, clip: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Sets whether the contents of the [`Button`](../struct.Button.html "struct iced::widget::Button") should be clipped on overflow.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#184-186)
+
+#### pub fn [style](#method.style)( self, style: impl [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")([&Theme](https://doc.rust-lang.org/nightly/std/primitive.reference.html), [Status](enum.Status.html "enum iced::widget::button::Status")) -> [Style](struct.Style.html "struct iced::widget::button::Style") + 'a, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where <Theme as [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog")\>::[Class](trait.Catalog.html#associatedtype.Class "type iced::widget::button::Catalog::Class")<'a>: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Box](https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html "struct alloc::boxed::Box")<dyn [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")([&Theme](https://doc.rust-lang.org/nightly/std/primitive.reference.html), [Status](enum.Status.html "enum iced::widget::button::Status")) -> [Style](struct.Style.html "struct iced::widget::button::Style") + 'a>>,
+
+Sets the style of the [`Button`](../struct.Button.html "struct iced::widget::Button").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#195)
+
+#### pub fn [class](#method.class)( self, class: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<<Theme as [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog")\>::[Class](trait.Catalog.html#associatedtype.Class "type iced::widget::button::Catalog::Class")<'a>>, ) -> [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+Available on **crate feature `advanced`** only.
+
+Sets the style class of the [`Button`](../struct.Button.html "struct iced::widget::Button").
+
+## Trait Implementations[§](#trait-implementations)
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#449-454)[§](#impl-From%3CButton%3C'a,+Message,+Theme,+Renderer%3E%3E-for-Element%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme, Renderer> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>> for [Element](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/element/struct.Element.html "struct iced_core::element::Element")<'a, Message, Theme, Renderer>
+
+where Message: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") + 'a, Theme: [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog") + 'a, Renderer: [Renderer](../../advanced/trait.Renderer.html "trait iced::advanced::Renderer") + 'a,
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#456)[§](#method.from)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)( button: [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>, ) -> [Element](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/element/struct.Element.html "struct iced_core::element::Element")<'a, Message, Theme, Renderer>
+
+Converts to this type from the input type.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#206-211)[§](#impl-Widget%3CMessage,+Theme,+Renderer%3E-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme, Renderer> [Widget](../../advanced/trait.Widget.html "trait iced::advanced::Widget")<Message, Theme, Renderer> for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where Message: 'a + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"), Renderer: 'a + [Renderer](../../advanced/trait.Renderer.html "trait iced::advanced::Renderer"), Theme: [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog"),
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#213)[§](#method.tag)
+
+#### fn [tag](../../advanced/trait.Widget.html#method.tag)(&self) -> [Tag](../../advanced/widget/tree/struct.Tag.html "struct iced::advanced::widget::tree::Tag")
+
+Returns the [`Tag`](../../advanced/widget/tree/struct.Tag.html "struct iced::advanced::widget::tree::Tag") of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#217)[§](#method.state)
+
+#### fn [state](../../advanced/trait.Widget.html#method.state)(&self) -> [State](../../advanced/widget/tree/enum.State.html "enum iced::advanced::widget::tree::State")
+
+Returns the [`State`](../../advanced/widget/tree/enum.State.html "enum iced::advanced::widget::tree::State") of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#221)[§](#method.children)
+
+#### fn [children](../../advanced/trait.Widget.html#method.children)(&self) -> [Vec](https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html "struct alloc::vec::Vec")<[Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree")\>
+
+Returns the state [`Tree`](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree") of the children of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#225)[§](#method.diff)
+
+#### fn [diff](../../advanced/trait.Widget.html#method.diff)(&self, tree: &mut [Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"))
+
+Reconciles the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget") with the provided [`Tree`](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#229)[§](#method.size)
+
+#### fn [size](../../advanced/trait.Widget.html#tymethod.size)(&self) -> [Size](../../struct.Size.html "struct iced::Size")<[Length](../../enum.Length.html "enum iced::Length")\>
+
+Returns the [`Size`](../../struct.Size.html "struct iced::Size") of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget") in lengths.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#236-241)[§](#method.layout)
+
+#### fn [layout](../../advanced/trait.Widget.html#tymethod.layout)( &mut self, tree: &mut [Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"), renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), limits: &[Limits](../../advanced/layout/struct.Limits.html "struct iced::advanced::layout::Limits"), ) -> [Node](../../advanced/layout/struct.Node.html "struct iced::advanced::layout::Node")
+
+Returns the [`layout::Node`](../../advanced/layout/struct.Node.html "struct iced::advanced::layout::Node") of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget"). [Read more](../../advanced/trait.Widget.html#tymethod.layout)
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#257-263)[§](#method.operate)
+
+#### fn [operate](../../advanced/trait.Widget.html#method.operate)( &mut self, tree: &mut [Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"), layout: [Layout](../../advanced/struct.Layout.html "struct iced::advanced::Layout")<'\_>, renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), operation: &mut dyn [Operation](../../advanced/widget/trait.Operation.html "trait iced::advanced::widget::Operation"), )
+
+Applies an [`Operation`](../../advanced/widget/trait.Operation.html "trait iced::advanced::widget::Operation") to the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget").
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#275-285)[§](#method.update)
+
+#### fn [update](../../advanced/trait.Widget.html#method.update)( &mut self, tree: &mut [Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"), event: &[Event](../../enum.Event.html "enum iced::Event"), layout: [Layout](../../advanced/struct.Layout.html "struct iced::advanced::Layout")<'\_>, cursor: [Cursor](../../mouse/enum.Cursor.html "enum iced::mouse::Cursor"), renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), clipboard: &mut dyn [Clipboard](../../advanced/trait.Clipboard.html "trait iced::advanced::Clipboard"), shell: &mut [Shell](../../advanced/struct.Shell.html "struct iced::advanced::Shell")<'\_, Message>, viewport: &[Rectangle](../../struct.Rectangle.html "struct iced::Rectangle"), )
+
+Processes a runtime [`Event`](../../enum.Event.html "enum iced::Event"). [Read more](../../advanced/trait.Widget.html#method.update)
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#363-372)[§](#method.draw)
+
+#### fn [draw](../../advanced/trait.Widget.html#tymethod.draw)( &self, tree: &[Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"), renderer: [&mut Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), theme: [&Theme](https://doc.rust-lang.org/nightly/std/primitive.reference.html), \_style: &[Style](../../advanced/renderer/struct.Style.html "struct iced::advanced::renderer::Style"), layout: [Layout](../../advanced/struct.Layout.html "struct iced::advanced::Layout")<'\_>, cursor: [Cursor](../../mouse/enum.Cursor.html "enum iced::mouse::Cursor"), viewport: &[Rectangle](../../struct.Rectangle.html "struct iced::Rectangle"), )
+
+Draws the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget") using the associated `Renderer`.
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#414-421)[§](#method.mouse_interaction)
+
+#### fn [mouse\_interaction](../../advanced/trait.Widget.html#method.mouse_interaction)( &self, \_tree: &[Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"), layout: [Layout](../../advanced/struct.Layout.html "struct iced::advanced::Layout")<'\_>, cursor: [Cursor](../../mouse/enum.Cursor.html "enum iced::mouse::Cursor"), \_viewport: &[Rectangle](../../struct.Rectangle.html "struct iced::Rectangle"), \_renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), ) -> [Interaction](../../mouse/enum.Interaction.html "enum iced::mouse::Interaction")
+
+Returns the current [`mouse::Interaction`](../../mouse/enum.Interaction.html "enum iced::mouse::Interaction") of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget"). [Read more](../../advanced/trait.Widget.html#method.mouse_interaction)
+
+[Source](https://docs.rs/iced_widget/0.14.0/x86_64-unknown-linux-gnu/src/iced_widget/button.rs.html#431-438)[§](#method.overlay)
+
+#### fn [overlay](../../advanced/trait.Widget.html#method.overlay)<'b>( &'b mut self, tree: &'b mut [Tree](../../advanced/widget/struct.Tree.html "struct iced::advanced::widget::Tree"), layout: [Layout](../../advanced/struct.Layout.html "struct iced::advanced::Layout")<'b>, renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), viewport: &[Rectangle](../../struct.Rectangle.html "struct iced::Rectangle"), translation: [Vector](../../struct.Vector.html "struct iced::Vector"), ) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<[Element](../../advanced/overlay/struct.Element.html "struct iced::advanced::overlay::Element")<'b, Message, Theme, Renderer>>
+
+Returns the overlay of the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget"), if there is any.
+
+[Source](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/src/iced_core/widget.rs.html#48)[§](#method.size_hint)
+
+#### fn [size\_hint](../../advanced/trait.Widget.html#method.size_hint)(&self) -> [Size](../../struct.Size.html "struct iced::Size")<[Length](../../enum.Length.html "enum iced::Length")\>
+
+Returns a [`Size`](../../struct.Size.html "struct iced::Size") hint for laying out the [`Widget`](../../advanced/trait.Widget.html "trait iced::advanced::Widget"). [Read more](../../advanced/trait.Widget.html#method.size_hint)
+
+## Auto Trait Implementations[§](#synthetic-implementations)
+
+[§](#impl-RefUnwindSafe-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme = [Theme](../../enum.Theme.html "enum iced::Theme"), Renderer = [Renderer](https://docs.rs/iced_renderer/0.14.0/x86_64-unknown-linux-gnu/iced_renderer/fallback/enum.Renderer.html "enum iced_renderer::fallback::Renderer")<[Renderer](https://docs.rs/iced_wgpu/0.14.0/x86_64-unknown-linux-gnu/iced_wgpu/struct.Renderer.html "struct iced_wgpu::Renderer"), [Renderer](https://docs.rs/iced_tiny_skia/0.14.0/x86_64-unknown-linux-gnu/iced_tiny_skia/struct.Renderer.html "struct iced_tiny_skia::Renderer")\>> ![RefUnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html "trait core::panic::unwind_safe::RefUnwindSafe") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+[§](#impl-Send-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme = [Theme](../../enum.Theme.html "enum iced::Theme"), Renderer = [Renderer](https://docs.rs/iced_renderer/0.14.0/x86_64-unknown-linux-gnu/iced_renderer/fallback/enum.Renderer.html "enum iced_renderer::fallback::Renderer")<[Renderer](https://docs.rs/iced_wgpu/0.14.0/x86_64-unknown-linux-gnu/iced_wgpu/struct.Renderer.html "struct iced_wgpu::Renderer"), [Renderer](https://docs.rs/iced_tiny_skia/0.14.0/x86_64-unknown-linux-gnu/iced_tiny_skia/struct.Renderer.html "struct iced_tiny_skia::Renderer")\>> ![Send](https://doc.rust-lang.org/nightly/core/marker/trait.Send.html "trait core::marker::Send") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+[§](#impl-Sync-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme = [Theme](../../enum.Theme.html "enum iced::Theme"), Renderer = [Renderer](https://docs.rs/iced_renderer/0.14.0/x86_64-unknown-linux-gnu/iced_renderer/fallback/enum.Renderer.html "enum iced_renderer::fallback::Renderer")<[Renderer](https://docs.rs/iced_wgpu/0.14.0/x86_64-unknown-linux-gnu/iced_wgpu/struct.Renderer.html "struct iced_wgpu::Renderer"), [Renderer](https://docs.rs/iced_tiny_skia/0.14.0/x86_64-unknown-linux-gnu/iced_tiny_skia/struct.Renderer.html "struct iced_tiny_skia::Renderer")\>> ![Sync](https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html "trait core::marker::Sync") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+[§](#impl-UnwindSafe-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme = [Theme](../../enum.Theme.html "enum iced::Theme"), Renderer = [Renderer](https://docs.rs/iced_renderer/0.14.0/x86_64-unknown-linux-gnu/iced_renderer/fallback/enum.Renderer.html "enum iced_renderer::fallback::Renderer")<[Renderer](https://docs.rs/iced_wgpu/0.14.0/x86_64-unknown-linux-gnu/iced_wgpu/struct.Renderer.html "struct iced_wgpu::Renderer"), [Renderer](https://docs.rs/iced_tiny_skia/0.14.0/x86_64-unknown-linux-gnu/iced_tiny_skia/struct.Renderer.html "struct iced_tiny_skia::Renderer")\>> ![UnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html "trait core::panic::unwind_safe::UnwindSafe") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+[§](#impl-Freeze-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme, Renderer> [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where <Theme as [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog")\>::[Class](trait.Catalog.html#associatedtype.Class "type iced::widget::button::Catalog::Class")<'a>: [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze"), Message: [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze"),
+
+[§](#impl-Unpin-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme, Renderer> [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where <Theme as [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog")\>::[Class](trait.Catalog.html#associatedtype.Class "type iced::widget::button::Catalog::Class")<'a>: [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin"), Message: [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin"),
+
+[§](#impl-UnsafeUnpin-for-Button%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, Message, Theme, Renderer> [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin") for [Button](../struct.Button.html "struct iced::widget::Button")<'a, Message, Theme, Renderer>
+
+where <Theme as [Catalog](trait.Catalog.html "trait iced::widget::button::Catalog")\>::[Class](trait.Catalog.html#associatedtype.Class "type iced::widget::button::Catalog::Class")<'a>: [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin"), Message: [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin"),
+
+## Blanket Implementations[§](#blanket-implementations)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#141)[§](#impl-Any-for-T)
+
+### impl<T> [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") for T
+
+where T: 'static + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#142)[§](#method.type_id)
+
+#### fn [type\_id](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)(&self) -> [TypeId](https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html "struct core::any::TypeId")
+
+Gets the `TypeId` of `self`. [Read more](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#212)[§](#impl-Borrow%3CT%3E-for-T)
+
+### impl<T> [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#214)[§](#method.borrow)
+
+#### fn [borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Immutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#221)[§](#impl-BorrowMut%3CT%3E-for-T)
+
+### impl<T> [BorrowMut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html "trait core::borrow::BorrowMut")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#222)[§](#method.borrow_mut)
+
+#### fn [borrow\_mut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)(&mut self) -> [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)
+
+[Source](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/src/downcast_rs/lib.rs.html#189)[§](#impl-Downcast-for-T)
+
+### impl<T> [Downcast](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/downcast_rs/trait.Downcast.html "trait downcast_rs::Downcast") for T
+
+where T: [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any"),
+
+[Source](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/src/downcast_rs/lib.rs.html#190)[§](#method.into_any)
+
+#### fn [into\_any](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/downcast_rs/trait.Downcast.html#tymethod.into_any)(self: [Box](https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html "struct alloc::boxed::Box")<T>) -> [Box](https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html "struct alloc::boxed::Box")<dyn [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any")\>
+
+Convert `Box<dyn Trait>` (where `Trait: Downcast`) to `Box<dyn Any>`. `Box<dyn Any>` can then be further `downcast` into `Box<ConcreteType>` where `ConcreteType` implements `Trait`.
+
+[Source](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/src/downcast_rs/lib.rs.html#191)[§](#method.into_any_rc)
+
+#### fn [into\_any\_rc](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/downcast_rs/trait.Downcast.html#tymethod.into_any_rc)(self: [Rc](https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html "struct alloc::rc::Rc")<T>) -> [Rc](https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html "struct alloc::rc::Rc")<dyn [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any")\>
+
+Convert `Rc<Trait>` (where `Trait: Downcast`) to `Rc<Any>`. `Rc<Any>` can then be further `downcast` into `Rc<ConcreteType>` where `ConcreteType` implements `Trait`.
+
+[Source](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/src/downcast_rs/lib.rs.html#192)[§](#method.as_any)
+
+#### fn [as\_any](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/downcast_rs/trait.Downcast.html#tymethod.as_any)(&self) -> &(dyn [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") + 'static)
+
+Convert `&Trait` (where `Trait: Downcast`) to `&Any`. This is needed since Rust cannot generate `&Any`’s vtable from `&Trait`’s.
+
+[Source](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/src/downcast_rs/lib.rs.html#193)[§](#method.as_any_mut)
+
+#### fn [as\_any\_mut](https://docs.rs/downcast-rs/1.2.1/x86_64-unknown-linux-gnu/downcast_rs/trait.Downcast.html#tymethod.as_any_mut)(&mut self) -> &mut (dyn [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") + 'static)
+
+Convert `&mut Trait` (where `Trait: Downcast`) to `&Any`. This is needed since Rust cannot generate `&mut Any`’s vtable from `&mut Trait`’s.
+
+[Source](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/src/khronos_egl/lib.rs.html#148)[§](#impl-Downcast%3CT%3E-for-T)
+
+### impl<T> [Downcast](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/khronos_egl/trait.Downcast.html "trait khronos_egl::Downcast")<T> for T
+
+[Source](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/src/khronos_egl/lib.rs.html#149)[§](#method.downcast)
+
+#### fn [downcast](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/khronos_egl/trait.Downcast.html#tymethod.downcast)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#787)[§](#impl-From%3CT%3E-for-T)
+
+### impl<T> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for T
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#790)[§](#method.from-1)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(t: T) -> T
+
+Returns the argument unchanged.
+
+[Source](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/src/tracing/instrument.rs.html#325)[§](#impl-Instrument-for-T)
+
+### impl<T> [Instrument](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.Instrument.html "trait tracing::instrument::Instrument") for T
+
+[Source](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/src/tracing/instrument.rs.html#86)[§](#method.instrument)
+
+#### fn [instrument](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.Instrument.html#method.instrument)(self, span: [Span](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/span/struct.Span.html "struct tracing::span::Span")) -> [Instrumented](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/struct.Instrumented.html "struct tracing::instrument::Instrumented")<Self>
+
+Instruments this type with the provided [`Span`](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/span/struct.Span.html "struct tracing::span::Span"), returning an `Instrumented` wrapper. [Read more](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.Instrument.html#method.instrument)
+
+[Source](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/src/tracing/instrument.rs.html#128)[§](#method.in_current_span)
+
+#### fn [in\_current\_span](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.Instrument.html#method.in_current_span)(self) -> [Instrumented](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/struct.Instrumented.html "struct tracing::instrument::Instrumented")<Self>
+
+Instruments this type with the [current](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/span/struct.Span.html#method.current "associated function tracing::span::Span::current") [`Span`](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/span/struct.Span.html "struct tracing::span::Span"), returning an `Instrumented` wrapper. [Read more](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.Instrument.html#method.in_current_span)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#769-771)[§](#impl-Into%3CU%3E-for-T)
+
+### impl<T, U> [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<U> for T
+
+where U: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#779)[§](#method.into)
+
+#### fn [into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into)(self) -> U
+
+Calls `U::from(self)`.
+
+That is, this conversion is whatever the implementation of `[From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for U` chooses to do.
+
+[Source](../../../src/iced/application.rs.html#556-560)[§](#impl-IntoBoot%3CState,+Message%3E-for-State)
+
+### impl<State, Message> [IntoBoot](../../application/trait.IntoBoot.html "trait iced::application::IntoBoot")<State, Message> for State
+
+[Source](../../../src/iced/application.rs.html#557-559)[§](#method.into_boot)
+
+#### fn [into\_boot](../../application/trait.IntoBoot.html#tymethod.into_boot)(self) -> (State, [Task](../../struct.Task.html "struct iced::Task")<Message>)
+
+Turns some type into the initial state of some [`Application`](../../application/struct.Application.html "struct iced::application::Application").
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#64)[§](#impl-IntoEither-for-T)
+
+### impl<T> [IntoEither](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html "trait either::into_either::IntoEither") for T
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#29)[§](#method.into_either)
+
+#### fn [into\_either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)(self, into\_left: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left` is `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#55-57)[§](#method.into_either_with)
+
+#### fn [into\_either\_with](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)<F>(self, into\_left: F) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+where F: [FnOnce](https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html "trait core::ops::function::FnOnce")(&Self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html),
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left(&self)` returns `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#194)[§](#impl-Pointable-for-T)
+
+### impl<T> [Pointable](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html "trait crossbeam_epoch::atomic::Pointable") for T
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#195)[§](#associatedconstant.ALIGN)
+
+#### const [ALIGN](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#associatedconstant.ALIGN): [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)
+
+The alignment of pointer.
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#197)[§](#associatedtype.Init)
+
+#### type [Init](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#associatedtype.Init) = T
+
+The type for initializers.
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#199)[§](#method.init)
+
+#### unsafe fn [init](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.init)(init: <T as [Pointable](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html "trait crossbeam_epoch::atomic::Pointable")\>::[Init](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#associatedtype.Init "type crossbeam_epoch::atomic::Pointable::Init")) -> [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)
+
+Initializes a with the given initializer. [Read more](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.init)
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#203)[§](#method.deref)
+
+#### unsafe fn [deref](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.deref)<'a>(ptr: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)) -> [&'a T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Dereferences the given pointer. [Read more](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.deref)
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#207)[§](#method.deref_mut)
+
+#### unsafe fn [deref\_mut](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.deref_mut)<'a>(ptr: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)) -> [&'a mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably dereferences the given pointer. [Read more](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.deref_mut)
+
+[Source](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/src/crossbeam_epoch/atomic.rs.html#211)[§](#method.drop)
+
+#### unsafe fn [drop](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.drop)(ptr: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html))
+
+Drops the object pointed to by the given pointer. [Read more](https://docs.rs/crossbeam-epoch/0.9.18/x86_64-unknown-linux-gnu/crossbeam_epoch/atomic/trait.Pointable.html#tymethod.drop)
+
+[Source](https://docs.rs/typenum/1.19.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#34)[§](#impl-Same-for-T)
+
+### impl<T> [Same](https://docs.rs/typenum/1.19.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html "trait typenum::type_operators::Same") for T
+
+[Source](https://docs.rs/typenum/1.19.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#35)[§](#associatedtype.Output)
+
+#### type [Output](https://docs.rs/typenum/1.19.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html#associatedtype.Output) = T
+
+Should always be `Self`
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#829-831)[§](#impl-TryFrom%3CU%3E-for-T)
+
+### impl<T, U> [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U> for T
+
+where U: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#833)[§](#associatedtype.Error)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error) = [Infallible](../../enum.Never.html "enum iced::Never")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#836)[§](#method.try_from)
+
+#### fn [try\_from](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#tymethod.try_from)(value: U) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<T, <T as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#813-815)[§](#impl-TryInto%3CU%3E-for-T)
+
+### impl<T, U> [TryInto](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html "trait core::convert::TryInto")<U> for T
+
+where U: [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#817)[§](#associatedtype.Error-1)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#associatedtype.Error) = <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#820)[§](#method.try_into)
+
+#### fn [try\_into](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#tymethod.try_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/src/khronos_egl/lib.rs.html#158)[§](#impl-Upcast%3CT%3E-for-T)
+
+### impl<T> [Upcast](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/khronos_egl/trait.Upcast.html "trait khronos_egl::Upcast")<T> for T
+
+[Source](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/src/khronos_egl/lib.rs.html#159)[§](#method.upcast)
+
+#### fn [upcast](https://docs.rs/khronos-egl/6.0.0/x86_64-unknown-linux-gnu/khronos_egl/trait.Upcast.html#tymethod.upcast)(&self) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<[&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)\>
+
+[Source](https://docs.rs/ppv-lite86/0.2.21/x86_64-unknown-linux-gnu/src/ppv_lite86/types.rs.html#221-223)[§](#impl-VZip%3CV%3E-for-T)
+
+### impl<V, T> [VZip](https://docs.rs/ppv-lite86/0.2.21/x86_64-unknown-linux-gnu/ppv_lite86/types/trait.VZip.html "trait ppv_lite86::types::VZip")<V> for T
+
+where V: [MultiLane](https://docs.rs/ppv-lite86/0.2.21/x86_64-unknown-linux-gnu/ppv_lite86/types/trait.MultiLane.html "trait ppv_lite86::types::MultiLane")<T>,
+
+[Source](https://docs.rs/ppv-lite86/0.2.21/x86_64-unknown-linux-gnu/src/ppv_lite86/types.rs.html#226)[§](#method.vzip)
+
+#### fn [vzip](https://docs.rs/ppv-lite86/0.2.21/x86_64-unknown-linux-gnu/ppv_lite86/types/trait.VZip.html#tymethod.vzip)(self) -> V
+
+[Source](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/src/tracing/instrument.rs.html#393)[§](#impl-WithSubscriber-for-T)
+
+### impl<T> [WithSubscriber](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.WithSubscriber.html "trait tracing::instrument::WithSubscriber") for T
+
+[Source](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/src/tracing/instrument.rs.html#176-178)[§](#method.with_subscriber)
+
+#### fn [with\_subscriber](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber)<S>(self, subscriber: S) -> [WithDispatch](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/struct.WithDispatch.html "struct tracing::instrument::WithDispatch")<Self>
+
+where S: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Dispatch](https://docs.rs/tracing-core/0.1.35/x86_64-unknown-linux-gnu/tracing_core/dispatcher/struct.Dispatch.html "struct tracing_core::dispatcher::Dispatch")\>,
+
+Attaches the provided [`Subscriber`](https://docs.rs/tracing-core/0.1.35/x86_64-unknown-linux-gnu/tracing_core/subscriber/trait.Subscriber.html "trait tracing_core::subscriber::Subscriber") to this type, returning a [`WithDispatch`](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/struct.WithDispatch.html "struct tracing::instrument::WithDispatch") wrapper. [Read more](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.WithSubscriber.html#method.with_subscriber)
+
+[Source](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/src/tracing/instrument.rs.html#228)[§](#method.with_current_subscriber)
+
+#### fn [with\_current\_subscriber](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber)(self) -> [WithDispatch](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/struct.WithDispatch.html "struct tracing::instrument::WithDispatch")<Self>
+
+Attaches the current [default](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/dispatcher/index.html#setting-the-default-subscriber "mod tracing::dispatcher") [`Subscriber`](https://docs.rs/tracing-core/0.1.35/x86_64-unknown-linux-gnu/tracing_core/subscriber/trait.Subscriber.html "trait tracing_core::subscriber::Subscriber") to this type, returning a [`WithDispatch`](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/struct.WithDispatch.html "struct tracing::instrument::WithDispatch") wrapper. [Read more](https://docs.rs/tracing/0.1.43/x86_64-unknown-linux-gnu/tracing/instrument/trait.WithSubscriber.html#method.with_current_subscriber)

@@ -1,0 +1,188 @@
+[songs.0]
+id = 0
+title = "说了再见"
+artist = "周杰伦"
+album = "跨时代"
+path = "/home/eternity/Music/音频文件/说了再见.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-跨时代.jpg"
+duration = 282.83
+
+[songs.1]
+id = 1
+title = "走狗"
+artist = "周柏豪"
+album = "Beginning"
+path = "/home/eternity/Music/音频文件/走狗.mp3"
+image = "/home/eternity/Music/专辑图片/周柏豪-Beginning.webp"
+duration = 249.35
+
+[songs.2]
+id = 2
+title = "K歌之王"
+artist = "陈奕迅"
+album = "打得火热"
+path = "/home/eternity/Music/音频文件/K歌之王.flac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-打得火热.jpeg"
+duration = 222.35
+
+[songs.3]
+id = 3
+title = "一路向北"
+artist = "周杰伦"
+album = "J III MP3 Live EP"
+path = "/home/eternity/Music/音频文件/一路向北.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-J III MP3 Live EP.png"
+duration = 294.24
+
+[songs.4]
+id = 4
+title = "十面埋伏"
+artist = "陈奕迅"
+album = "Live For Today"
+path = "/home/eternity/Music/音频文件/十面埋伏.aac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-Love For Today.webp"
+duration = 217.93
+
+[songs.5]
+id = 5
+title = "单车"
+artist = "陈奕迅"
+album = "Shall We Dance? Shall We Talk!"
+path = "/home/eternity/Music/音频文件/单车.flac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-Shall We Dance? Shall We Talk!.jpg"
+duration = 211.25
+
+[songs.6]
+id = 6
+title = "反方向的钟"
+artist = "周杰伦"
+album = "Jay"
+path = "/home/eternity/Music/音频文件/反方向的钟.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-Jay.webp"
+duration = 258.11
+
+[songs.7]
+id = 7
+title = "够钟"
+artist = "周柏豪"
+album = "Continue"
+path = "/home/eternity/Music/音频文件/够钟.aac"
+image = "/home/eternity/Music/专辑图片/周柏豪-Continue.webp"
+duration = 228.69
+
+[songs.8]
+id = 8
+title = "孤独患者"
+artist = "陈奕迅"
+album = "? (Question Mark)"
+path = "/home/eternity/Music/音频文件/孤独患者.mp3"
+image = "/home/eternity/Music/专辑图片/陈奕迅-Question Mark.webp"
+duration = 273.47
+
+[songs.9]
+id = 9
+title = "富士山下"
+artist = "陈奕迅"
+album = "What's Going On...?"
+path = "/home/eternity/Music/音频文件/富士山下.flac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-What's Going On...?.jpeg"
+duration = 259.13
+
+[songs.10]
+id = 10
+title = "搁浅"
+artist = "周杰伦"
+album = "七里香"
+path = "/home/eternity/Music/音频文件/搁浅.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-七里香.webp"
+duration = 240.13
+
+[songs.11]
+id = 11
+title = "晴天"
+artist = "周杰伦"
+album = "叶惠美"
+path = "/home/eternity/Music/音频文件/晴天.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-叶惠美.jpg"
+duration = 269.75
+
+[songs.12]
+id = 12
+title = "最佳损友"
+artist = "陈奕迅"
+album = "Life Thru Interview"
+path = "/home/eternity/Music/音频文件/最佳损友.mp3"
+image = "/home/eternity/Music/专辑图片/陈奕迅-Life Thru Interview.webp"
+duration = 235.93
+
+[songs.13]
+id = 13
+title = "枫"
+artist = "周杰伦"
+album = "十一月的萧邦"
+path = "/home/eternity/Music/音频文件/枫.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-十一月的萧邦.webp"
+duration = 275.67
+
+[songs.14]
+id = 14
+title = "浮夸"
+artist = "陈奕迅"
+album = "U87"
+path = "/home/eternity/Music/音频文件/浮夸.flac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-U87.jpeg"
+duration = 283.52
+
+[songs.15]
+id = 15
+title = "淘汰"
+artist = "陈奕迅"
+album = "认了吧"
+path = "/home/eternity/Music/音频文件/淘汰.aac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-认了吧.jpeg"
+duration = 285.07
+
+[songs.16]
+id = 16
+title = "爱错"
+artist = "王力宏"
+album = "心中日月"
+path = "/home/eternity/Music/音频文件/爱错.aac"
+image = "/home/eternity/Music/专辑图片/王力宏-心中日月.jpg"
+duration = 238.89
+
+[songs.17]
+id = 17
+title = "红尘客栈"
+artist = "周杰伦"
+album = "十二新作"
+path = "/home/eternity/Music/音频文件/红尘客栈.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-十二新作.jpeg"
+duration = 274.07
+
+[songs.18]
+id = 18
+title = "葡萄成熟时"
+artist = "陈奕迅"
+album = "U87"
+path = "/home/eternity/Music/音频文件/葡萄成熟时.flac"
+image = "/home/eternity/Music/专辑图片/陈奕迅-U87.jpeg"
+duration = 277.04
+
+[songs.19]
+id = 19
+title = "蒲公英的约定"
+artist = "周杰伦"
+album = "我很忙"
+path = "/home/eternity/Music/音频文件/蒲公英的约定.mp3"
+image = "/home/eternity/Music/专辑图片/周杰伦-我很忙.png"
+duration = 247.20
+
+[songs.20]
+id = 20
+title = "演员"
+artist = "薛之谦"
+album = "绅士"
+path = "/home/eternity/Music/音频文件/演员.flac"
+image = "/home/eternity/Music/专辑图片/薛之谦-绅士.jpeg"
+duration = 261.0

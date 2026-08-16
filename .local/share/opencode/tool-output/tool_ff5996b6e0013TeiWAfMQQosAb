@@ -1,0 +1,1229 @@
+Layout in ratatui::layout - Rust
+
+  
+
+[Docs.rs](/)
+
+-   [ratatui-0.30.2](# "A library that's all about cooking up terminal user interfaces")
+    
+    -   ratatui 0.30.2
+    -   [Permalink](/ratatui/0.30.2/ratatui/layout/struct.Layout.html "Get a link to this specific version")
+    -   [Docs.rs crate page](/crate/ratatui/latest "See ratatui in docs.rs")
+    -   [MIT](https://spdx.org/licenses/MIT)
+    -   19 June 2026
+    
+    -   Links
+    -   [Homepage](https://ratatui.rs)
+    -   [Repository](https://github.com/ratatui/ratatui)
+    -   [crates.io](https://crates.io/crates/ratatui "See ratatui in crates.io")
+    -   [Source](/crate/ratatui/latest/source/ "Browse source of ratatui-0.30.2")
+    
+    -   Owners
+    -   [orhun](https://crates.io/users/orhun)
+    -   [kdheepak](https://crates.io/users/kdheepak)
+    -   [joshka](https://crates.io/users/joshka)
+    -   [github:ratatui:core](https://crates.io/teams/github:ratatui:core)
+    
+    -   Dependencies
+    -   -   [document-features ^0.2 *normal* *optional*](/document-features/^0.2/)
+        -   [instability ^0.3 *normal*](/instability/^0.3/)
+        -   [palette ^0.7.6 *normal* *optional*](/palette/^0.7.6/)
+        -   [ratatui-core ^0.1.2 *normal*](/ratatui-core/^0.1.2/)
+        -   [ratatui-crossterm ^0.1.2 *normal* *optional*](/ratatui-crossterm/^0.1.2/)
+        -   [ratatui-macros ^0.7.2 *normal* *optional*](/ratatui-macros/^0.7.2/)
+        -   [ratatui-termina ^0.1.0 *normal* *optional*](/ratatui-termina/^0.1.0/)
+        -   [ratatui-termwiz ^0.1.2 *normal* *optional*](/ratatui-termwiz/^0.1.2/)
+        -   [ratatui-widgets ^0.3.2 *normal*](/ratatui-widgets/^0.3.2/)
+        -   [serde ^1 *normal* *optional*](/serde/^1/)
+        -   [criterion ^0.8 *dev*](/criterion/^0.8/)
+        -   [crossterm ^0.29 *dev*](/crossterm/^0.29/)
+        -   [fakeit ^1 *dev*](/fakeit/^1/)
+        -   [indoc ^2 *dev*](/indoc/^2/)
+        -   [pretty\_assertions ^1 *dev*](/pretty_assertions/^1/)
+        -   [rand ^0.10 *dev*](/rand/^0.10/)
+        -   [rstest ^0.26 *dev*](/rstest/^0.26/)
+        -   [serde\_json ^1 *dev*](/serde_json/^1/)
+        -   [time ^0.3.47 *dev*](/time/^0.3.47/)
+        -   [ratatui-termion ^0.1.2 *normal* *optional*](/ratatui-termion/^0.1.2/)
+        
+    
+    -   Versions
+    
+    -   [**100%** of the crate is documented](/crate/ratatui/latest)
+    
+-   [Platform](#)
+    -   [x86\_64-unknown-linux-gnu](/crate/ratatui/latest/target-redirect/ratatui/layout/struct.Layout.html)
+-   [Feature flags](/crate/ratatui/latest/features "Browse available feature flags of ratatui-0.30.2")
+
+-   [docs.rs](#)
+    -   [About docs.rs](/about)
+    -   [Badges](/about/badges)
+    -   [Builds](/about/builds)
+    -   [Metadata](/about/metadata)
+    -   [Shorthand URLs](/about/redirections)
+    -   [Download](/about/download)
+    -   [Rustdoc JSON](/about/rustdoc-json)
+    -   [Build queue](/releases/queue)
+    -   [Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+-   [Rust](#)
+    -   [Rust website](https://www.rust-lang.org/)
+    -   [The Book](https://doc.rust-lang.org/book/)
+    -   [Standard Library API Reference](https://doc.rust-lang.org/std/)
+    -   [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+    -   [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+    -   [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+[Skip to main content](#main-content)
+
+## [Layout](#)
+
+[![logo](https://raw.githubusercontent.com/ratatui/ratatui/main/assets/logo.png)](../../ratatui/index.html)
+
+## [ratatui](../../ratatui/index.html)0.30.2
+
+## [Layout](#)
+
+### [Sections](#)
+
+-   [Construction](#construction "Construction")
+-   [Configuration](#configuration "Configuration")
+-   [Layout Operations](#layout-operations "Layout Operations")
+-   [Cache Management](#cache-management "Cache Management")
+-   [Example](#example "Example")
+
+### [Associated Constants](#implementations)
+
+-   [DEFAULT\_CACHE\_SIZE](#associatedconstant.DEFAULT_CACHE_SIZE "DEFAULT_CACHE_SIZE")
+
+### [Associated Functions](#implementations)
+
+-   [new](#method.new "new")
+-   [vertical](#method.vertical "vertical")
+-   [horizontal](#method.horizontal "horizontal")
+-   [init\_cache](#method.init_cache "init_cache")
+
+### [Methods](#implementations)
+
+-   [areas](#method.areas "areas")
+-   [constraints](#method.constraints "constraints")
+-   [direction](#method.direction "direction")
+-   [flex](#method.flex "flex")
+-   [horizontal\_margin](#method.horizontal_margin "horizontal_margin")
+-   [margin](#method.margin "margin")
+-   [spacers](#method.spacers "spacers")
+-   [spacing](#method.spacing "spacing")
+-   [split](#method.split "split")
+-   [split\_with\_spacers](#method.split_with_spacers "split_with_spacers")
+-   [try\_areas](#method.try_areas "try_areas")
+-   [vertical\_margin](#method.vertical_margin "vertical_margin")
+
+### [Trait Implementations](#trait-implementations)
+
+-   [Clone](#impl-Clone-for-Layout "Clone")
+-   [Debug](#impl-Debug-for-Layout "Debug")
+-   [Default](#impl-Default-for-Layout "Default")
+-   [Deserialize<'de>](#impl-Deserialize%3C'de%3E-for-Layout "Deserialize<'de>")
+-   [Eq](#impl-Eq-for-Layout "Eq")
+-   [Hash](#impl-Hash-for-Layout "Hash")
+-   [PartialEq](#impl-PartialEq-for-Layout "PartialEq")
+-   [Serialize](#impl-Serialize-for-Layout "Serialize")
+-   [StructuralPartialEq](#impl-StructuralPartialEq-for-Layout "StructuralPartialEq")
+
+### [Auto Trait Implementations](#synthetic-implementations)
+
+-   [Freeze](#impl-Freeze-for-Layout "Freeze")
+-   [RefUnwindSafe](#impl-RefUnwindSafe-for-Layout "RefUnwindSafe")
+-   [Send](#impl-Send-for-Layout "Send")
+-   [Sync](#impl-Sync-for-Layout "Sync")
+-   [Unpin](#impl-Unpin-for-Layout "Unpin")
+-   [UnsafeUnpin](#impl-UnsafeUnpin-for-Layout "UnsafeUnpin")
+-   [UnwindSafe](#impl-UnwindSafe-for-Layout "UnwindSafe")
+
+### [Blanket Implementations](#blanket-implementations)
+
+-   [AdaptInto<D, Swp, Dwp, T>](#impl-AdaptInto%3CD,+Swp,+Dwp,+T%3E-for-S "AdaptInto<D, Swp, Dwp, T>")
+-   [Any](#impl-Any-for-T "Any")
+-   [ArraysFrom<C>](#impl-ArraysFrom%3CC%3E-for-T "ArraysFrom<C>")
+-   [ArraysInto<C>](#impl-ArraysInto%3CC%3E-for-T "ArraysInto<C>")
+-   [Borrow<T>](#impl-Borrow%3CT%3E-for-T "Borrow<T>")
+-   [BorrowMut<T>](#impl-BorrowMut%3CT%3E-for-T "BorrowMut<T>")
+-   [Cam16IntoUnclamped<WpParam, T>](#impl-Cam16IntoUnclamped%3CWpParam,+T%3E-for-U "Cam16IntoUnclamped<WpParam, T>")
+-   [CloneToUninit](#impl-CloneToUninit-for-T "CloneToUninit")
+-   [ComponentsFrom<C>](#impl-ComponentsFrom%3CC%3E-for-T "ComponentsFrom<C>")
+-   [DeserializeOwned](#impl-DeserializeOwned-for-T "DeserializeOwned")
+-   [Equivalent<K>](#impl-Equivalent%3CK%3E-for-Q "Equivalent<K>")
+-   [From<T>](#impl-From%3CT%3E-for-T "From<T>")
+-   [FromAngle<T>](#impl-FromAngle%3CT%3E-for-T "FromAngle<T>")
+-   [FromStimulus<U>](#impl-FromStimulus%3CU%3E-for-T "FromStimulus<U>")
+-   [Into<U>](#impl-Into%3CU%3E-for-T "Into<U>")
+-   [IntoAngle<U>](#impl-IntoAngle%3CU%3E-for-T "IntoAngle<U>")
+-   [IntoCam16Unclamped<WpParam, T>](#impl-IntoCam16Unclamped%3CWpParam,+T%3E-for-U "IntoCam16Unclamped<WpParam, T>")
+-   [IntoColor<U>](#impl-IntoColor%3CU%3E-for-T "IntoColor<U>")
+-   [IntoColorUnclamped<U>](#impl-IntoColorUnclamped%3CU%3E-for-T "IntoColorUnclamped<U>")
+-   [IntoEither](#impl-IntoEither-for-T "IntoEither")
+-   [IntoStimulus<T>](#impl-IntoStimulus%3CT%3E-for-T "IntoStimulus<T>")
+-   [Same](#impl-Same-for-T "Same")
+-   [ToOwned](#impl-ToOwned-for-T "ToOwned")
+-   [TryComponentsInto<C>](#impl-TryComponentsInto%3CC%3E-for-T "TryComponentsInto<C>")
+-   [TryFrom<U>](#impl-TryFrom%3CU%3E-for-T "TryFrom<U>")
+-   [TryInto<U>](#impl-TryInto%3CU%3E-for-T "TryInto<U>")
+-   [TryIntoColor<U>](#impl-TryIntoColor%3CU%3E-for-T "TryIntoColor<U>")
+-   [UintsFrom<C>](#impl-UintsFrom%3CC%3E-for-U "UintsFrom<C>")
+-   [UintsInto<C>](#impl-UintsInto%3CC%3E-for-U "UintsInto<C>")
+
+## [In ratatui::layout](index.html)
+
+[ratatui](../index.html)::[layout](index.html)
+
+# Struct Layout Copy item path
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#202)
+
+```
+pub struct Layout { /* private fields */ }
+```
+
+Expand description
+
+The primary layout engine for dividing terminal space using constraints and direction.
+
+A layout is a set of constraints that can be applied to a given area to split it into smaller rectangular areas. This is the core building block for creating structured user interfaces in terminal applications.
+
+A layout is composed of:
+
+-   a direction (horizontal or vertical)
+-   a set of constraints (length, ratio, percentage, fill, min, max)
+-   a margin (horizontal and vertical), the space between the edge of the main area and the split areas
+-   a flex option that controls space distribution
+-   a spacing option that controls gaps between segments
+
+The algorithm used to compute the layout is based on the [`kasuari`](https://crates.io/crates/kasuari) solver, a linear constraint solver that computes positions and sizes to satisfy as many constraints as possible in order of their priorities.
+
+When the layout is computed, the result is cached in a thread-local cache, so that subsequent calls with the same parameters are faster. The cache is a `LruCache`, and the size of the cache can be configured using [`Layout::init_cache()`](../prelude/struct.Layout.html#method.init_cache "associated function ratatui::prelude::Layout::init_cache") when the `layout-cache` feature is enabled.
+
+## [§](#construction)Construction
+
+-   [`default`](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default "associated function core::default::Default::default") - Create a layout with default values (vertical direction, no constraints, no margin)
+-   [`new`](../prelude/struct.Layout.html#method.new "associated function ratatui::prelude::Layout::new") - Create a new layout with a given direction and constraints
+-   [`vertical`](../prelude/struct.Layout.html#method.vertical "associated function ratatui::prelude::Layout::vertical") - Create a new vertical layout with the given constraints
+-   [`horizontal`](../prelude/struct.Layout.html#method.horizontal "associated function ratatui::prelude::Layout::horizontal") - Create a new horizontal layout with the given constraints
+
+## [§](#configuration)Configuration
+
+-   [`direction`](../prelude/struct.Layout.html#method.direction "method ratatui::prelude::Layout::direction") - Set the direction of the layout
+-   [`constraints`](../prelude/struct.Layout.html#method.constraints "method ratatui::prelude::Layout::constraints") - Set the constraints of the layout
+-   [`margin`](../prelude/struct.Layout.html#method.margin "method ratatui::prelude::Layout::margin") - Set uniform margin on all sides
+-   [`horizontal_margin`](../prelude/struct.Layout.html#method.horizontal_margin "method ratatui::prelude::Layout::horizontal_margin") - Set the horizontal margin of the layout
+-   [`vertical_margin`](../prelude/struct.Layout.html#method.vertical_margin "method ratatui::prelude::Layout::vertical_margin") - Set the vertical margin of the layout
+-   [`flex`](../prelude/struct.Layout.html#method.flex "method ratatui::prelude::Layout::flex") - Set the way space is distributed when constraints are satisfied
+-   [`spacing`](../prelude/struct.Layout.html#method.spacing "method ratatui::prelude::Layout::spacing") - Set the gap between the constraints of the layout
+
+## [§](#layout-operations)Layout Operations
+
+-   [`areas`](../prelude/struct.Layout.html#method.areas "method ratatui::prelude::Layout::areas") - Split area into fixed number of rectangles (compile-time known)
+-   [`spacers`](../prelude/struct.Layout.html#method.spacers "method ratatui::prelude::Layout::spacers") - Get spacer rectangles between layout areas
+-   [`split`](../prelude/struct.Layout.html#method.split "method ratatui::prelude::Layout::split") - Split area into rectangles (runtime determined count)
+-   [`split_with_spacers`](../prelude/struct.Layout.html#method.split_with_spacers "method ratatui::prelude::Layout::split_with_spacers") - Split area and return both areas and spacers
+
+## [§](#cache-management)Cache Management
+
+-   [`init_cache`](../prelude/struct.Layout.html#method.init_cache "associated function ratatui::prelude::Layout::init_cache") - Initialize layout cache with custom size
+
+## [§](#example)Example
+
+```
+use ratatui_core::buffer::Buffer;
+use ratatui_core::layout::{Constraint, Direction, Layout, Rect};
+use ratatui_core::text::Text;
+use ratatui_core::widgets::Widget;
+
+fn render(area: Rect, buf: &mut Buffer) {
+    let layout = Layout::vertical([Constraint::Length(5), Constraint::Fill(1)]);
+    let [top, bottom] = layout.areas(area);
+    Text::from("foo").render(top, buf);
+    Text::from("bar").render(bottom, buf);
+}
+```
+
+See the `layout`, `flex`, and `constraints` examples in the [Examples](https://github.com/ratatui/ratatui/blob/main/examples/README.md) folder for more details about how to use layouts.
+
+For comprehensive layout documentation and examples, see the [`layout`](index.html "mod ratatui::layout") module.
+
+![layout example](https://camo.githubusercontent.com/77d22f3313b782a81e5e033ef82814bb48d786d2598699c27f8e757ccee62021/68747470733a2f2f7668732e636861726d2e73682f7668732d315a4e6f4e4c4e6c4c746b4a58706767396e435635652e676966)
+
+## Implementations[§](#implementations)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#210)[§](#impl-Layout)
+
+### impl [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#218)
+
+#### pub const [DEFAULT\_CACHE\_SIZE](#associatedconstant.DEFAULT_CACHE_SIZE): [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html) = 500
+
+Available on **crate feature `layout-cache`** only.
+
+This is a somewhat arbitrary size for the layout cache based on adding the columns and rows on my laptop’s terminal (171+51 = 222) and doubling it for good measure and then adding a bit more to make it a round number. This gives enough entries to store a layout for every row and every column, twice over, which should be enough for most apps. For those that need more, the cache size can be set with `Layout::init_cache()` (requires the `layout-cache` feature).
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#250-253)
+
+#### pub fn [new](#method.new)<I>(direction: [Direction](../prelude/enum.Direction.html "enum ratatui::prelude::Direction"), constraints: I) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+where I: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator"), <I as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item "type core::iter::traits::collect::IntoIterator::Item"): [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Constraint](../prelude/enum.Constraint.html "enum ratatui::prelude::Constraint")\>,
+
+Creates a new layout with default values.
+
+The `constraints` parameter accepts any type that implements `IntoIterator<Item = Into<Constraint>>`. This includes arrays, slices, vectors, iterators. `Into<Constraint>` is implemented on `u16`, so you can pass an array, `Vec`, etc. of `u16` to this function to create a layout with fixed size chunks.
+
+Default values for the other fields are:
+
+-   `margin`: 0, 0
+-   `flex`: [`Flex::Start`](enum.Flex.html#variant.Start "variant ratatui::layout::Flex::Start")
+-   `spacing`: 0
+
+##### [§](#examples)Examples
+
+```
+use ratatui_core::layout::{Constraint, Direction, Layout};
+
+Layout::new(
+    Direction::Horizontal,
+    [Constraint::Length(5), Constraint::Fill(1)],
+);
+
+Layout::new(
+    Direction::Vertical,
+    [1, 2, 3].iter().map(|&c| Constraint::Length(c)),
+);
+
+Layout::new(Direction::Horizontal, vec![1, 2]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#274-277)
+
+#### pub fn [vertical](#method.vertical)<I>(constraints: I) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+where I: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator"), <I as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item "type core::iter::traits::collect::IntoIterator::Item"): [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Constraint](../prelude/enum.Constraint.html "enum ratatui::prelude::Constraint")\>,
+
+Creates a new vertical layout with default values.
+
+The `constraints` parameter accepts any type that implements `IntoIterator<Item = Into<Constraint>>`. This includes arrays, slices, vectors, iterators, etc.
+
+##### [§](#examples-1)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout};
+
+let layout = Layout::vertical([Constraint::Length(5), Constraint::Fill(1)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#294-297)
+
+#### pub fn [horizontal](#method.horizontal)<I>(constraints: I) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+where I: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator"), <I as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item "type core::iter::traits::collect::IntoIterator::Item"): [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Constraint](../prelude/enum.Constraint.html "enum ratatui::prelude::Constraint")\>,
+
+Creates a new horizontal layout with default values.
+
+The `constraints` parameter accepts any type that implements `IntoIterator<Item = Into<Constraint>>`. This includes arrays, slices, vectors, iterators, etc.
+
+##### [§](#examples-2)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout};
+
+let layout = Layout::horizontal([Constraint::Length(5), Constraint::Fill(1)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#311)
+
+#### pub fn [init\_cache](#method.init_cache)(cache\_size: [NonZero](https://doc.rust-lang.org/nightly/core/num/nonzero/struct.NonZero.html "struct core::num::nonzero::NonZero")<[usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)\>)
+
+Available on **crate feature `layout-cache`** only.
+
+Initialize an empty cache with a custom size. The cache is keyed on the layout and area, so that subsequent calls with the same parameters are faster. The cache is a `LruCache`, and grows until `cache_size` is reached.
+
+By default, the cache size is [`Self::DEFAULT_CACHE_SIZE`](../prelude/struct.Layout.html#associatedconstant.DEFAULT_CACHE_SIZE "associated constant ratatui::prelude::Layout::DEFAULT_CACHE_SIZE").
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#351)
+
+#### pub const fn [direction](#method.direction)(self, direction: [Direction](../prelude/enum.Direction.html "enum ratatui::prelude::Direction")) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+Set the direction of the layout.
+
+##### [§](#examples-3)Examples
+
+```
+use ratatui_core::layout::{Constraint, Direction, Layout, Rect};
+
+let layout = Layout::default()
+    .direction(Direction::Horizontal)
+    .constraints([Constraint::Length(5), Constraint::Fill(1)])
+    .split(Rect::new(0, 0, 10, 10));
+assert_eq!(layout[..], [Rect::new(0, 0, 5, 10), Rect::new(5, 0, 5, 10)]);
+
+let layout = Layout::default()
+    .direction(Direction::Vertical)
+    .constraints([Constraint::Length(5), Constraint::Fill(1)])
+    .split(Rect::new(0, 0, 10, 10));
+assert_eq!(layout[..], [Rect::new(0, 0, 10, 5), Rect::new(0, 5, 10, 5)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#402-405)
+
+#### pub fn [constraints](#method.constraints)<I>(self, constraints: I) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+where I: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator"), <I as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item "type core::iter::traits::collect::IntoIterator::Item"): [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Constraint](../prelude/enum.Constraint.html "enum ratatui::prelude::Constraint")\>,
+
+Sets the constraints of the layout.
+
+The `constraints` parameter accepts any type that implements `IntoIterator<Item = Into<Constraint>>`. This includes arrays, slices, vectors, iterators. `Into<Constraint>` is implemented on u16, so you can pass an array or vec of u16 to this function to create a layout with fixed size chunks.
+
+Note that the constraints are applied to the whole area that is to be split, so using percentages and ratios with the other constraints may not have the desired effect of splitting the area up. (e.g. splitting 100 into \[min 20, 50%, 50%\], may not result in \[20, 40, 40\] but rather an indeterminate result between \[20, 50, 30\] and \[20, 30, 50\]).
+
+##### [§](#examples-4)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let layout = Layout::default()
+    .constraints([
+        Constraint::Percentage(20),
+        Constraint::Ratio(1, 5),
+        Constraint::Length(2),
+        Constraint::Min(2),
+        Constraint::Max(2),
+    ])
+    .split(Rect::new(0, 0, 10, 10));
+assert_eq!(
+    layout[..],
+    [
+        Rect::new(0, 0, 10, 2),
+        Rect::new(0, 2, 10, 2),
+        Rect::new(0, 4, 10, 2),
+        Rect::new(0, 6, 10, 2),
+        Rect::new(0, 8, 10, 2),
+    ]
+);
+
+Layout::default().constraints([Constraint::Fill(1)]);
+Layout::default().constraints(&[Constraint::Fill(1)]);
+Layout::default().constraints(vec![Constraint::Fill(1)]);
+Layout::default().constraints([Constraint::Fill(1)].iter().filter(|_| true));
+Layout::default().constraints([1, 2, 3].iter().map(|&c| Constraint::Length(c)));
+Layout::default().constraints([1, 2, 3]);
+Layout::default().constraints(vec![1, 2, 3]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#425)
+
+#### pub const fn [margin](#method.margin)(self, margin: [u16](https://doc.rust-lang.org/nightly/std/primitive.u16.html)) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+Set the margin of the layout.
+
+##### [§](#examples-5)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let layout = Layout::default()
+    .constraints([Constraint::Fill(1)])
+    .margin(2)
+    .split(Rect::new(0, 0, 10, 10));
+assert_eq!(layout[..], [Rect::new(2, 2, 6, 6)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#447)
+
+#### pub const fn [horizontal\_margin](#method.horizontal_margin)(self, horizontal: [u16](https://doc.rust-lang.org/nightly/std/primitive.u16.html)) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+Set the horizontal margin of the layout.
+
+##### [§](#examples-6)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let layout = Layout::default()
+    .constraints([Constraint::Fill(1)])
+    .horizontal_margin(2)
+    .split(Rect::new(0, 0, 10, 10));
+assert_eq!(layout[..], [Rect::new(2, 0, 6, 10)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#466)
+
+#### pub const fn [vertical\_margin](#method.vertical_margin)(self, vertical: [u16](https://doc.rust-lang.org/nightly/std/primitive.u16.html)) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+Set the vertical margin of the layout.
+
+##### [§](#examples-7)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let layout = Layout::default()
+    .constraints([Constraint::Fill(1)])
+    .vertical_margin(2)
+    .split(Rect::new(0, 0, 10, 10));
+assert_eq!(layout[..], [Rect::new(0, 2, 10, 6)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#507)
+
+#### pub const fn [flex](#method.flex)(self, flex: [Flex](enum.Flex.html "enum ratatui::layout::Flex")) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+The `flex` method allows you to specify the flex behavior of the layout.
+
+##### [§](#arguments)Arguments
+
+-   `flex`: A [`Flex`](enum.Flex.html "enum ratatui::layout::Flex") enum value that represents the flex behavior of the layout. It can be one of the following:
+    -   [`Flex::Legacy`](enum.Flex.html#variant.Legacy "variant ratatui::layout::Flex::Legacy"): The last item is stretched to fill the excess space.
+    -   [`Flex::Start`](enum.Flex.html#variant.Start "variant ratatui::layout::Flex::Start"): The items are aligned to the start of the layout.
+    -   [`Flex::Center`](enum.Flex.html#variant.Center "variant ratatui::layout::Flex::Center"): The items are aligned to the center of the layout.
+    -   [`Flex::End`](enum.Flex.html#variant.End "variant ratatui::layout::Flex::End"): The items are aligned to the end of the layout.
+    -   [`Flex::SpaceBetween`](enum.Flex.html#variant.SpaceBetween "variant ratatui::layout::Flex::SpaceBetween"): The items are evenly distributed with equal space between them.
+    -   [`Flex::SpaceAround`](enum.Flex.html#variant.SpaceAround "variant ratatui::layout::Flex::SpaceAround"): The items are evenly distributed with equal space around them, except the first and last items, which have half the space on their sides.
+    -   [`Flex::SpaceEvenly`](enum.Flex.html#variant.SpaceEvenly "variant ratatui::layout::Flex::SpaceEvenly"): The items are evenly distributed with equal space around them.
+
+##### [§](#examples-8)Examples
+
+In this example, the items in the layout will be aligned to the start.
+
+```
+use ratatui_core::layout::Constraint::*;
+use ratatui_core::layout::{Flex, Layout};
+
+let layout = Layout::horizontal([Length(20), Length(20), Length(20)]).flex(Flex::Start);
+```
+
+In this example, the items in the layout will be stretched equally to fill the available space.
+
+```
+use ratatui_core::layout::Constraint::*;
+use ratatui_core::layout::{Flex, Layout};
+
+let layout = Layout::horizontal([Length(20), Length(20), Length(20)]).flex(Flex::Legacy);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#546-548)
+
+#### pub fn [spacing](#method.spacing)<T>(self, spacing: T) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+where T: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Spacing](enum.Spacing.html "enum ratatui::layout::Spacing")\>,
+
+Sets the spacing between items in the layout.
+
+The `spacing` method sets the spacing between items in the layout. The spacing is applied evenly between all segments. The spacing value represents the number of cells between each item.
+
+Spacing can be positive integers, representing gaps between segments; or negative integers representing overlaps. Additionally, one of the variants of the [`Spacing`](enum.Spacing.html "enum ratatui::layout::Spacing") enum can be passed to this function. See the documentation of the [`Spacing`](enum.Spacing.html "enum ratatui::layout::Spacing") enum for more information.
+
+Note that if the layout has only one segment, the spacing will not be applied. Also, spacing will not be applied for [`Flex::SpaceAround`](enum.Flex.html#variant.SpaceAround "variant ratatui::layout::Flex::SpaceAround"), [`Flex::SpaceEvenly`](enum.Flex.html#variant.SpaceEvenly "variant ratatui::layout::Flex::SpaceEvenly") and [`Flex::SpaceBetween`](enum.Flex.html#variant.SpaceBetween "variant ratatui::layout::Flex::SpaceBetween")
+
+##### [§](#examples-9)Examples
+
+In this example, the spacing between each item in the layout is set to 2 cells.
+
+```
+use ratatui_core::layout::Constraint::*;
+use ratatui_core::layout::Layout;
+
+let layout = Layout::horizontal([Length(20), Length(20), Length(20)]).spacing(2);
+```
+
+In this example, the spacing between each item in the layout is set to -1 cells, i.e. the three segments will have an overlapping border.
+
+```
+use ratatui_core::layout::Constraint::*;
+use ratatui_core::layout::Layout;
+let layout = Layout::horizontal([Length(20), Length(20), Length(20)]).spacing(-1);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#578)
+
+#### pub fn [areas](#method.areas)<const N: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)\>(&self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")) -> \[[Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect"); [N](https://doc.rust-lang.org/nightly/std/primitive.array.html)\]
+
+Split the rect into a number of sub-rects according to the given [`Layout`](../prelude/struct.Layout.html "struct ratatui::prelude::Layout").
+
+An ergonomic wrapper around [`Layout::split`](../prelude/struct.Layout.html#method.split "method ratatui::prelude::Layout::split") that returns an array of `Rect`s instead of `Rc<[Rect]>`.
+
+This method requires the number of constraints to be known at compile time. If you don’t know the number of constraints at compile time, use [`Layout::split`](../prelude/struct.Layout.html#method.split "method ratatui::prelude::Layout::split") instead.
+
+##### [§](#panics)Panics
+
+Panics if the number of constraints is not equal to the length of the returned array.
+
+##### [§](#examples-10)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let area = Rect::new(0, 0, 10, 10);
+let layout = Layout::vertical([Constraint::Length(1), Constraint::Fill(1)]);
+let [top, main] = layout.areas(area);
+
+// or explicitly specify the number of constraints:
+let areas = layout.areas::<2>(area);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#614)
+
+#### pub fn [try\_areas](#method.try_areas)<const N: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)\>( &self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect"), ) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<\[[Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect"); [N](https://doc.rust-lang.org/nightly/std/primitive.array.html)\], [TryFromSliceError](https://doc.rust-lang.org/nightly/core/array/struct.TryFromSliceError.html "struct core::array::TryFromSliceError")\>
+
+Split the rect into a number of sub-rects according to the given [`Layout`](../prelude/struct.Layout.html "struct ratatui::prelude::Layout").
+
+An ergonomic wrapper around [`Layout::split`](../prelude/struct.Layout.html#method.split "method ratatui::prelude::Layout::split") that returns an array of `Rect`s instead of `Rc<[Rect]>`.
+
+This method requires the number of constraints to be known at compile time. If you don’t know the number of constraints at compile time, use [`Layout::split`](../prelude/struct.Layout.html#method.split "method ratatui::prelude::Layout::split") instead.
+
+##### [§](#errors)Errors
+
+Returns an error if the number of constraints is not equal to the length of the returned array.
+
+##### [§](#examples-11)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let area = Rect::new(0, 0, 10, 10);
+let layout = Layout::vertical([Constraint::Length(1), Constraint::Min(0)]);
+let [top, main] = layout.try_areas(area)?;
+
+// or explicitly specify the number of constraints:
+let areas = layout.try_areas::<2>(area)?;
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#646)
+
+#### pub fn [spacers](#method.spacers)<const N: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html)\>(&self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")) -> \[[Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect"); [N](https://doc.rust-lang.org/nightly/std/primitive.array.html)\]
+
+Split the rect into a number of sub-rects according to the given [`Layout`](../prelude/struct.Layout.html "struct ratatui::prelude::Layout") and return just the spacers between the areas.
+
+This method requires the number of constraints to be known at compile time. If you don’t know the number of constraints at compile time, use [`Layout::split_with_spacers`](../prelude/struct.Layout.html#method.split_with_spacers "method ratatui::prelude::Layout::split_with_spacers") instead.
+
+This method is similar to [`Layout::areas`](../prelude/struct.Layout.html#method.areas "method ratatui::prelude::Layout::areas"), and can be called with the same parameters, but it returns just the spacers between the areas. The result of calling the `areas` method is cached, so this will generally not re-run the solver, but will just return the cached result.
+
+##### [§](#panics-1)Panics
+
+Panics if the number of constraints + 1 is not equal to the length of the returned array.
+
+##### [§](#examples-12)Examples
+
+```
+use ratatui_core::layout::{Constraint, Layout, Rect};
+
+let area = Rect::new(0, 0, 10, 10);
+let layout = Layout::vertical([Constraint::Length(1), Constraint::Fill(1)]);
+let [top, main] = layout.areas(area);
+let [before, inbetween, after] = layout.spacers(area);
+
+// or explicitly specify the number of constraints:
+let spacers = layout.spacers::<3>(area);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#688)
+
+#### pub fn [split](#method.split)(&self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")) -> [Rc](https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html "struct alloc::rc::Rc")<\[[Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")\]>
+
+Wrapper function around the [`kasuari`](https://docs.rs/kasuari/0.4.12/x86_64-unknown-linux-gnu/kasuari/index.html "mod kasuari") solver to be able to split a given area into smaller ones based on the preferred widths or heights and the direction.
+
+Note that the constraints are applied to the whole area that is to be split, so using percentages and ratios with the other constraints may not have the desired effect of splitting the area up. (e.g. splitting 100 into \[min 20, 50%, 50%\], may not result in \[20, 40, 40\] but rather an indeterminate result between \[20, 50, 30\] and \[20, 30, 50\]).
+
+This method stores the result of the computation in a thread-local cache keyed on the layout and area, so that subsequent calls with the same parameters are faster. The cache is a `LruCache`, and grows until [`Self::DEFAULT_CACHE_SIZE`](../prelude/struct.Layout.html#associatedconstant.DEFAULT_CACHE_SIZE "associated constant ratatui::prelude::Layout::DEFAULT_CACHE_SIZE") is reached by default. If the cache is initialized with [`Layout::init_cache()`](../prelude/struct.Layout.html#method.init_cache "associated function ratatui::prelude::Layout::init_cache"), it grows until the initialized cache size.
+
+There is a helper method that can be used to split the whole area into smaller ones based on the layout: [`Layout::areas()`](../prelude/struct.Layout.html#method.areas "method ratatui::prelude::Layout::areas"). That method is a shortcut for calling this method. It allows you to destructure the result directly into variables, which is useful when you know at compile time the number of areas that will be created.
+
+##### [§](#examples-13)Examples
+
+```
+use ratatui_core::layout::{Constraint, Direction, Layout, Rect};
+let layout = Layout::default()
+    .direction(Direction::Vertical)
+    .constraints([Constraint::Length(5), Constraint::Fill(1)])
+    .split(Rect::new(2, 2, 10, 10));
+assert_eq!(layout[..], [Rect::new(2, 2, 10, 5), Rect::new(2, 7, 10, 5)]);
+
+let layout = Layout::default()
+    .direction(Direction::Horizontal)
+    .constraints([Constraint::Ratio(1, 3), Constraint::Ratio(2, 3)])
+    .split(Rect::new(0, 0, 9, 2));
+assert_eq!(layout[..], [Rect::new(0, 0, 3, 2), Rect::new(3, 0, 6, 2)]);
+```
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#738)
+
+#### pub fn [split\_with\_spacers](#method.split_with_spacers)(&self, area: [Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")) -> ([Rc](https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html "struct alloc::rc::Rc")<\[[Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")\]>, [Rc](https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html "struct alloc::rc::Rc")<\[[Rect](../prelude/struct.Rect.html "struct ratatui::prelude::Rect")\]>)
+
+Wrapper function around the [`kasuari`](https://docs.rs/kasuari/0.4.12/x86_64-unknown-linux-gnu/kasuari/index.html "mod kasuari") solver that splits the given area into smaller ones based on the preferred widths or heights and the direction, with the ability to include spacers between the areas.
+
+This method is similar to `split`, but it returns two sets of rectangles: one for the areas and one for the spacers.
+
+This method stores the result of the computation in a thread-local cache keyed on the layout and area, so that subsequent calls with the same parameters are faster. The cache is a `LruCache`, and grows until [`Self::DEFAULT_CACHE_SIZE`](../prelude/struct.Layout.html#associatedconstant.DEFAULT_CACHE_SIZE "associated constant ratatui::prelude::Layout::DEFAULT_CACHE_SIZE") is reached by default. If the cache is initialized with [`Layout::init_cache()`](../prelude/struct.Layout.html#method.init_cache "associated function ratatui::prelude::Layout::init_cache"), it grows until the initialized cache size.
+
+##### [§](#examples-14)Examples
+
+```
+use ratatui_core::layout::{Constraint, Direction, Layout, Rect};
+
+let (areas, spacers) = Layout::default()
+    .direction(Direction::Vertical)
+    .constraints([Constraint::Length(5), Constraint::Fill(1)])
+    .split_with_spacers(Rect::new(2, 2, 10, 10));
+assert_eq!(areas[..], [Rect::new(2, 2, 10, 5), Rect::new(2, 7, 10, 5)]);
+assert_eq!(
+    spacers[..],
+    [
+        Rect::new(2, 2, 10, 0),
+        Rect::new(2, 7, 10, 0),
+        Rect::new(2, 12, 10, 0)
+    ]
+);
+
+let (areas, spacers) = Layout::default()
+    .direction(Direction::Horizontal)
+    .spacing(1)
+    .constraints([Constraint::Ratio(1, 3), Constraint::Ratio(2, 3)])
+    .split_with_spacers(Rect::new(0, 0, 10, 2));
+assert_eq!(areas[..], [Rect::new(0, 0, 3, 2), Rect::new(4, 0, 6, 2)]);
+assert_eq!(
+    spacers[..],
+    [
+        Rect::new(0, 0, 0, 2),
+        Rect::new(3, 0, 1, 2),
+        Rect::new(10, 0, 0, 2)
+    ]
+);
+```
+
+## Trait Implementations[§](#trait-implementations)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-Clone-for-Layout)
+
+### impl [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#method.clone)
+
+#### fn [clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)(&self) -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+Returns a duplicate of the value. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)
+
+1.0.0 (const: [unstable](https://github.com/rust-lang/rust/issues/142757 "Tracking issue for const_clone")) · [Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#245-247)[§](#method.clone_from)
+
+#### fn [clone\_from](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)(&mut self, source: &Self)
+
+Performs copy-assignment from `source`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-Debug-for-Layout)
+
+### impl [Debug](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html "trait core::fmt::Debug") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#method.fmt)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-Default-for-Layout)
+
+### impl [Default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html "trait core::default::Default") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#method.default)
+
+#### fn [default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)() -> [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+Returns the “default value” for a type. [Read more](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#201)[§](#impl-Deserialize%3C'de%3E-for-Layout)
+
+### impl<'de> [Deserialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html "trait serde_core::de::Deserialize")<'de> for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#201)[§](#method.deserialize)
+
+#### fn [deserialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html#tymethod.deserialize)<\_\_D>( \_\_deserializer: \_\_D, ) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout"), <\_\_D as [Deserializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserializer.html "trait serde_core::de::Deserializer")<'de>>::[Error](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserializer.html#associatedtype.Error "type serde_core::de::Deserializer::Error")\>
+
+where \_\_D: [Deserializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserializer.html "trait serde_core::de::Deserializer")<'de>,
+
+Deserialize this value from the given Serde deserializer. [Read more](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html#tymethod.deserialize)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-Eq-for-Layout)
+
+### impl [Eq](https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html "trait core::cmp::Eq") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-Hash-for-Layout)
+
+### impl [Hash](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html "trait core::hash::Hash") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#method.hash)
+
+#### fn [hash](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash)<\_\_H>(&self, state: [&mut \_\_H](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+where \_\_H: [Hasher](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"),
+
+Feeds this value into the given [`Hasher`](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"). [Read more](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash)
+
+1.3.0 · [Source](https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#234-236)[§](#method.hash_slice)
+
+#### fn [hash\_slice](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice)<H>(data: &\[Self\], state: [&mut H](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+where H: [Hasher](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"), Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Feeds a slice of this type into the given [`Hasher`](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"). [Read more](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-PartialEq-for-Layout)
+
+### impl [PartialEq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html "trait core::cmp::PartialEq") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#method.eq)
+
+#### fn [eq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq)(&self, other: &[Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `self` and `other` values to be equal, and is used by `==`.
+
+1.0.0 (const: [unstable](https://github.com/rust-lang/rust/issues/143800 "Tracking issue for const_cmp")) · [Source](https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#263)[§](#method.ne)
+
+#### fn [ne](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne)(&self, other: [&Rhs](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `!=`. The default implementation is almost always sufficient, and should not be overridden without very good reason.
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#201)[§](#impl-Serialize-for-Layout)
+
+### impl [Serialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serialize.html "trait serde_core::ser::Serialize") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#201)[§](#method.serialize)
+
+#### fn [serialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serialize.html#tymethod.serialize)<\_\_S>( &self, \_\_serializer: \_\_S, ) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<<\_\_S as [Serializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html "trait serde_core::ser::Serializer")\>::[Ok](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html#associatedtype.Ok "type serde_core::ser::Serializer::Ok"), <\_\_S as [Serializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html "trait serde_core::ser::Serializer")\>::[Error](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html#associatedtype.Error "type serde_core::ser::Serializer::Error")\>
+
+where \_\_S: [Serializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html "trait serde_core::ser::Serializer"),
+
+Serialize this value into the given Serde serializer. [Read more](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serialize.html#tymethod.serialize)
+
+[Source](https://docs.rs/ratatui-core/0.1.2/x86_64-unknown-linux-gnu/src/ratatui_core/layout/layout.rs.html#200)[§](#impl-StructuralPartialEq-for-Layout)
+
+### impl [StructuralPartialEq](https://doc.rust-lang.org/nightly/core/marker/trait.StructuralPartialEq.html "trait core::marker::StructuralPartialEq") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+## Auto Trait Implementations[§](#synthetic-implementations)
+
+[§](#impl-Freeze-for-Layout)
+
+### impl [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[§](#impl-RefUnwindSafe-for-Layout)
+
+### impl [RefUnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html "trait core::panic::unwind_safe::RefUnwindSafe") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[§](#impl-Send-for-Layout)
+
+### impl [Send](https://doc.rust-lang.org/nightly/core/marker/trait.Send.html "trait core::marker::Send") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[§](#impl-Sync-for-Layout)
+
+### impl [Sync](https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html "trait core::marker::Sync") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[§](#impl-Unpin-for-Layout)
+
+### impl [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[§](#impl-UnsafeUnpin-for-Layout)
+
+### impl [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+[§](#impl-UnwindSafe-for-Layout)
+
+### impl [UnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html "trait core::panic::unwind_safe::UnwindSafe") for [Layout](../prelude/struct.Layout.html "struct ratatui::prelude::Layout")
+
+## Blanket Implementations[§](#blanket-implementations)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#205-210)[§](#impl-AdaptInto%3CD,+Swp,+Dwp,+T%3E-for-S)
+
+### impl<S, D, Swp, Dwp, T> [AdaptInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html "trait palette::chromatic_adaptation::AdaptInto")<D, Swp, Dwp, T> for S
+
+where T: [Real](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Real.html "trait palette::num::Real") + [Zero](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Zero.html "trait palette::num::Zero") + [Arithmetics](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Arithmetics.html "trait palette::num::Arithmetics") + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"), Swp: [WhitePoint](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/white_point/trait.WhitePoint.html "trait palette::white_point::WhitePoint")<T>, Dwp: [WhitePoint](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/white_point/trait.WhitePoint.html "trait palette::white_point::WhitePoint")<T>, D: [AdaptFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptFrom.html "trait palette::chromatic_adaptation::AdaptFrom")<S, Swp, Dwp, T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#213)[§](#method.adapt_into_using)
+
+#### fn [adapt\_into\_using](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html#tymethod.adapt_into_using)<M>(self, method: M) -> D
+
+where M: [TransformMatrix](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.TransformMatrix.html "trait palette::chromatic_adaptation::TransformMatrix")<T>,
+
+Convert the source color to the destination color using the specified method.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#196)[§](#method.adapt_into)
+
+#### fn [adapt\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html#method.adapt_into)(self) -> D
+
+Convert the source color to the destination color using the bradford method by default.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#141)[§](#impl-Any-for-T)
+
+### impl<T> [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") for T
+
+where T: 'static + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#142)[§](#method.type_id)
+
+#### fn [type\_id](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)(&self) -> [TypeId](https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html "struct core::any::TypeId")
+
+Gets the `TypeId` of `self`. [Read more](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#271-273)[§](#impl-ArraysFrom%3CC%3E-for-T)
+
+### impl<T, C> [ArraysFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysFrom.html "trait palette::cast::from_into_arrays_traits::ArraysFrom")<C> for T
+
+where C: [IntoArrays](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.IntoArrays.html "trait palette::cast::from_into_arrays_traits::IntoArrays")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#276)[§](#method.arrays_from)
+
+#### fn [arrays\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysFrom.html#tymethod.arrays_from)(colors: C) -> T
+
+Cast a collection of colors into a collection of arrays.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#329-331)[§](#impl-ArraysInto%3CC%3E-for-T)
+
+### impl<T, C> [ArraysInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysInto.html "trait palette::cast::from_into_arrays_traits::ArraysInto")<C> for T
+
+where C: [FromArrays](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.FromArrays.html "trait palette::cast::from_into_arrays_traits::FromArrays")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#334)[§](#method.arrays_into)
+
+#### fn [arrays\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysInto.html#tymethod.arrays_into)(self) -> C
+
+Cast this collection of arrays into a collection of colors.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#212)[§](#impl-Borrow%3CT%3E-for-T)
+
+### impl<T> [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#214)[§](#method.borrow)
+
+#### fn [borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Immutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#221)[§](#impl-BorrowMut%3CT%3E-for-T)
+
+### impl<T> [BorrowMut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html "trait core::borrow::BorrowMut")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#222)[§](#method.borrow_mut)
+
+#### fn [borrow\_mut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)(&mut self) -> [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#143-145)[§](#impl-Cam16IntoUnclamped%3CWpParam,+T%3E-for-U)
+
+### impl<WpParam, T, U> [Cam16IntoUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html "trait palette::cam16::Cam16IntoUnclamped")<WpParam, T> for U
+
+where T: [FromCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html "trait palette::cam16::FromCam16Unclamped")<WpParam, U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#147)[§](#associatedtype.Scalar)
+
+#### type [Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#associatedtype.Scalar) = <T as [FromCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html "trait palette::cam16::FromCam16Unclamped")<WpParam, U>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html#associatedtype.Scalar "type palette::cam16::FromCam16Unclamped::Scalar")
+
+The number type that’s used in `parameters` when converting.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#149)[§](#method.cam16_into_unclamped)
+
+#### fn [cam16\_into\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#tymethod.cam16_into_unclamped)( self, parameters: [BakedParameters](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/parameters/struct.BakedParameters.html "struct palette::cam16::parameters::BakedParameters")<WpParam, <U as [Cam16IntoUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html "trait palette::cam16::Cam16IntoUnclamped")<WpParam, T>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#associatedtype.Scalar "type palette::cam16::Cam16IntoUnclamped::Scalar")\>, ) -> T
+
+Converts `self` into `C`, using the provided parameters.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#648)[§](#impl-CloneToUninit-for-T)
+
+### impl<T> [CloneToUninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html "trait core::clone::CloneToUninit") for T
+
+where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#650)[§](#method.clone_to_uninit)
+
+#### unsafe fn [clone\_to\_uninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)(&self, dest: [\*mut](https://doc.rust-lang.org/nightly/std/primitive.pointer.html) [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html))
+
+🔬This is a nightly-only experimental API. (`clone_to_uninit`)
+
+Performs copy-assignment from `self` to `dest`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#414-416)[§](#impl-ComponentsFrom%3CC%3E-for-T)
+
+### impl<T, C> [ComponentsFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.ComponentsFrom.html "trait palette::cast::from_into_components_traits::ComponentsFrom")<C> for T
+
+where C: [IntoComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.IntoComponents.html "trait palette::cast::from_into_components_traits::IntoComponents")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#419)[§](#method.components_from)
+
+#### fn [components\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.ComponentsFrom.html#tymethod.components_from)(colors: C) -> T
+
+Cast a collection of colors into a collection of color components.
+
+[Source](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/src/serde_core/de/mod.rs.html#633)[§](#impl-DeserializeOwned-for-T)
+
+### impl<T> [DeserializeOwned](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.DeserializeOwned.html "trait serde_core::de::DeserializeOwned") for T
+
+where T: for<'de> [Deserialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html "trait serde_core::de::Deserialize")<'de>,
+
+[Source](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/src/equivalent/lib.rs.html#82-85)[§](#impl-Equivalent%3CK%3E-for-Q)
+
+### impl<Q, K> [Equivalent](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/equivalent/trait.Equivalent.html "trait equivalent::Equivalent")<K> for Q
+
+where Q: [Eq](https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html "trait core::cmp::Eq") + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"), K: [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<Q> + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/src/equivalent/lib.rs.html#88)[§](#method.equivalent)
+
+#### fn [equivalent](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/equivalent/trait.Equivalent.html#tymethod.equivalent)(&self, key: [&K](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Compare self to `key` and return `true` if they are equal.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#787)[§](#impl-From%3CT%3E-for-T)
+
+### impl<T> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for T
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#790)[§](#method.from)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(t: T) -> T
+
+Returns the argument unchanged.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#65)[§](#impl-FromAngle%3CT%3E-for-T)
+
+### impl<T> [FromAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html "trait palette::angle::FromAngle")<T> for T
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#67)[§](#method.from_angle)
+
+#### fn [from\_angle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html#tymethod.from_angle)(angle: T) -> T
+
+Performs a conversion from `angle`.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#85)[§](#impl-FromStimulus%3CU%3E-for-T)
+
+### impl<T, U> [FromStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.FromStimulus.html "trait palette::stimulus::FromStimulus")<U> for T
+
+where U: [IntoStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html "trait palette::stimulus::IntoStimulus")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#87)[§](#method.from_stimulus)
+
+#### fn [from\_stimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.FromStimulus.html#tymethod.from_stimulus)(other: U) -> T
+
+Converts `other` into `Self`, while performing the appropriate scaling, rounding and clamping.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#769-771)[§](#impl-Into%3CU%3E-for-T)
+
+### impl<T, U> [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<U> for T
+
+where U: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#779)[§](#method.into)
+
+#### fn [into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into)(self) -> U
+
+Calls `U::from(self)`.
+
+That is, this conversion is whatever the implementation of `[From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for U` chooses to do.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#78-80)[§](#impl-IntoAngle%3CU%3E-for-T)
+
+### impl<T, U> [IntoAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.IntoAngle.html "trait palette::angle::IntoAngle")<U> for T
+
+where U: [FromAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html "trait palette::angle::FromAngle")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#83)[§](#method.into_angle)
+
+#### fn [into\_angle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.IntoAngle.html#tymethod.into_angle)(self) -> U
+
+Performs a conversion into `T`.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#114-116)[§](#impl-IntoCam16Unclamped%3CWpParam,+T%3E-for-U)
+
+### impl<WpParam, T, U> [IntoCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html "trait palette::cam16::IntoCam16Unclamped")<WpParam, T> for U
+
+where T: [Cam16FromUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html "trait palette::cam16::Cam16FromUnclamped")<WpParam, U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#118)[§](#associatedtype.Scalar-1)
+
+#### type [Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#associatedtype.Scalar) = <T as [Cam16FromUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html "trait palette::cam16::Cam16FromUnclamped")<WpParam, U>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html#associatedtype.Scalar "type palette::cam16::Cam16FromUnclamped::Scalar")
+
+The number type that’s used in `parameters` when converting.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#120)[§](#method.into_cam16_unclamped)
+
+#### fn [into\_cam16\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#tymethod.into_cam16_unclamped)( self, parameters: [BakedParameters](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/parameters/struct.BakedParameters.html "struct palette::cam16::parameters::BakedParameters")<WpParam, <U as [IntoCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html "trait palette::cam16::IntoCam16Unclamped")<WpParam, T>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#associatedtype.Scalar "type palette::cam16::IntoCam16Unclamped::Scalar")\>, ) -> T
+
+Converts `self` into `C`, using the provided parameters.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color.rs.html#129-131)[§](#impl-IntoColor%3CU%3E-for-T)
+
+### impl<T, U> [IntoColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html "trait palette::convert::from_into_color::IntoColor")<U> for T
+
+where U: [FromColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.FromColor.html "trait palette::convert::from_into_color::FromColor")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color.rs.html#134)[§](#method.into_color)
+
+#### fn [into\_color](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html#tymethod.into_color)(self) -> U
+
+Convert into T with values clamped to the color defined bounds [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html#tymethod.into_color)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color_unclamped.rs.html#95-97)[§](#impl-IntoColorUnclamped%3CU%3E-for-T)
+
+### impl<T, U> [IntoColorUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html "trait palette::convert::from_into_color_unclamped::IntoColorUnclamped")<U> for T
+
+where U: [FromColorUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.FromColorUnclamped.html "trait palette::convert::from_into_color_unclamped::FromColorUnclamped")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color_unclamped.rs.html#100)[§](#method.into_color_unclamped)
+
+#### fn [into\_color\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html#tymethod.into_color_unclamped)(self) -> U
+
+Convert into T. The resulting color might be invalid in its color space [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html#tymethod.into_color_unclamped)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#64)[§](#impl-IntoEither-for-T)
+
+### impl<T> [IntoEither](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html "trait either::into_either::IntoEither") for T
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#29)[§](#method.into_either)
+
+#### fn [into\_either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)(self, into\_left: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left` is `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#55-57)[§](#method.into_either_with)
+
+#### fn [into\_either\_with](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)<F>(self, into\_left: F) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+where F: [FnOnce](https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html "trait core::ops::function::FnOnce")(&Self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html),
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left(&self)` returns `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#109)[§](#impl-IntoStimulus%3CT%3E-for-T)
+
+### impl<T> [IntoStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html "trait palette::stimulus::IntoStimulus")<T> for T
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#111)[§](#method.into_stimulus)
+
+#### fn [into\_stimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html#tymethod.into_stimulus)(self) -> T
+
+Converts `self` into `T`, while performing the appropriate scaling, rounding and clamping.
+
+[Source](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#34)[§](#impl-Same-for-T)
+
+### impl<T> [Same](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html "trait typenum::type_operators::Same") for T
+
+[Source](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#35)[§](#associatedtype.Output)
+
+#### type [Output](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html#associatedtype.Output) = T
+
+Should always be `Self`
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#72-74)[§](#impl-ToOwned-for-T)
+
+### impl<T> [ToOwned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html "trait alloc::borrow::ToOwned") for T
+
+where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#76)[§](#associatedtype.Owned)
+
+#### type [Owned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#associatedtype.Owned) = T
+
+The resulting type after obtaining ownership.
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#77)[§](#method.to_owned)
+
+#### fn [to\_owned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned)(&self) -> T
+
+Creates owned data from borrowed data, usually by cloning. [Read more](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned)
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#81)[§](#method.clone_into)
+
+#### fn [clone\_into](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into)(&self, target: [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+Uses borrowed data to replace owned data, usually by cloning. [Read more](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#584-586)[§](#impl-TryComponentsInto%3CC%3E-for-T)
+
+### impl<T, C> [TryComponentsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html "trait palette::cast::from_into_components_traits::TryComponentsInto")<C> for T
+
+where C: [TryFromComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html "trait palette::cast::from_into_components_traits::TryFromComponents")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#588)[§](#associatedtype.Error)
+
+#### type [Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#associatedtype.Error) = <C as [TryFromComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html "trait palette::cast::from_into_components_traits::TryFromComponents")<T>>::[Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html#associatedtype.Error "type palette::cast::from_into_components_traits::TryFromComponents::Error")
+
+The error for when `try_into_colors` fails to cast.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#591)[§](#method.try_components_into)
+
+#### fn [try\_components\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#tymethod.try_components_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<C, <T as [TryComponentsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html "trait palette::cast::from_into_components_traits::TryComponentsInto")<C>>::[Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#associatedtype.Error "type palette::cast::from_into_components_traits::TryComponentsInto::Error")\>
+
+Try to cast this collection of color components into a collection of colors. [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#tymethod.try_components_into)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#829-831)[§](#impl-TryFrom%3CU%3E-for-T)
+
+### impl<T, U> [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U> for T
+
+where U: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#833)[§](#associatedtype.Error-1)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error) = [Infallible](https://doc.rust-lang.org/nightly/core/convert/enum.Infallible.html "enum core::convert::Infallible")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#836)[§](#method.try_from)
+
+#### fn [try\_from](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#tymethod.try_from)(value: U) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<T, <T as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#813-815)[§](#impl-TryInto%3CU%3E-for-T)
+
+### impl<T, U> [TryInto](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html "trait core::convert::TryInto")<U> for T
+
+where U: [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#817)[§](#associatedtype.Error-2)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#associatedtype.Error) = <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#820)[§](#method.try_into)
+
+#### fn [try\_into](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#tymethod.try_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/try_from_into_color.rs.html#110-112)[§](#impl-TryIntoColor%3CU%3E-for-T)
+
+### impl<T, U> [TryIntoColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html "trait palette::convert::try_from_into_color::TryIntoColor")<U> for T
+
+where U: [TryFromColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryFromColor.html "trait palette::convert::try_from_into_color::TryFromColor")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/try_from_into_color.rs.html#115)[§](#method.try_into_color)
+
+#### fn [try\_into\_color](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html#tymethod.try_into_color)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, [OutOfBounds](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/struct.OutOfBounds.html "struct palette::convert::try_from_into_color::OutOfBounds")<U>>
+
+Convert into T, returning ok if the color is inside of its defined range, otherwise an `OutOfBounds` error is returned which contains the unclamped color. [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html#tymethod.try_into_color)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#325-327)[§](#impl-UintsFrom%3CC%3E-for-U)
+
+### impl<C, U> [UintsFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsFrom.html "trait palette::cast::from_into_uints_traits::UintsFrom")<C> for U
+
+where C: [IntoUints](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.IntoUints.html "trait palette::cast::from_into_uints_traits::IntoUints")<U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#330)[§](#method.uints_from)
+
+#### fn [uints\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsFrom.html#tymethod.uints_from)(colors: C) -> U
+
+Cast a collection of colors into a collection of unsigned integers.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#401-403)[§](#impl-UintsInto%3CC%3E-for-U)
+
+### impl<C, U> [UintsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsInto.html "trait palette::cast::from_into_uints_traits::UintsInto")<C> for U
+
+where C: [FromUints](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.FromUints.html "trait palette::cast::from_into_uints_traits::FromUints")<U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#406)[§](#method.uints_into)
+
+#### fn [uints\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsInto.html#tymethod.uints_into)(self) -> C
+
+Cast this collection of unsigned integers into a collection of colors.

@@ -1,0 +1,11 @@
+2026/08/06-17:35:46.482 34ca Reusing MANIFEST /home/eternity/.config/Final2x/Local Storage/leveldb/MANIFEST-000001
+2026/08/06-17:35:46.483 34ca Recovering log #3
+2026/08/06-17:35:46.485 34ca Level-0 table #3: started
+2026/08/06-17:35:46.500 34ca Level-0 table #3: 73905 bytes OK
+2026/08/06-17:35:46.500 34ca Recovering log #4
+2026/08/06-17:35:46.500 34ca Reusing old log /home/eternity/.config/Final2x/Local Storage/leveldb/000004.log 
+2026/08/06-17:35:46.501 34ca Delete type=0 #3
+2026/08/06-17:35:46.501 34ca Delete type=2 #5
+2026/08/06-17:36:50.200 34cb Level-0 table #6: started
+2026/08/06-17:36:50.214 34cb Level-0 table #6: 74227 bytes OK
+2026/08/06-17:36:50.215 34cb Delete type=0 #4

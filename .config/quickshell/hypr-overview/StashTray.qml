@@ -1,0 +1,312 @@
+pragma ComponentBehavior: Bound
+
+import QtQuick
+import QtQuick.Layouts
+import Quickshell
+import Quickshell.Wayland
+import Quickshell.Hyprland
+
+/**
+ * StashTray - Single stash tray visual component
+ * Displays stashed windows for a specific tray
+ */
+Rectangle {
+    id: root
+
+    // Required properties
+    required property string trayName
+    required property string trayLabel
+    required property var monitorData
+    required property var widgetMonitor
+
+    // Config
+    property real previewScale: StashState.previewScale
+
+    // State
+    property var stashedWindows: StashState.getWindowsForTray(trayName)
+    property int windowCount: stashedWindows.length
+    property bool isEmpty: windowCount === 0
+    property bool collapsed: isEmpty && !StashState.showEmptyTrays
+
+    // Helper to strip surrounding quotes from workspace names (Hyprland includes literal quotes)
+    function stripQuotes(str) {
+        if (str && str.startsWith('"') && str.endsWith('"')) {
+            return str.slice(1, -1)
+        }
+        return str
+    }
+
+    // Group windows by origin workspace
+    property var windowsByWorkspace: {
+        const groups = {};
+        for (const win of stashedWindows) {
+            const wsKey = win.originWorkspace;
+            if (!groups[wsKey]) {
+                groups[wsKey] = {
+                    id: win.originWorkspace,
+                    name: root.stripQuotes(win.originWorkspaceName) || String(win.originWorkspace),
+                    windows: []
+                };
+            }
+            groups[wsKey].windows.push(win);
+        }
+        // Convert to sorted array
+        return Object.values(groups).sort((a, b) => a.id - b.id);
+    }
+
+    // Visual properties - base dimensions scaled by previewScale
+    property real basePreviewWidth: 120
+    property real basePreviewHeight: 80
+    property real windowPreviewWidth: basePreviewWidth * previewScale
+    property real windowPreviewHeight: basePreviewHeight * previewScale
+    property real trayPadding: 8
+    property real cornerRadius: 12
+
+    // Colors
+    property color backgroundColor: Qt.rgba(0.12, 0.12, 0.12, 0.95)
+    property color borderColor: Qt.rgba(0.3, 0.3, 0.3, 0.5)
+    property color labelColor: Qt.rgba(1, 1, 1, 0.7)
+    property color countBadgeColor: Qt.rgba(0.4, 0.6, 1.0, 0.9)
+
+    // Size
+    visible: !collapsed
+    implicitWidth: collapsed ? 0 : Math.max(200, contentRow.implicitWidth + trayPadding * 2)
+    implicitHeight: collapsed ? 0 : windowPreviewHeight + trayPadding * 2
+
+    // Appearance
+    color: backgroundColor
+    radius: cornerRadius
+    border.color: borderColor
+    border.width: 1
+
+    // Refresh when state changes
+    Connections {
+        target: StashState
+        function onStateChanged() {
+            root.stashedWindows = StashState.getWindowsForTray(root.trayName);
+        }
+    }
+
+    // Content layout
+    RowLayout {
+        id: contentRow
+        anchors.fill: parent
+        anchors.margins: trayPadding
+        spacing: 8
+
+        // Tray label and count
+        ColumnLayout {
+            Layout.preferredWidth: 80
+            Layout.fillHeight: true
+            spacing: 4
+
+            Text {
+                text: root.trayLabel
+                color: labelColor
+                font.pixelSize: 12
+                font.weight: Font.Medium
+            }
+
+            // Count badge
+            Rectangle {
+                visible: root.windowCount > 0
+                width: 24
+                height: 24
+                radius: 12
+                color: countBadgeColor
+
+                Text {
+                    anchors.centerIn: parent
+                    text: root.windowCount
+                    color: "white"
+                    font.pixelSize: 11
+                    font.bold: true
+                }
+            }
+
+            Item { Layout.fillHeight: true }
+        }
+
+        // Separator
+        Rectangle {
+            Layout.preferredWidth: 1
+            Layout.fillHeight: true
+            Layout.topMargin: 8
+            Layout.bottomMargin: 8
+            color: borderColor
+            visible: root.windowCount > 0
+        }
+
+        // Grouped window previews by origin workspace
+        Row {
+            id: windowsRow
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignVCenter
+            spacing: 12
+
+            Repeater {
+                model: root.windowsByWorkspace
+
+                delegate: Row {
+                    id: workspaceGroup
+                    required property var modelData
+                    required property int index
+
+                    spacing: 4
+
+                    // Workspace label (rotated CCW for vertical text)
+                    Rectangle {
+                        width: 20
+                        height: root.windowPreviewHeight
+                        color: Qt.rgba(0.3, 0.5, 0.8, 0.3)
+                        radius: 4
+
+                        Text {
+                            anchors.centerIn: parent
+                            rotation: -90
+                            width: parent.height - 8
+                            text: workspaceGroup.modelData.name
+                            color: Qt.rgba(1, 1, 1, 0.8)
+                            font.pixelSize: 11
+                            font.bold: true
+                            elide: Text.ElideRight
+                            horizontalAlignment: Text.AlignHCenter
+                        }
+                    }
+
+                    // Windows in this workspace group
+                    Row {
+                        spacing: 4
+
+                        Repeater {
+                            model: workspaceGroup.modelData.windows
+
+                            delegate: Rectangle {
+                                id: windowPreview
+                                required property var modelData
+                                required property int index
+
+                                property string windowAddress: modelData.address
+                                property var windowData: HyprlandData.windowByAddress[windowAddress]
+                                property var toplevel: Hyprland.toplevels.values.find(
+                                    t => HyprlandData.normalizeAddr(t.address) === windowAddress)
+
+                                width: root.windowPreviewWidth
+                                height: root.windowPreviewHeight
+                                color: Qt.rgba(0.2, 0.2, 0.2, 1)
+                                radius: 6
+                                clip: true
+
+                                // Hover state
+                                property bool hovered: false
+                                border.color: hovered ? Qt.rgba(0.5, 0.7, 1.0, 0.8) : "transparent"
+                                border.width: 2
+
+                                // Live preview if available
+                                ScreencopyView {
+                                    anchors.fill: parent
+                                    anchors.margins: 2
+                                    captureSource: OverviewState.isOpen ? windowPreview.toplevel?.wayland ?? null : null
+                                    live: true
+                                    visible: windowPreview.toplevel !== undefined
+                                }
+
+                                // Fallback: app icon
+                                Image {
+                                    anchors.centerIn: parent
+                                    width: 32
+                                    height: 32
+                                    visible: windowPreview.toplevel === undefined && StashState.showAppIcons
+                                    source: OverviewConfig.resolveIconPath(windowPreview.windowData?.class ?? "")
+                                }
+
+                                // Window title tooltip
+                                Rectangle {
+                                    visible: windowPreview.hovered
+                                    anchors.bottom: parent.top
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    anchors.bottomMargin: 4
+                                    width: titleText.width + 12
+                                    height: titleText.height + 6
+                                    color: "#2d2d2d"
+                                    radius: 4
+                                    z: 100
+
+                                    Text {
+                                        id: titleText
+                                        anchors.centerIn: parent
+                                        text: windowPreview.windowData?.title ?? "Unknown"
+                                        color: "white"
+                                        font.pixelSize: 10
+                                        maximumLineCount: 1
+                                        elide: Text.ElideRight
+                                    }
+                                }
+
+                                // Click to restore
+                                MouseArea {
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    acceptedButtons: Qt.LeftButton
+
+                                    onEntered: windowPreview.hovered = true
+                                    onExited: windowPreview.hovered = false
+
+                                    onClicked: (mouse) => {
+                                        // When configured modifier is held, restore without focus (mouse stays on overview)
+                                        const shouldFocus = !StashState.isModifierHeld(mouse.modifiers);
+                                        StashState.unstashWindow(windowPreview.windowAddress, shouldFocus);
+                                        console.log("[StashTray] Restored window", windowPreview.windowAddress, "focus:", shouldFocus);
+                                    }
+                                }
+
+                                // Animation
+                                Behavior on opacity {
+                                    NumberAnimation { duration: 150 }
+                                }
+                            }
+                        }
+                    }
+
+                    // Separator between workspace groups
+                    Rectangle {
+                        visible: workspaceGroup.index < root.windowsByWorkspace.length - 1
+                        width: 1
+                        height: parent.height - 16
+                        anchors.verticalCenter: parent.verticalCenter
+                        color: Qt.rgba(1, 1, 1, 0.2)
+                    }
+                }
+            }
+        }
+
+        // Empty state message
+        Text {
+            visible: root.isEmpty && StashState.showEmptyTrays
+            text: "Drop windows here"
+            color: Qt.rgba(1, 1, 1, 0.3)
+            font.pixelSize: 11
+            font.italic: true
+        }
+    }
+
+    // Drop area for stashing via drag (uses onEntered/onExited pattern like workspace drops)
+    DropArea {
+        anchors.fill: parent
+
+        onEntered: (drag) => {
+            root.border.color = Qt.rgba(0.4, 0.9, 0.4, 0.9);
+            root.border.width = 2;
+            StashState.draggingTargetStash = root.trayName;
+        }
+
+        onExited: {
+            root.border.color = borderColor;
+            root.border.width = 1;
+            if (StashState.draggingTargetStash === root.trayName) {
+                StashState.draggingTargetStash = "";
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
++08  2026-06-18 15:29:20.868609 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-18 15:29:21.437288 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-18 15:29:24.531361 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-18 15:29:24.537603 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-18 21:46:47.868275 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-18 21:46:47.880372 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-18 21:46:50.921752 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-18 21:46:50.928908 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 11:26:18.199557 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 11:26:18.211600 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-19 11:26:21.260421 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 11:26:21.274267 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 12:41:58.000715 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 12:41:58.012941 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-19 12:42:01.053605 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 12:42:01.059802 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 23:50:12.054539 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 23:50:12.066635 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-19 23:50:15.108780 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-19 23:50:15.115458 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:23:15.893278 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:23:15.936742 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 01:23:19.026704 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:23:19.036745 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:31:50.049193 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:31:50.119373 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 01:31:53.161698 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:31:53.168277 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:34:15.818136 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:34:15.843951 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 01:34:18.906149 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:34:18.912472 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:54:31.247187 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:54:31.317867 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 01:54:34.361820 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 01:54:34.368593 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 11:58:24.130727 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 11:58:24.143044 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 11:58:27.184106 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 11:58:27.190691 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 15:56:30.031471 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 15:56:30.044125 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 15:56:33.085591 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 15:56:33.091900 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 16:21:08.458865 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 16:21:08.471151 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 16:21:11.511383 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 16:21:11.540359 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 23:53:26.270958 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 23:53:26.291681 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-20 23:53:29.333693 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-20 23:53:29.340330 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 11:20:48.254824 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 11:20:48.267419 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 11:20:51.307971 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 11:20:51.314539 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 11:39:14.668316 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 11:39:14.734567 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 11:39:17.775977 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 11:39:17.782520 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:42:46.500204 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:42:46.512790 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 13:42:49.554333 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:42:49.561120 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:44:49.490913 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:44:49.503054 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 13:44:52.543173 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:44:52.549862 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:47:59.748902 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:47:59.834626 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 13:48:02.877286 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 13:48:02.884019 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:29:22.691112 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:29:22.702946 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 15:29:25.743400 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:29:25.750439 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:44:42.631512 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:44:42.643832 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 15:44:45.684350 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:44:45.691162 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:52:06.474611 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:52:06.487168 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-06-21 15:52:09.528407 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-06-21 15:52:09.535197 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-10 23:47:36.592900 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-10 23:47:36.605653 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-07-10 23:47:37.003878 WARNING VPNService.start err start process karingservice exit:1: 
++08  2026-07-10 23:47:39.669199 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-10 23:47:39.676457 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 00:10:46.630663 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 00:10:46.643392 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-07-12 00:10:47.252507 WARNING VPNService.start err start process karingservice exit:1: 
++08  2026-07-12 00:10:49.707619 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 00:10:49.748111 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 16:00:51.000636 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 16:00:51.012770 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-07-12 16:00:51.356276 WARNING VPNService.start err start process karingservice exit:1: 
++08  2026-07-12 16:00:54.064881 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 16:00:54.071860 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-12 16:00:58.799267 WARNING VPNService.start err start process karingservice exit:1: 
++08  2026-07-22 02:29:19.516761 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-22 02:29:19.529399 WARNING launch 1.2.19.2209 /usr/share/karing/karing, [], /home/eternity, /home/eternity/.local/share/com.nebula.karing 
++08  2026-07-22 02:29:19.897202 WARNING VPNService.start err start process karingservice exit:1: 
++08  2026-07-22 02:29:22.579246 WARNING SecureStorageUtilsSecureStorageUtils read exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 
++08  2026-07-22 02:29:22.602087 WARNING SecureStorageUtils write exception PlatformException(Libsecret error, Failed to unlock the keyring, null, null) 

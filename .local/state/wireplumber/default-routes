@@ -1,0 +1,12 @@
+[default-routes]
+alsa_card.pci-0000_06_00.6:output:analog-output-speaker={"latencyOffsetNsec":0, "mute":false, "channelMap":["FL", "FR"], "channelVolumes":[1.000000, 1.000000]}
+alsa_card.pci-0000_06_00.6:profile:output:analog-stereo+input:analog-stereo=["analog-output-speaker"]
+alsa_card.pci-0000_06_00.6:output:analog-output-headphones={"channelVolumes":[1.000000, 1.000000], "mute":false, "latencyOffsetNsec":0, "channelMap":["FL", "FR"]}
+bluez_card.41_42_B7_0A_EF_DD:output:headset-output={"latencyOffsetNsec":0, "mute":false, "channelMap":["FL", "FR"], "channelVolumes":[0.008000, 0.008000]}
+bluez_card.41_42_B7_0A_EF_DD:profile:a2dp-sink=["headset-output"]
+alsa_card.usb-GeneralPlus_USB_Audio_Device-00:output:analog-output-speaker={"mute":false, "latencyOffsetNsec":0, "channelVolumes":[1.000000, 1.000000], "channelMap":["FL", "FR"]}
+alsa_card.usb-GeneralPlus_USB_Audio_Device-00:profile:output:analog-stereo+input:mono-fallback=["analog-output-speaker"]
+alsa_card.usb-GeneralPlus_USB_Audio_Device-00:input:analog-input-mic={"mute":false, "channelMap":["MONO"], "latencyOffsetNsec":0, "channelVolumes":[1.124842]}
+alsa_card.pci-0000_06_00.6:output:\oOut\c\sSpeaker={"mute":false, "latencyOffsetNsec":0, "channelMap":["FL", "FR"], "channelVolumes":[1.000000, 1.000000]}
+alsa_card.pci-0000_06_00.6:profile:HiFi\s(Mic1,\sMic2,\sSpeaker)=["[Out] Speaker"]
+alsa_card.pci-0000_06_00.6:input:\oIn\c\sMic1={"channelVolumes":[0.000000, 0.000000], "mute":false, "channelMap":["FL", "FR"], "latencyOffsetNsec":0}

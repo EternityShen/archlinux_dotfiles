@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Bongo Cat
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/3419430
+Icon=steam_icon_3419430
+Terminal=false
+Type=Application
+Categories=Game;

@@ -1,0 +1,7 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
+avatars.githubusercontent.com	0	0	1781876322	31557600
+api.mason-registry.dev	0	0	1781240056	63072000
+raw.githubusercontent.com	0	0	1783519424	31536000
+github.com	0	1	1786517474	31536000

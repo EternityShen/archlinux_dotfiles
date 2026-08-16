@@ -1,0 +1,15 @@
+singleton OverviewState 1.0 OverviewState.qml
+singleton OverviewConfig 1.0 Config.qml
+singleton HyprlandData 1.0 HyprlandData.qml
+singleton HyprlandDispatch 1.0 HyprlandDispatch.qml
+singleton StashState 1.0 StashState.qml
+singleton ClusterPositionState 1.0 ClusterPositionState.qml
+singleton WorkspaceVisibilityState 1.0 WorkspaceVisibilityState.qml
+Overview 1.0 Overview.qml
+OverviewWindow 1.0 OverviewWindow.qml
+OverviewWidget 1.0 OverviewWidget.qml
+BoardModeWidget 1.0 BoardModeWidget.qml
+WorkspaceCluster 1.0 WorkspaceCluster.qml
+FirstRunChoice 1.0 FirstRunChoice.qml
+StashTray 1.0 StashTray.qml
+StashTrayContainer 1.0 StashTrayContainer.qml

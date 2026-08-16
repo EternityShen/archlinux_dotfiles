@@ -1,0 +1,34 @@
+#!/bin/sh
+# hypr-overview wrapper - auto-detaches for launch, sync for IPC
+# Aliases: hyo, hypr-overview (for pkill compatibility)
+
+QS_PATH="$HOME/.config/quickshell/hypr-overview"
+PROCESS_NAME="hypr-overview|hyo"  # Used in exec -a and pkill
+
+# Kill function - terminates hypr-overview processes
+kill_existing() {
+    pkill -f "$PROCESS_NAME.*quickshell" 2>/dev/null
+}
+
+# Handle commands
+case "$1" in
+    reload)
+        kill_existing
+        sleep 0.2  # Brief pause for clean shutdown
+        shift
+        exec "$0" "$@"  # Relaunch (recursive call to this script)
+        ;;
+    kill|stop)
+        kill_existing
+        exit 0
+        ;;
+    ipc)
+        # IPC calls need synchronous execution for output
+        exec qs -p "$QS_PATH" "$@"
+        ;;
+    *)
+        # Launch mode: detach from terminal
+        # exec -a sets argv[0] so both pkill -f hyo and pkill -f hypr-overview work
+        setsid -f sh -c "exec -a '$PROCESS_NAME' qs -p '$QS_PATH' $*" &>/dev/null
+        ;;
+esac

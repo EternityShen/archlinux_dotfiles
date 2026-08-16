@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "args=($@) WAYBAR_WS=$WAYBAR_WORKSPACE_ID" >> /tmp/waybar_test.log

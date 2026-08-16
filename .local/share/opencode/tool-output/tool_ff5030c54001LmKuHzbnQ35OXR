@@ -1,0 +1,1386 @@
+Borders in ratatui::widgets - Rust
+
+  
+
+[Docs.rs](/)
+
+-   [ratatui-0.30.2](# "A library that's all about cooking up terminal user interfaces")
+    
+    -   ratatui 0.30.2
+    -   [Permalink](/ratatui/0.30.2/ratatui/widgets/struct.Borders.html "Get a link to this specific version")
+    -   [Docs.rs crate page](/crate/ratatui/latest "See ratatui in docs.rs")
+    -   [MIT](https://spdx.org/licenses/MIT)
+    -   19 June 2026
+    
+    -   Links
+    -   [Homepage](https://ratatui.rs)
+    -   [Repository](https://github.com/ratatui/ratatui)
+    -   [crates.io](https://crates.io/crates/ratatui "See ratatui in crates.io")
+    -   [Source](/crate/ratatui/latest/source/ "Browse source of ratatui-0.30.2")
+    
+    -   Owners
+    -   [orhun](https://crates.io/users/orhun)
+    -   [kdheepak](https://crates.io/users/kdheepak)
+    -   [joshka](https://crates.io/users/joshka)
+    -   [github:ratatui:core](https://crates.io/teams/github:ratatui:core)
+    
+    -   Dependencies
+    -   -   [document-features ^0.2 *normal* *optional*](/document-features/^0.2/)
+        -   [instability ^0.3 *normal*](/instability/^0.3/)
+        -   [palette ^0.7.6 *normal* *optional*](/palette/^0.7.6/)
+        -   [ratatui-core ^0.1.2 *normal*](/ratatui-core/^0.1.2/)
+        -   [ratatui-crossterm ^0.1.2 *normal* *optional*](/ratatui-crossterm/^0.1.2/)
+        -   [ratatui-macros ^0.7.2 *normal* *optional*](/ratatui-macros/^0.7.2/)
+        -   [ratatui-termina ^0.1.0 *normal* *optional*](/ratatui-termina/^0.1.0/)
+        -   [ratatui-termwiz ^0.1.2 *normal* *optional*](/ratatui-termwiz/^0.1.2/)
+        -   [ratatui-widgets ^0.3.2 *normal*](/ratatui-widgets/^0.3.2/)
+        -   [serde ^1 *normal* *optional*](/serde/^1/)
+        -   [criterion ^0.8 *dev*](/criterion/^0.8/)
+        -   [crossterm ^0.29 *dev*](/crossterm/^0.29/)
+        -   [fakeit ^1 *dev*](/fakeit/^1/)
+        -   [indoc ^2 *dev*](/indoc/^2/)
+        -   [pretty\_assertions ^1 *dev*](/pretty_assertions/^1/)
+        -   [rand ^0.10 *dev*](/rand/^0.10/)
+        -   [rstest ^0.26 *dev*](/rstest/^0.26/)
+        -   [serde\_json ^1 *dev*](/serde_json/^1/)
+        -   [time ^0.3.47 *dev*](/time/^0.3.47/)
+        -   [ratatui-termion ^0.1.2 *normal* *optional*](/ratatui-termion/^0.1.2/)
+        
+    
+    -   Versions
+    
+    -   [**100%** of the crate is documented](/crate/ratatui/latest)
+    
+-   [Platform](#)
+    -   [x86\_64-unknown-linux-gnu](/crate/ratatui/latest/target-redirect/ratatui/widgets/struct.Borders.html)
+-   [Feature flags](/crate/ratatui/latest/features "Browse available feature flags of ratatui-0.30.2")
+
+-   [docs.rs](#)
+    -   [About docs.rs](/about)
+    -   [Badges](/about/badges)
+    -   [Builds](/about/builds)
+    -   [Metadata](/about/metadata)
+    -   [Shorthand URLs](/about/redirections)
+    -   [Download](/about/download)
+    -   [Rustdoc JSON](/about/rustdoc-json)
+    -   [Build queue](/releases/queue)
+    -   [Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+-   [Rust](#)
+    -   [Rust website](https://www.rust-lang.org/)
+    -   [The Book](https://doc.rust-lang.org/book/)
+    -   [Standard Library API Reference](https://doc.rust-lang.org/std/)
+    -   [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+    -   [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+    -   [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+[Skip to main content](#main-content)
+
+## [Borders](#)
+
+[![logo](https://raw.githubusercontent.com/ratatui/ratatui/main/assets/logo.png)](../../ratatui/index.html)
+
+## [ratatui](../../ratatui/index.html)0.30.2
+
+## [Borders](#)
+
+### [Associated Constants](#implementations)
+
+-   [ALL](#associatedconstant.ALL "ALL")
+-   [BOTTOM](#associatedconstant.BOTTOM "BOTTOM")
+-   [LEFT](#associatedconstant.LEFT "LEFT")
+-   [NONE](#associatedconstant.NONE "NONE")
+-   [RIGHT](#associatedconstant.RIGHT "RIGHT")
+-   [TOP](#associatedconstant.TOP "TOP")
+
+### [Associated Functions](#implementations)
+
+-   [empty](#method.empty "empty")
+-   [all](#method.all "all")
+-   [from\_bits](#method.from_bits "from_bits")
+-   [from\_bits\_truncate](#method.from_bits_truncate "from_bits_truncate")
+-   [from\_bits\_retain](#method.from_bits_retain "from_bits_retain")
+-   [from\_name](#method.from_name "from_name")
+
+### [Methods](#implementations)
+
+-   [bits](#method.bits "bits")
+-   [complement](#method.complement "complement")
+-   [contains](#method.contains "contains")
+-   [difference](#method.difference "difference")
+-   [insert](#method.insert "insert")
+-   [intersection](#method.intersection "intersection")
+-   [intersects](#method.intersects "intersects")
+-   [is\_all](#method.is_all "is_all")
+-   [is\_empty](#method.is_empty "is_empty")
+-   [iter](#method.iter "iter")
+-   [iter\_names](#method.iter_names "iter_names")
+-   [remove](#method.remove "remove")
+-   [set](#method.set "set")
+-   [symmetric\_difference](#method.symmetric_difference "symmetric_difference")
+-   [toggle](#method.toggle "toggle")
+-   [union](#method.union "union")
+
+### [Trait Implementations](#trait-implementations)
+
+-   [Binary](#impl-Binary-for-Borders "Binary")
+-   [BitAnd](#impl-BitAnd-for-Borders "BitAnd")
+-   [BitAndAssign](#impl-BitAndAssign-for-Borders "BitAndAssign")
+-   [BitOr](#impl-BitOr-for-Borders "BitOr")
+-   [BitOrAssign](#impl-BitOrAssign-for-Borders "BitOrAssign")
+-   [BitXor](#impl-BitXor-for-Borders "BitXor")
+-   [BitXorAssign](#impl-BitXorAssign-for-Borders "BitXorAssign")
+-   [Clone](#impl-Clone-for-Borders "Clone")
+-   [Copy](#impl-Copy-for-Borders "Copy")
+-   [Debug](#impl-Debug-for-Borders "Debug")
+-   [Default](#impl-Default-for-Borders "Default")
+-   [Deserialize<'de>](#impl-Deserialize%3C'de%3E-for-Borders "Deserialize<'de>")
+-   [Eq](#impl-Eq-for-Borders "Eq")
+-   [Extend<Borders>](#impl-Extend%3CBorders%3E-for-Borders "Extend<Borders>")
+-   [Flags](#impl-Flags-for-Borders "Flags")
+-   [FromIterator<Borders>](#impl-FromIterator%3CBorders%3E-for-Borders "FromIterator<Borders>")
+-   [Hash](#impl-Hash-for-Borders "Hash")
+-   [IntoIterator](#impl-IntoIterator-for-Borders "IntoIterator")
+-   [LowerHex](#impl-LowerHex-for-Borders "LowerHex")
+-   [Not](#impl-Not-for-Borders "Not")
+-   [Octal](#impl-Octal-for-Borders "Octal")
+-   [PartialEq](#impl-PartialEq-for-Borders "PartialEq")
+-   [Serialize](#impl-Serialize-for-Borders "Serialize")
+-   [StructuralPartialEq](#impl-StructuralPartialEq-for-Borders "StructuralPartialEq")
+-   [Sub](#impl-Sub-for-Borders "Sub")
+-   [SubAssign](#impl-SubAssign-for-Borders "SubAssign")
+-   [UpperHex](#impl-UpperHex-for-Borders "UpperHex")
+
+### [Auto Trait Implementations](#synthetic-implementations)
+
+-   [Freeze](#impl-Freeze-for-Borders "Freeze")
+-   [RefUnwindSafe](#impl-RefUnwindSafe-for-Borders "RefUnwindSafe")
+-   [Send](#impl-Send-for-Borders "Send")
+-   [Sync](#impl-Sync-for-Borders "Sync")
+-   [Unpin](#impl-Unpin-for-Borders "Unpin")
+-   [UnsafeUnpin](#impl-UnsafeUnpin-for-Borders "UnsafeUnpin")
+-   [UnwindSafe](#impl-UnwindSafe-for-Borders "UnwindSafe")
+
+### [Blanket Implementations](#blanket-implementations)
+
+-   [AdaptInto<D, Swp, Dwp, T>](#impl-AdaptInto%3CD,+Swp,+Dwp,+T%3E-for-S "AdaptInto<D, Swp, Dwp, T>")
+-   [Any](#impl-Any-for-T "Any")
+-   [ArraysFrom<C>](#impl-ArraysFrom%3CC%3E-for-T "ArraysFrom<C>")
+-   [ArraysInto<C>](#impl-ArraysInto%3CC%3E-for-T "ArraysInto<C>")
+-   [Borrow<T>](#impl-Borrow%3CT%3E-for-T "Borrow<T>")
+-   [BorrowMut<T>](#impl-BorrowMut%3CT%3E-for-T "BorrowMut<T>")
+-   [Cam16IntoUnclamped<WpParam, T>](#impl-Cam16IntoUnclamped%3CWpParam,+T%3E-for-U "Cam16IntoUnclamped<WpParam, T>")
+-   [CloneToUninit](#impl-CloneToUninit-for-T "CloneToUninit")
+-   [ComponentsFrom<C>](#impl-ComponentsFrom%3CC%3E-for-T "ComponentsFrom<C>")
+-   [DeserializeOwned](#impl-DeserializeOwned-for-T "DeserializeOwned")
+-   [Equivalent<K>](#impl-Equivalent%3CK%3E-for-Q "Equivalent<K>")
+-   [From<T>](#impl-From%3CT%3E-for-T "From<T>")
+-   [FromAngle<T>](#impl-FromAngle%3CT%3E-for-T "FromAngle<T>")
+-   [FromStimulus<U>](#impl-FromStimulus%3CU%3E-for-T "FromStimulus<U>")
+-   [Into<U>](#impl-Into%3CU%3E-for-T "Into<U>")
+-   [IntoAngle<U>](#impl-IntoAngle%3CU%3E-for-T "IntoAngle<U>")
+-   [IntoCam16Unclamped<WpParam, T>](#impl-IntoCam16Unclamped%3CWpParam,+T%3E-for-U "IntoCam16Unclamped<WpParam, T>")
+-   [IntoColor<U>](#impl-IntoColor%3CU%3E-for-T "IntoColor<U>")
+-   [IntoColorUnclamped<U>](#impl-IntoColorUnclamped%3CU%3E-for-T "IntoColorUnclamped<U>")
+-   [IntoEither](#impl-IntoEither-for-T "IntoEither")
+-   [IntoStimulus<T>](#impl-IntoStimulus%3CT%3E-for-T "IntoStimulus<T>")
+-   [Same](#impl-Same-for-T "Same")
+-   [ToOwned](#impl-ToOwned-for-T "ToOwned")
+-   [TryComponentsInto<C>](#impl-TryComponentsInto%3CC%3E-for-T "TryComponentsInto<C>")
+-   [TryFrom<U>](#impl-TryFrom%3CU%3E-for-T "TryFrom<U>")
+-   [TryInto<U>](#impl-TryInto%3CU%3E-for-T "TryInto<U>")
+-   [TryIntoColor<U>](#impl-TryIntoColor%3CU%3E-for-T "TryIntoColor<U>")
+-   [UintsFrom<C>](#impl-UintsFrom%3CC%3E-for-U "UintsFrom<C>")
+-   [UintsInto<C>](#impl-UintsInto%3CC%3E-for-U "UintsInto<C>")
+
+## [In ratatui::widgets](index.html)
+
+[ratatui](../index.html)::[widgets](index.html)
+
+# Struct Borders Copy item path
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+```
+pub struct Borders(/* private fields */);
+```
+
+Expand description
+
+Bitflags that can be composed to set the visible borders essentially on the block widget.
+
+## Implementations[§](#implementations)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Borders)
+
+### impl [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const [TOP](#associatedconstant.TOP): [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Show the top border
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const [RIGHT](#associatedconstant.RIGHT): [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Show the right border
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const [BOTTOM](#associatedconstant.BOTTOM): [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Show the bottom border
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const [LEFT](#associatedconstant.LEFT): [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Show the left border
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const [ALL](#associatedconstant.ALL): [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Show all borders
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Borders-1)
+
+### impl [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [empty](#method.empty)() -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Get a flags value with all bits unset.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [all](#method.all)() -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Get a flags value with all known bits set.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [bits](#method.bits)(&self) -> [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)
+
+Get the underlying bits value.
+
+The returned value is exactly the bits set in this flags value.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [from\_bits](#method.from_bits)(bits: [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>
+
+Convert from a bits value.
+
+This method will return `None` if any unknown bits are set.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [from\_bits\_truncate](#method.from_bits_truncate)(bits: [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Convert from a bits value, unsetting any unknown bits.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [from\_bits\_retain](#method.from_bits_retain)(bits: [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Convert from a bits value exactly.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub fn [from\_name](#method.from_name)(name: &[str](https://doc.rust-lang.org/nightly/std/primitive.str.html)) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>
+
+Get a flags value with the bits of a flag with the given name set.
+
+This method will return `None` if `name` is empty or doesn’t correspond to any named flag.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [is\_empty](#method.is_empty)(&self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Whether all bits in `self` are unset.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [is\_all](#method.is_all)(&self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Whether all known bits in this flags value are set.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [intersects](#method.intersects)(&self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Whether any set bits in `other` are also set in `self`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [contains](#method.contains)(&self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Whether all set bits in `other` are also set in `self`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub fn [insert](#method.insert)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The bitwise or (`|`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub fn [remove](#method.remove)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The intersection of `self` with the complement of `other` (`&!`).
+
+This method is not equivalent to `self & !other` when `other` has unknown bits set. `remove` won’t truncate `other`, but the `!` operator will.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub fn [toggle](#method.toggle)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The bitwise exclusive-or (`^`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub fn [set](#method.set)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"), value: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html))
+
+Call `insert` when `value` is `true` or `remove` when `value` is `false`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [intersection](#method.intersection)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise and (`&`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [union](#method.union)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise or (`|`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [difference](#method.difference)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The intersection of `self` with the complement of `other` (`&!`).
+
+This method is not equivalent to `self & !other` when `other` has unknown bits set. `difference` won’t truncate `other`, but the `!` operator will.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [symmetric\_difference](#method.symmetric_difference)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise exclusive-or (`^`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [complement](#method.complement)(self) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise negation (`!`) of the bits in `self`, truncating the result.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Borders-2)
+
+### impl [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [iter](#method.iter)(&self) -> [Iter](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.Iter.html "struct bitflags::iter::Iter")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>
+
+Yield a set of contained flags values.
+
+Each yielded flags value will correspond to a defined named flag. Any unknown bits will be yielded together as a final flags value.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)
+
+#### pub const fn [iter\_names](#method.iter_names)(&self) -> [IterNames](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.IterNames.html "struct bitflags::iter::IterNames")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>
+
+Yield a set of contained named flags values.
+
+This method is like [`iter`](#method.iter), except only yields bits in contained named flags. Any unknown bits, or bits not corresponding to a contained flag will not be yielded.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#26)[§](#impl-Borders-3)
+
+### impl [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#28)
+
+#### pub const [NONE](#associatedconstant.NONE): [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Show no border (default)
+
+## Trait Implementations[§](#trait-implementations)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Binary-for-Borders)
+
+### impl [Binary](https://doc.rust-lang.org/nightly/core/fmt/trait.Binary.html "trait core::fmt::Binary") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.fmt)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Binary.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.Binary.html#tymethod.fmt)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-BitAnd-for-Borders)
+
+### impl [BitAnd](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitAnd.html "trait core::ops::bit::BitAnd") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bitand)
+
+#### fn [bitand](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitAnd.html#tymethod.bitand)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise and (`&`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Output)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitAnd.html#associatedtype.Output) = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The resulting type after applying the `&` operator.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-BitAndAssign-for-Borders)
+
+### impl [BitAndAssign](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitAndAssign.html "trait core::ops::bit::BitAndAssign") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bitand_assign)
+
+#### fn [bitand\_assign](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitAndAssign.html#tymethod.bitand_assign)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The bitwise and (`&`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-BitOr-for-Borders)
+
+### impl [BitOr](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitOr.html "trait core::ops::bit::BitOr") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bitor)
+
+#### fn [bitor](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitOr.html#tymethod.bitor)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise or (`|`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Output-1)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitOr.html#associatedtype.Output) = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The resulting type after applying the `|` operator.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-BitOrAssign-for-Borders)
+
+### impl [BitOrAssign](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitOrAssign.html "trait core::ops::bit::BitOrAssign") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bitor_assign)
+
+#### fn [bitor\_assign](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitOrAssign.html#tymethod.bitor_assign)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The bitwise or (`|`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-BitXor-for-Borders)
+
+### impl [BitXor](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitXor.html "trait core::ops::bit::BitXor") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bitxor)
+
+#### fn [bitxor](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitXor.html#tymethod.bitxor)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise exclusive-or (`^`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Output-2)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitXor.html#associatedtype.Output) = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The resulting type after applying the `^` operator.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-BitXorAssign-for-Borders)
+
+### impl [BitXorAssign](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitXorAssign.html "trait core::ops::bit::BitXorAssign") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bitxor_assign)
+
+#### fn [bitxor\_assign](https://doc.rust-lang.org/nightly/core/ops/bit/trait.BitXorAssign.html#tymethod.bitxor_assign)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The bitwise exclusive-or (`^`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-Clone-for-Borders)
+
+### impl [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#method.clone)
+
+#### fn [clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)(&self) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Returns a duplicate of the value. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone)
+
+1.0.0 (const: [unstable](https://github.com/rust-lang/rust/issues/142757 "Tracking issue for const_clone")) · [Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#245-247)[§](#method.clone_from)
+
+#### fn [clone\_from](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)(&mut self, source: &Self)
+
+Performs copy-assignment from `source`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-Copy-for-Borders)
+
+### impl [Copy](https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html "trait core::marker::Copy") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#178)[§](#impl-Debug-for-Borders)
+
+### impl [Debug](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html "trait core::fmt::Debug") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#183)[§](#method.fmt-1)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Display the Borders bitflags as a list of names.
+
+`Borders::NONE` is displayed as `NONE` and `Borders::ALL` is displayed as `ALL`. If multiple flags are set, they are otherwise displayed separated by a pipe character.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-Default-for-Borders)
+
+### impl [Default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html "trait core::default::Default") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#method.default)
+
+#### fn [default](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)() -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Returns the “default value” for a type. [Read more](https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#11)[§](#impl-Deserialize%3C'de%3E-for-Borders)
+
+### impl<'de> [Deserialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html "trait serde_core::de::Deserialize")<'de> for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#11)[§](#method.deserialize)
+
+#### fn [deserialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html#tymethod.deserialize)<\_\_D>( \_\_deserializer: \_\_D, ) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders"), <\_\_D as [Deserializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserializer.html "trait serde_core::de::Deserializer")<'de>>::[Error](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserializer.html#associatedtype.Error "type serde_core::de::Deserializer::Error")\>
+
+where \_\_D: [Deserializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserializer.html "trait serde_core::de::Deserializer")<'de>,
+
+Deserialize this value from the given Serde deserializer. [Read more](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html#tymethod.deserialize)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-Eq-for-Borders)
+
+### impl [Eq](https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html "trait core::cmp::Eq") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Extend%3CBorders%3E-for-Borders)
+
+### impl [Extend](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html "trait core::iter::traits::collect::Extend")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\> for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.extend)
+
+#### fn [extend](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#tymethod.extend)<T>(&mut self, iterator: T)
+
+where T: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")<Item = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>,
+
+The bitwise or (`|`) of the bits in each flags value.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/iter/traits/collect.rs.html#420)[§](#method.extend_one)
+
+#### fn [extend\_one](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#method.extend_one)(&mut self, item: A)
+
+🔬This is a nightly-only experimental API. (`extend_one`)
+
+Extends a collection with exactly one element.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/iter/traits/collect.rs.html#428)[§](#method.extend_reserve)
+
+#### fn [extend\_reserve](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#method.extend_reserve)(&mut self, additional: [usize](https://doc.rust-lang.org/nightly/std/primitive.usize.html))
+
+🔬This is a nightly-only experimental API. (`extend_one`)
+
+Reserves capacity in a collection for the given number of additional elements. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.Extend.html#method.extend_reserve)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Flags-for-Borders)
+
+### impl [Flags](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html "trait bitflags::traits::Flags") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedconstant.FLAGS)
+
+#### const [FLAGS](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedconstant.FLAGS): &'static \[[Flag](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/struct.Flag.html "struct bitflags::traits::Flag")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>\]
+
+The set of defined flags.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Bits)
+
+#### type [Bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedtype.Bits) = [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)
+
+The underlying bits type.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.bits-1)
+
+#### fn [bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#tymethod.bits)(&self) -> [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)
+
+Get the underlying bits value. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#tymethod.bits)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.from_bits_retain-1)
+
+#### fn [from\_bits\_retain](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#tymethod.from_bits_retain)(bits: [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html)) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Convert from a bits value exactly.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.all_named)
+
+#### fn [all\_named](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.all_named)() -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+Get a flags value with all bits from named flags set. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.all_named)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#140)[§](#method.empty-1)
+
+#### fn [empty](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.empty)() -> Self
+
+Get a flags value with all bits unset.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#145)[§](#method.all-1)
+
+#### fn [all](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.all)() -> Self
+
+Get a flags value with all known bits set.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#168)[§](#method.known_bits)
+
+#### fn [known\_bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.known_bits)(&self) -> Self::[Bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedtype.Bits "type bitflags::traits::Flags::Bits")
+
+Get the known bits from a flags value.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#173)[§](#method.unknown_bits)
+
+#### fn [unknown\_bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.unknown_bits)(&self) -> Self::[Bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedtype.Bits "type bitflags::traits::Flags::Bits")
+
+Get the unknown bits from a flags value.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#178)[§](#method.contains_unknown_bits)
+
+#### fn [contains\_unknown\_bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.contains_unknown_bits)(&self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+This method will return `true` if any unknown bits are set.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#190)[§](#method.from_bits-1)
+
+#### fn [from\_bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.from_bits)(bits: Self::[Bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedtype.Bits "type bitflags::traits::Flags::Bits")) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<Self>
+
+Convert from a bits value. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.from_bits)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#201)[§](#method.from_bits_truncate-1)
+
+#### fn [from\_bits\_truncate](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.from_bits_truncate)(bits: Self::[Bits](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedtype.Bits "type bitflags::traits::Flags::Bits")) -> Self
+
+Convert from a bits value, unsetting any unknown bits.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#212)[§](#method.from_name-1)
+
+#### fn [from\_name](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.from_name)(name: &[str](https://doc.rust-lang.org/nightly/std/primitive.str.html)) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<Self>
+
+Get a flags value with the bits of a flag with the given name set. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.from_name)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#231)[§](#method.iter-1)
+
+#### fn [iter](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter)(&self) -> [Iter](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.Iter.html "struct bitflags::iter::Iter")<Self>
+
+Yield a set of contained flags values. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#239)[§](#method.iter_names-1)
+
+#### fn [iter\_names](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter_names)(&self) -> [IterNames](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.IterNames.html "struct bitflags::iter::IterNames")<Self>
+
+Yield a set of contained named flags values. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter_names)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#244)[§](#method.iter_defined_names)
+
+#### fn [iter\_defined\_names](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter_defined_names)() -> [IterDefinedNames](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.IterDefinedNames.html "struct bitflags::iter::IterDefinedNames")<Self>
+
+Yield a set of all named flags defined by [`Self::FLAGS`](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#associatedconstant.FLAGS "associated constant bitflags::traits::Flags::FLAGS").
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#252)[§](#method.iter_equal_names)
+
+#### fn [iter\_equal\_names](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter_equal_names)(&self) -> [IterEqualNames](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.IterEqualNames.html "struct bitflags::iter::IterEqualNames")<Self>
+
+Get an iterator over all defined names for this flags value. [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.iter_equal_names)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#257)[§](#method.is_empty-1)
+
+#### fn [is\_empty](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.is_empty)(&self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Whether all bits in this flags value are unset.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#262)[§](#method.is_all-1)
+
+#### fn [is\_all](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.is_all)(&self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Whether all known bits in this flags value are set.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#269-271)[§](#method.intersects-1)
+
+#### fn [intersects](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.intersects)(&self, other: Self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Whether any set bits in `other` are also set in `self`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#277-279)[§](#method.contains-1)
+
+#### fn [contains](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.contains)(&self, other: Self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Whether all set bits in `other` are also set in `self`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#285-287)[§](#method.truncate)
+
+#### fn [truncate](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.truncate)(&mut self)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Remove any unknown bits from the flags.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#293-295)[§](#method.insert-1)
+
+#### fn [insert](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.insert)(&mut self, other: Self)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+The bitwise or (`|`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#304-306)[§](#method.remove-1)
+
+#### fn [remove](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.remove)(&mut self, other: Self)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+The intersection of `self` with the complement of `other` (`&!`). [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.remove)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#312-314)[§](#method.toggle-1)
+
+#### fn [toggle](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.toggle)(&mut self, other: Self)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+The bitwise exclusive-or (`^`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#320-322)[§](#method.set-1)
+
+#### fn [set](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.set)(&mut self, other: Self, value: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html))
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Call [`Flags::insert`](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.insert "method bitflags::traits::Flags::insert") when `value` is `true` or [`Flags::remove`](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.remove "method bitflags::traits::Flags::remove") when `value` is `false`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#332-334)[§](#method.clear)
+
+#### fn [clear](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.clear)(&mut self)
+
+where Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Unsets all bits in the flags.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#341)[§](#method.intersection-1)
+
+#### fn [intersection](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.intersection)(self, other: Self) -> Self
+
+The bitwise and (`&`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#347)[§](#method.union-1)
+
+#### fn [union](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.union)(self, other: Self) -> Self
+
+The bitwise or (`|`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#356)[§](#method.difference-1)
+
+#### fn [difference](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.difference)(self, other: Self) -> Self
+
+The intersection of `self` with the complement of `other` (`&!`). [Read more](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.difference)
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#362)[§](#method.symmetric_difference-1)
+
+#### fn [symmetric\_difference](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.symmetric_difference)(self, other: Self) -> Self
+
+The bitwise exclusive-or (`^`) of the bits in `self` and `other`.
+
+[Source](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/src/bitflags/traits.rs.html#368)[§](#method.complement-1)
+
+#### fn [complement](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/traits/trait.Flags.html#method.complement)(self) -> Self
+
+The bitwise negation (`!`) of the bits in `self`, truncating the result.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-FromIterator%3CBorders%3E-for-Borders)
+
+### impl [FromIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.FromIterator.html "trait core::iter::traits::collect::FromIterator")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\> for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.from_iter)
+
+#### fn [from\_iter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.FromIterator.html#tymethod.from_iter)<T>(iterator: T) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+where T: [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")<Item = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>,
+
+The bitwise or (`|`) of the bits in each flags value.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-Hash-for-Borders)
+
+### impl [Hash](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html "trait core::hash::Hash") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#method.hash)
+
+#### fn [hash](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash)<\_\_H>(&self, state: [&mut \_\_H](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+where \_\_H: [Hasher](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"),
+
+Feeds this value into the given [`Hasher`](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"). [Read more](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash)
+
+1.3.0 · [Source](https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#234-236)[§](#method.hash_slice)
+
+#### fn [hash\_slice](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice)<H>(data: &\[Self\], state: [&mut H](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+where H: [Hasher](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"), Self: [Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+Feeds a slice of this type into the given [`Hasher`](https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html "trait core::hash::Hasher"). [Read more](https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-IntoIterator-for-Borders)
+
+### impl [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Item)
+
+#### type [Item](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item) = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The type of the elements being iterated over.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.IntoIter)
+
+#### type [IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter) = [Iter](https://docs.rs/bitflags/1.3.2/x86_64-unknown-linux-gnu/bitflags/iter/struct.Iter.html "struct bitflags::iter::Iter")<[Borders](struct.Borders.html "struct ratatui::widgets::Borders")\>
+
+Which kind of iterator are we turning this into?
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.into_iter)
+
+#### fn [into\_iter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)(self) -> <[Borders](struct.Borders.html "struct ratatui::widgets::Borders") as [IntoIterator](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html "trait core::iter::traits::collect::IntoIterator")\>::[IntoIter](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.IntoIter "type core::iter::traits::collect::IntoIterator::IntoIter")
+
+Creates an iterator from a value. [Read more](https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-LowerHex-for-Borders)
+
+### impl [LowerHex](https://doc.rust-lang.org/nightly/core/fmt/trait.LowerHex.html "trait core::fmt::LowerHex") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.fmt-2)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.LowerHex.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.LowerHex.html#tymethod.fmt)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Not-for-Borders)
+
+### impl [Not](https://doc.rust-lang.org/nightly/core/ops/bit/trait.Not.html "trait core::ops::bit::Not") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.not)
+
+#### fn [not](https://doc.rust-lang.org/nightly/core/ops/bit/trait.Not.html#tymethod.not)(self) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The bitwise negation (`!`) of the bits in `self`, truncating the result.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Output-3)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/bit/trait.Not.html#associatedtype.Output) = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The resulting type after applying the `!` operator.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Octal-for-Borders)
+
+### impl [Octal](https://doc.rust-lang.org/nightly/core/fmt/trait.Octal.html "trait core::fmt::Octal") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.fmt-3)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.Octal.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.Octal.html#tymethod.fmt)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-PartialEq-for-Borders)
+
+### impl [PartialEq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html "trait core::cmp::PartialEq") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#method.eq)
+
+#### fn [eq](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq)(&self, other: &[Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `self` and `other` values to be equal, and is used by `==`.
+
+1.0.0 (const: [unstable](https://github.com/rust-lang/rust/issues/143800 "Tracking issue for const_cmp")) · [Source](https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#263)[§](#method.ne)
+
+#### fn [ne](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne)(&self, other: [&Rhs](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Tests for `!=`. The default implementation is almost always sufficient, and should not be overridden without very good reason.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#11)[§](#impl-Serialize-for-Borders)
+
+### impl [Serialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serialize.html "trait serde_core::ser::Serialize") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#11)[§](#method.serialize)
+
+#### fn [serialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serialize.html#tymethod.serialize)<\_\_S>( &self, \_\_serializer: \_\_S, ) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<<\_\_S as [Serializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html "trait serde_core::ser::Serializer")\>::[Ok](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html#associatedtype.Ok "type serde_core::ser::Serializer::Ok"), <\_\_S as [Serializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html "trait serde_core::ser::Serializer")\>::[Error](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html#associatedtype.Error "type serde_core::ser::Serializer::Error")\>
+
+where \_\_S: [Serializer](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serializer.html "trait serde_core::ser::Serializer"),
+
+Serialize this value into the given Serde serializer. [Read more](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/ser/trait.Serialize.html#tymethod.serialize)
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#10)[§](#impl-StructuralPartialEq-for-Borders)
+
+### impl [StructuralPartialEq](https://doc.rust-lang.org/nightly/core/marker/trait.StructuralPartialEq.html "trait core::marker::StructuralPartialEq") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-Sub-for-Borders)
+
+### impl [Sub](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Sub.html "trait core::ops::arith::Sub") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.sub)
+
+#### fn [sub](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Sub.html#tymethod.sub)(self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders")) -> [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The intersection of `self` with the complement of `other` (`&!`).
+
+This method is not equivalent to `self & !other` when `other` has unknown bits set. `difference` won’t truncate `other`, but the `!` operator will.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#associatedtype.Output-4)
+
+#### type [Output](https://doc.rust-lang.org/nightly/core/ops/arith/trait.Sub.html#associatedtype.Output) = [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+The resulting type after applying the `-` operator.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-SubAssign-for-Borders)
+
+### impl [SubAssign](https://doc.rust-lang.org/nightly/core/ops/arith/trait.SubAssign.html "trait core::ops::arith::SubAssign") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.sub_assign)
+
+#### fn [sub\_assign](https://doc.rust-lang.org/nightly/core/ops/arith/trait.SubAssign.html#tymethod.sub_assign)(&mut self, other: [Borders](struct.Borders.html "struct ratatui::widgets::Borders"))
+
+The intersection of `self` with the complement of `other` (`&!`).
+
+This method is not equivalent to `self & !other` when `other` has unknown bits set. `difference` won’t truncate `other`, but the `!` operator will.
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#impl-UpperHex-for-Borders)
+
+### impl [UpperHex](https://doc.rust-lang.org/nightly/core/fmt/trait.UpperHex.html "trait core::fmt::UpperHex") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[Source](https://docs.rs/ratatui-widgets/0.3.2/x86_64-unknown-linux-gnu/src/ratatui_widgets/borders.rs.html#8-24)[§](#method.fmt-4)
+
+#### fn [fmt](https://doc.rust-lang.org/nightly/core/fmt/trait.UpperHex.html#tymethod.fmt)(&self, f: &mut [Formatter](https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html "struct core::fmt::Formatter")<'\_>) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html), [Error](https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html "struct core::fmt::Error")\>
+
+Formats the value using the given formatter. [Read more](https://doc.rust-lang.org/nightly/core/fmt/trait.UpperHex.html#tymethod.fmt)
+
+## Auto Trait Implementations[§](#synthetic-implementations)
+
+[§](#impl-Freeze-for-Borders)
+
+### impl [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[§](#impl-RefUnwindSafe-for-Borders)
+
+### impl [RefUnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html "trait core::panic::unwind_safe::RefUnwindSafe") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[§](#impl-Send-for-Borders)
+
+### impl [Send](https://doc.rust-lang.org/nightly/core/marker/trait.Send.html "trait core::marker::Send") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[§](#impl-Sync-for-Borders)
+
+### impl [Sync](https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html "trait core::marker::Sync") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[§](#impl-Unpin-for-Borders)
+
+### impl [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[§](#impl-UnsafeUnpin-for-Borders)
+
+### impl [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+[§](#impl-UnwindSafe-for-Borders)
+
+### impl [UnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html "trait core::panic::unwind_safe::UnwindSafe") for [Borders](struct.Borders.html "struct ratatui::widgets::Borders")
+
+## Blanket Implementations[§](#blanket-implementations)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#205-210)[§](#impl-AdaptInto%3CD,+Swp,+Dwp,+T%3E-for-S)
+
+### impl<S, D, Swp, Dwp, T> [AdaptInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html "trait palette::chromatic_adaptation::AdaptInto")<D, Swp, Dwp, T> for S
+
+where T: [Real](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Real.html "trait palette::num::Real") + [Zero](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Zero.html "trait palette::num::Zero") + [Arithmetics](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/num/trait.Arithmetics.html "trait palette::num::Arithmetics") + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"), Swp: [WhitePoint](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/white_point/trait.WhitePoint.html "trait palette::white_point::WhitePoint")<T>, Dwp: [WhitePoint](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/white_point/trait.WhitePoint.html "trait palette::white_point::WhitePoint")<T>, D: [AdaptFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptFrom.html "trait palette::chromatic_adaptation::AdaptFrom")<S, Swp, Dwp, T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#213)[§](#method.adapt_into_using)
+
+#### fn [adapt\_into\_using](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html#tymethod.adapt_into_using)<M>(self, method: M) -> D
+
+where M: [TransformMatrix](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.TransformMatrix.html "trait palette::chromatic_adaptation::TransformMatrix")<T>,
+
+Convert the source color to the destination color using the specified method.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/chromatic_adaptation.rs.html#196)[§](#method.adapt_into)
+
+#### fn [adapt\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/chromatic_adaptation/trait.AdaptInto.html#method.adapt_into)(self) -> D
+
+Convert the source color to the destination color using the bradford method by default.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#141)[§](#impl-Any-for-T)
+
+### impl<T> [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") for T
+
+where T: 'static + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#142)[§](#method.type_id)
+
+#### fn [type\_id](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)(&self) -> [TypeId](https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html "struct core::any::TypeId")
+
+Gets the `TypeId` of `self`. [Read more](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#271-273)[§](#impl-ArraysFrom%3CC%3E-for-T)
+
+### impl<T, C> [ArraysFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysFrom.html "trait palette::cast::from_into_arrays_traits::ArraysFrom")<C> for T
+
+where C: [IntoArrays](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.IntoArrays.html "trait palette::cast::from_into_arrays_traits::IntoArrays")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#276)[§](#method.arrays_from)
+
+#### fn [arrays\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysFrom.html#tymethod.arrays_from)(colors: C) -> T
+
+Cast a collection of colors into a collection of arrays.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#329-331)[§](#impl-ArraysInto%3CC%3E-for-T)
+
+### impl<T, C> [ArraysInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysInto.html "trait palette::cast::from_into_arrays_traits::ArraysInto")<C> for T
+
+where C: [FromArrays](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.FromArrays.html "trait palette::cast::from_into_arrays_traits::FromArrays")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_arrays_traits.rs.html#334)[§](#method.arrays_into)
+
+#### fn [arrays\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_arrays_traits/trait.ArraysInto.html#tymethod.arrays_into)(self) -> C
+
+Cast this collection of arrays into a collection of colors.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#212)[§](#impl-Borrow%3CT%3E-for-T)
+
+### impl<T> [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#214)[§](#method.borrow)
+
+#### fn [borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Immutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#221)[§](#impl-BorrowMut%3CT%3E-for-T)
+
+### impl<T> [BorrowMut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html "trait core::borrow::BorrowMut")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#222)[§](#method.borrow_mut)
+
+#### fn [borrow\_mut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)(&mut self) -> [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#143-145)[§](#impl-Cam16IntoUnclamped%3CWpParam,+T%3E-for-U)
+
+### impl<WpParam, T, U> [Cam16IntoUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html "trait palette::cam16::Cam16IntoUnclamped")<WpParam, T> for U
+
+where T: [FromCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html "trait palette::cam16::FromCam16Unclamped")<WpParam, U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#147)[§](#associatedtype.Scalar)
+
+#### type [Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#associatedtype.Scalar) = <T as [FromCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html "trait palette::cam16::FromCam16Unclamped")<WpParam, U>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.FromCam16Unclamped.html#associatedtype.Scalar "type palette::cam16::FromCam16Unclamped::Scalar")
+
+The number type that’s used in `parameters` when converting.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#149)[§](#method.cam16_into_unclamped)
+
+#### fn [cam16\_into\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#tymethod.cam16_into_unclamped)( self, parameters: [BakedParameters](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/parameters/struct.BakedParameters.html "struct palette::cam16::parameters::BakedParameters")<WpParam, <U as [Cam16IntoUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html "trait palette::cam16::Cam16IntoUnclamped")<WpParam, T>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16IntoUnclamped.html#associatedtype.Scalar "type palette::cam16::Cam16IntoUnclamped::Scalar")\>, ) -> T
+
+Converts `self` into `C`, using the provided parameters.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#648)[§](#impl-CloneToUninit-for-T)
+
+### impl<T> [CloneToUninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html "trait core::clone::CloneToUninit") for T
+
+where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/clone.rs.html#650)[§](#method.clone_to_uninit)
+
+#### unsafe fn [clone\_to\_uninit](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)(&self, dest: [\*mut](https://doc.rust-lang.org/nightly/std/primitive.pointer.html) [u8](https://doc.rust-lang.org/nightly/std/primitive.u8.html))
+
+🔬This is a nightly-only experimental API. (`clone_to_uninit`)
+
+Performs copy-assignment from `self` to `dest`. [Read more](https://doc.rust-lang.org/nightly/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#414-416)[§](#impl-ComponentsFrom%3CC%3E-for-T)
+
+### impl<T, C> [ComponentsFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.ComponentsFrom.html "trait palette::cast::from_into_components_traits::ComponentsFrom")<C> for T
+
+where C: [IntoComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.IntoComponents.html "trait palette::cast::from_into_components_traits::IntoComponents")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#419)[§](#method.components_from)
+
+#### fn [components\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.ComponentsFrom.html#tymethod.components_from)(colors: C) -> T
+
+Cast a collection of colors into a collection of color components.
+
+[Source](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/src/serde_core/de/mod.rs.html#633)[§](#impl-DeserializeOwned-for-T)
+
+### impl<T> [DeserializeOwned](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.DeserializeOwned.html "trait serde_core::de::DeserializeOwned") for T
+
+where T: for<'de> [Deserialize](https://docs.rs/serde_core/1.0.228/x86_64-unknown-linux-gnu/serde_core/de/trait.Deserialize.html "trait serde_core::de::Deserialize")<'de>,
+
+[Source](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/src/equivalent/lib.rs.html#82-85)[§](#impl-Equivalent%3CK%3E-for-Q)
+
+### impl<Q, K> [Equivalent](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/equivalent/trait.Equivalent.html "trait equivalent::Equivalent")<K> for Q
+
+where Q: [Eq](https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html "trait core::cmp::Eq") + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"), K: [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<Q> + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/src/equivalent/lib.rs.html#88)[§](#method.equivalent)
+
+#### fn [equivalent](https://docs.rs/equivalent/1.0.2/x86_64-unknown-linux-gnu/equivalent/trait.Equivalent.html#tymethod.equivalent)(&self, key: [&K](https://doc.rust-lang.org/nightly/std/primitive.reference.html)) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)
+
+Compare self to `key` and return `true` if they are equal.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#787)[§](#impl-From%3CT%3E-for-T)
+
+### impl<T> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for T
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#790)[§](#method.from)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(t: T) -> T
+
+Returns the argument unchanged.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#65)[§](#impl-FromAngle%3CT%3E-for-T)
+
+### impl<T> [FromAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html "trait palette::angle::FromAngle")<T> for T
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#67)[§](#method.from_angle)
+
+#### fn [from\_angle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html#tymethod.from_angle)(angle: T) -> T
+
+Performs a conversion from `angle`.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#85)[§](#impl-FromStimulus%3CU%3E-for-T)
+
+### impl<T, U> [FromStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.FromStimulus.html "trait palette::stimulus::FromStimulus")<U> for T
+
+where U: [IntoStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html "trait palette::stimulus::IntoStimulus")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#87)[§](#method.from_stimulus)
+
+#### fn [from\_stimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.FromStimulus.html#tymethod.from_stimulus)(other: U) -> T
+
+Converts `other` into `Self`, while performing the appropriate scaling, rounding and clamping.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#769-771)[§](#impl-Into%3CU%3E-for-T)
+
+### impl<T, U> [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<U> for T
+
+where U: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#779)[§](#method.into)
+
+#### fn [into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into)(self) -> U
+
+Calls `U::from(self)`.
+
+That is, this conversion is whatever the implementation of `[From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for U` chooses to do.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#78-80)[§](#impl-IntoAngle%3CU%3E-for-T)
+
+### impl<T, U> [IntoAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.IntoAngle.html "trait palette::angle::IntoAngle")<U> for T
+
+where U: [FromAngle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.FromAngle.html "trait palette::angle::FromAngle")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/angle.rs.html#83)[§](#method.into_angle)
+
+#### fn [into\_angle](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/angle/trait.IntoAngle.html#tymethod.into_angle)(self) -> U
+
+Performs a conversion into `T`.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#114-116)[§](#impl-IntoCam16Unclamped%3CWpParam,+T%3E-for-U)
+
+### impl<WpParam, T, U> [IntoCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html "trait palette::cam16::IntoCam16Unclamped")<WpParam, T> for U
+
+where T: [Cam16FromUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html "trait palette::cam16::Cam16FromUnclamped")<WpParam, U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#118)[§](#associatedtype.Scalar-1)
+
+#### type [Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#associatedtype.Scalar) = <T as [Cam16FromUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html "trait palette::cam16::Cam16FromUnclamped")<WpParam, U>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.Cam16FromUnclamped.html#associatedtype.Scalar "type palette::cam16::Cam16FromUnclamped::Scalar")
+
+The number type that’s used in `parameters` when converting.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cam16.rs.html#120)[§](#method.into_cam16_unclamped)
+
+#### fn [into\_cam16\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#tymethod.into_cam16_unclamped)( self, parameters: [BakedParameters](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/parameters/struct.BakedParameters.html "struct palette::cam16::parameters::BakedParameters")<WpParam, <U as [IntoCam16Unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html "trait palette::cam16::IntoCam16Unclamped")<WpParam, T>>::[Scalar](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cam16/trait.IntoCam16Unclamped.html#associatedtype.Scalar "type palette::cam16::IntoCam16Unclamped::Scalar")\>, ) -> T
+
+Converts `self` into `C`, using the provided parameters.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color.rs.html#129-131)[§](#impl-IntoColor%3CU%3E-for-T)
+
+### impl<T, U> [IntoColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html "trait palette::convert::from_into_color::IntoColor")<U> for T
+
+where U: [FromColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.FromColor.html "trait palette::convert::from_into_color::FromColor")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color.rs.html#134)[§](#method.into_color)
+
+#### fn [into\_color](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html#tymethod.into_color)(self) -> U
+
+Convert into T with values clamped to the color defined bounds [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color/trait.IntoColor.html#tymethod.into_color)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color_unclamped.rs.html#95-97)[§](#impl-IntoColorUnclamped%3CU%3E-for-T)
+
+### impl<T, U> [IntoColorUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html "trait palette::convert::from_into_color_unclamped::IntoColorUnclamped")<U> for T
+
+where U: [FromColorUnclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.FromColorUnclamped.html "trait palette::convert::from_into_color_unclamped::FromColorUnclamped")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/from_into_color_unclamped.rs.html#100)[§](#method.into_color_unclamped)
+
+#### fn [into\_color\_unclamped](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html#tymethod.into_color_unclamped)(self) -> U
+
+Convert into T. The resulting color might be invalid in its color space [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/from_into_color_unclamped/trait.IntoColorUnclamped.html#tymethod.into_color_unclamped)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#64)[§](#impl-IntoEither-for-T)
+
+### impl<T> [IntoEither](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html "trait either::into_either::IntoEither") for T
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#29)[§](#method.into_either)
+
+#### fn [into\_either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)(self, into\_left: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left` is `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either)
+
+[Source](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/src/either/into_either.rs.html#55-57)[§](#method.into_either_with)
+
+#### fn [into\_either\_with](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)<F>(self, into\_left: F) -> [Either](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either")<Self, Self>
+
+where F: [FnOnce](https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html "trait core::ops::function::FnOnce")(&Self) -> [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html),
+
+Converts `self` into a [`Left`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Left "variant either::Either::Left") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") if `into_left(&self)` returns `true`. Converts `self` into a [`Right`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html#variant.Right "variant either::Either::Right") variant of [`Either<Self, Self>`](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/enum.Either.html "enum either::Either") otherwise. [Read more](https://docs.rs/either/1.15.0/x86_64-unknown-linux-gnu/either/into_either/trait.IntoEither.html#method.into_either_with)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#109)[§](#impl-IntoStimulus%3CT%3E-for-T)
+
+### impl<T> [IntoStimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html "trait palette::stimulus::IntoStimulus")<T> for T
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/stimulus.rs.html#111)[§](#method.into_stimulus)
+
+#### fn [into\_stimulus](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/stimulus/trait.IntoStimulus.html#tymethod.into_stimulus)(self) -> T
+
+Converts `self` into `T`, while performing the appropriate scaling, rounding and clamping.
+
+[Source](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#34)[§](#impl-Same-for-T)
+
+### impl<T> [Same](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html "trait typenum::type_operators::Same") for T
+
+[Source](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/src/typenum/type_operators.rs.html#35)[§](#associatedtype.Output-5)
+
+#### type [Output](https://docs.rs/typenum/1.18.0/x86_64-unknown-linux-gnu/typenum/type_operators/trait.Same.html#associatedtype.Output) = T
+
+Should always be `Self`
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#72-74)[§](#impl-ToOwned-for-T)
+
+### impl<T> [ToOwned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html "trait alloc::borrow::ToOwned") for T
+
+where T: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#76)[§](#associatedtype.Owned)
+
+#### type [Owned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#associatedtype.Owned) = T
+
+The resulting type after obtaining ownership.
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#77)[§](#method.to_owned)
+
+#### fn [to\_owned](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned)(&self) -> T
+
+Creates owned data from borrowed data, usually by cloning. [Read more](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned)
+
+[Source](https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#81)[§](#method.clone_into)
+
+#### fn [clone\_into](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into)(&self, target: [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html))
+
+Uses borrowed data to replace owned data, usually by cloning. [Read more](https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#584-586)[§](#impl-TryComponentsInto%3CC%3E-for-T)
+
+### impl<T, C> [TryComponentsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html "trait palette::cast::from_into_components_traits::TryComponentsInto")<C> for T
+
+where C: [TryFromComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html "trait palette::cast::from_into_components_traits::TryFromComponents")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#588)[§](#associatedtype.Error)
+
+#### type [Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#associatedtype.Error) = <C as [TryFromComponents](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html "trait palette::cast::from_into_components_traits::TryFromComponents")<T>>::[Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryFromComponents.html#associatedtype.Error "type palette::cast::from_into_components_traits::TryFromComponents::Error")
+
+The error for when `try_into_colors` fails to cast.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_components_traits.rs.html#591)[§](#method.try_components_into)
+
+#### fn [try\_components\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#tymethod.try_components_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<C, <T as [TryComponentsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html "trait palette::cast::from_into_components_traits::TryComponentsInto")<C>>::[Error](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#associatedtype.Error "type palette::cast::from_into_components_traits::TryComponentsInto::Error")\>
+
+Try to cast this collection of color components into a collection of colors. [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_components_traits/trait.TryComponentsInto.html#tymethod.try_components_into)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#829-831)[§](#impl-TryFrom%3CU%3E-for-T)
+
+### impl<T, U> [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U> for T
+
+where U: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#833)[§](#associatedtype.Error-1)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error) = [Infallible](https://doc.rust-lang.org/nightly/core/convert/enum.Infallible.html "enum core::convert::Infallible")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#836)[§](#method.try_from)
+
+#### fn [try\_from](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#tymethod.try_from)(value: U) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<T, <T as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#813-815)[§](#impl-TryInto%3CU%3E-for-T)
+
+### impl<T, U> [TryInto](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html "trait core::convert::TryInto")<U> for T
+
+where U: [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#817)[§](#associatedtype.Error-2)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#associatedtype.Error) = <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#820)[§](#method.try_into)
+
+#### fn [try\_into](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#tymethod.try_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/try_from_into_color.rs.html#110-112)[§](#impl-TryIntoColor%3CU%3E-for-T)
+
+### impl<T, U> [TryIntoColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html "trait palette::convert::try_from_into_color::TryIntoColor")<U> for T
+
+where U: [TryFromColor](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryFromColor.html "trait palette::convert::try_from_into_color::TryFromColor")<T>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/convert/try_from_into_color.rs.html#115)[§](#method.try_into_color)
+
+#### fn [try\_into\_color](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html#tymethod.try_into_color)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, [OutOfBounds](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/struct.OutOfBounds.html "struct palette::convert::try_from_into_color::OutOfBounds")<U>>
+
+Convert into T, returning ok if the color is inside of its defined range, otherwise an `OutOfBounds` error is returned which contains the unclamped color. [Read more](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/convert/try_from_into_color/trait.TryIntoColor.html#tymethod.try_into_color)
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#325-327)[§](#impl-UintsFrom%3CC%3E-for-U)
+
+### impl<C, U> [UintsFrom](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsFrom.html "trait palette::cast::from_into_uints_traits::UintsFrom")<C> for U
+
+where C: [IntoUints](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.IntoUints.html "trait palette::cast::from_into_uints_traits::IntoUints")<U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#330)[§](#method.uints_from)
+
+#### fn [uints\_from](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsFrom.html#tymethod.uints_from)(colors: C) -> U
+
+Cast a collection of colors into a collection of unsigned integers.
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#401-403)[§](#impl-UintsInto%3CC%3E-for-U)
+
+### impl<C, U> [UintsInto](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsInto.html "trait palette::cast::from_into_uints_traits::UintsInto")<C> for U
+
+where C: [FromUints](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.FromUints.html "trait palette::cast::from_into_uints_traits::FromUints")<U>,
+
+[Source](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/src/palette/cast/from_into_uints_traits.rs.html#406)[§](#method.uints_into)
+
+#### fn [uints\_into](https://docs.rs/palette/0.7.6/x86_64-unknown-linux-gnu/palette/cast/from_into_uints_traits/trait.UintsInto.html#tymethod.uints_into)(self) -> C
+
+Cast this collection of unsigned integers into a collection of colors.

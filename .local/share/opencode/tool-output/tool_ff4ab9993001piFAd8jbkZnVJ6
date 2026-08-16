@@ -1,0 +1,583 @@
+NumberInput in iced\_aw::widget::number\_input - Rust
+
+  
+
+[Docs.rs](/)
+
+-   [iced\_aw-0.14.1](# "Additional widgets for the Iced GUI library")
+    
+    -   iced\_aw 0.14.1
+    -   [Permalink](/iced_aw/0.14.1/iced_aw/widget/number_input/struct.NumberInput.html "Get a link to this specific version")
+    -   [Docs.rs crate page](/crate/iced_aw/latest "See iced_aw in docs.rs")
+    -   [MIT](https://spdx.org/licenses/MIT)
+    -   10 July 2026
+    
+    -   Links
+    -   [Homepage](https://iced.rs)
+    -   [Repository](https://github.com/iced-rs/iced_aw)
+    -   [crates.io](https://crates.io/crates/iced_aw "See iced_aw in crates.io")
+    -   [Source](/crate/iced_aw/latest/source/ "Browse source of iced_aw-0.14.1")
+    
+    -   Owners
+    -   [Kaiden42](https://crates.io/users/Kaiden42)
+    -   [genusistimelord](https://crates.io/users/genusistimelord)
+    -   [Redhawk18](https://crates.io/users/Redhawk18)
+    
+    -   Dependencies
+    -   -   [cfg-if ^1.0 *normal*](/cfg-if/^1.0/)
+        -   [chrono ^0.4.44 *normal* *optional*](/chrono/^0.4.44/)
+        -   [iced\_core ^0.14.0 *normal*](/iced_core/^0.14.0/)
+        -   [iced\_fonts ^0.3.0 *normal*](/iced_fonts/^0.3.0/)
+        -   [iced\_widget ^0.14.2 *normal*](/iced_widget/^0.14.2/)
+        -   [log ^0.4 *normal* *optional*](/log/^0.4/)
+        -   [num-format ^0.4.4 *normal* *optional*](/num-format/^0.4.4/)
+        -   [num-traits ^0.2.19 *normal* *optional*](/num-traits/^0.2.19/)
+        -   [web-time ^1.1.0 *normal*](/web-time/^1.1.0/)
+        -   [env\_logger ^0.11.10 *dev*](/env_logger/^0.11.10/)
+        -   [getrandom ^0.4.2 *dev*](/getrandom/^0.4.2/)
+        -   [iced ^0.14.0 *dev*](/iced/^0.14.0/)
+        -   [iced\_test ^0.14 *dev*](/iced_test/^0.14/)
+        -   [rand ^0.10.1 *dev*](/rand/^0.10.1/)
+        
+    
+    -   Versions
+    
+    -   [**100%** of the crate is documented](/crate/iced_aw/latest)
+    
+-   [Platform](#)
+    -   [x86\_64-unknown-linux-gnu](/crate/iced_aw/latest/target-redirect/iced_aw/widget/number_input/struct.NumberInput.html)
+-   [Feature flags](/crate/iced_aw/latest/features "Browse available feature flags of iced_aw-0.14.1")
+
+-   [docs.rs](#)
+    -   [About docs.rs](/about)
+    -   [Badges](/about/badges)
+    -   [Builds](/about/builds)
+    -   [Metadata](/about/metadata)
+    -   [Shorthand URLs](/about/redirections)
+    -   [Download](/about/download)
+    -   [Rustdoc JSON](/about/rustdoc-json)
+    -   [Build queue](/releases/queue)
+    -   [Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+-   [Rust](#)
+    -   [Rust website](https://www.rust-lang.org/)
+    -   [The Book](https://doc.rust-lang.org/book/)
+    -   [Standard Library API Reference](https://doc.rust-lang.org/std/)
+    -   [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+    -   [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+    -   [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+[Skip to main content](#main-content)
+
+## [NumberInput](#)
+
+## [iced\_aw](../../../iced_aw/index.html)0.14.1
+
+## [NumberInput](#)
+
+### [Sections](#)
+
+-   [Example](#example "Example")
+
+### [Associated Functions](#implementations)
+
+-   [new](#method.new "new")
+
+### [Methods](#implementations)
+
+-   [align\_x](#method.align_x "align_x")
+-   [bounds](#method.bounds "bounds")
+-   [class](#method.class "class")
+-   [content\_width](#method.content_width "content_width")
+-   [font](#method.font "font")
+-   [icon](#method.icon "icon")
+-   [id](#method.id "id")
+-   [ignore\_buttons](#method.ignore_buttons "ignore_buttons")
+-   [ignore\_scroll](#method.ignore_scroll "ignore_scroll")
+-   [input\_style](#method.input_style "input_style")
+-   [line\_height](#method.line_height "line_height")
+-   [on\_input](#method.on_input "on_input")
+-   [on\_input\_maybe](#method.on_input_maybe "on_input_maybe")
+-   [on\_paste](#method.on_paste "on_paste")
+-   [on\_paste\_maybe](#method.on_paste_maybe "on_paste_maybe")
+-   [on\_submit](#method.on_submit "on_submit")
+-   [on\_submit\_maybe](#method.on_submit_maybe "on_submit_maybe")
+-   [padding](#method.padding "padding")
+-   [set\_size](#method.set_size "set_size")
+-   [step](#method.step "step")
+-   [style](#method.style "style")
+-   [width](#method.width "width")
+
+### [Trait Implementations](#trait-implementations)
+
+-   [From<NumberInput<'a, T, Message, Theme, Renderer>>](#impl-From%3CNumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E%3E-for-Element%3C'a,+Message,+Theme,+Renderer%3E "From<NumberInput<'a, T, Message, Theme, Renderer>>")
+-   [Widget<Message, Theme, Renderer>](#impl-Widget%3CMessage,+Theme,+Renderer%3E-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "Widget<Message, Theme, Renderer>")
+
+### [Auto Trait Implementations](#synthetic-implementations)
+
+-   [!RefUnwindSafe](#impl-RefUnwindSafe-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "!RefUnwindSafe")
+-   [!Send](#impl-Send-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "!Send")
+-   [!Sync](#impl-Sync-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "!Sync")
+-   [!UnwindSafe](#impl-UnwindSafe-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "!UnwindSafe")
+-   [Freeze](#impl-Freeze-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "Freeze")
+-   [Unpin](#impl-Unpin-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "Unpin")
+-   [UnsafeUnpin](#impl-UnsafeUnpin-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E "UnsafeUnpin")
+
+### [Blanket Implementations](#blanket-implementations)
+
+-   [Any](#impl-Any-for-T "Any")
+-   [Borrow<T>](#impl-Borrow%3CT%3E-for-T "Borrow<T>")
+-   [BorrowMut<T>](#impl-BorrowMut%3CT%3E-for-T "BorrowMut<T>")
+-   [From<T>](#impl-From%3CT%3E-for-T "From<T>")
+-   [Into<U>](#impl-Into%3CU%3E-for-T "Into<U>")
+-   [TryFrom<U>](#impl-TryFrom%3CU%3E-for-T "TryFrom<U>")
+-   [TryInto<U>](#impl-TryInto%3CU%3E-for-T "TryInto<U>")
+
+## [In iced\_aw::widget::number\_input](index.html)
+
+[iced\_aw](../../index.html)::[widget](../index.html)::[number\_input](index.html)
+
+# Struct NumberInput Copy item path
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#62-98)
+
+```
+pub struct NumberInput<'a, T, Message, Theme = Theme, Renderer = Renderer>where
+    Renderer: Renderer<Font = Font>,
+    Theme: ExtendedCatalog,{ /* private fields */ }
+```
+
+Expand description
+
+A field that can only be filled with numeric type.
+
+## [§](#example)Example
+
+[ⓘ](# "This example is not tested")
+
+```
+#[derive(Debug, Clone)]
+enum Message {
+    NumberInputChanged(u32),
+}
+
+let value = 12;
+let max = 1275;
+
+let input = NumberInput::new(
+    value,
+    0..=max,
+    Message::NumberInputChanged,
+)
+.step(2);
+```
+
+## Implementations[§](#implementations)
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#108-485)[§](#impl-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme, Renderer> [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+where T: [Num](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/trait.Num.html "trait num_traits::Num") + [NumAssignOps](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/trait.NumAssignOps.html "trait num_traits::NumAssignOps") + [PartialOrd](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html "trait core::cmp::PartialOrd") + [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display") + [FromStr](https://doc.rust-lang.org/nightly/core/str/traits/trait.FromStr.html "trait core::str::traits::FromStr") + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") + [Bounded](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/bounds/trait.Bounded.html "trait num_traits::bounds::Bounded") + 'a, Message: [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") + 'a, Renderer: [Renderer](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/trait.Renderer.html "trait iced_core::text::Renderer")<Font = [Font](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/font/struct.Font.html "struct iced_core::font::Font")\>, Theme: [ExtendedCatalog](../../style/number_input/trait.ExtendedCatalog.html "trait iced_aw::style::number_input::ExtendedCatalog"),
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#121-148)
+
+#### pub fn [new](#method.new)<F>(value: [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html), bounds: impl [RangeBounds](https://doc.rust-lang.org/nightly/core/ops/range/trait.RangeBounds.html "trait core::ops::range::RangeBounds")<T>, on\_change: F) -> Self
+
+where F: 'a + [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")(T) -> Message + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"),
+
+Creates a new [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+It expects:
+
+-   the current value
+-   the bound values
+-   a function that produces a message when the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput") changes
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#152-155)
+
+#### pub fn [id](#method.id)(self, id: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Id](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/id/struct.Id.html "struct iced_core::widget::id::Id")\>) -> Self
+
+Sets the [`Id`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/id/struct.Id.html "struct iced_core::widget::id::Id") of the underlying [`TextInput`](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/struct.TextInput.html "struct iced_widget::text_input::TextInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#161-168)
+
+#### pub fn [on\_input](#method.on_input)<F>(self, callback: F) -> Self
+
+where F: 'a + [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")(T) -> Message,
+
+Sets the message that should be produced when some valid text is typed into [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")
+
+If neither this method nor [`on_submit`](struct.NumberInput.html#method.on_submit "method iced_aw::widget::number_input::NumberInput::on_submit") is called, the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput") will be disabled
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#174-192)
+
+#### pub fn [on\_input\_maybe](#method.on_input_maybe)<F>(self, callback: [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<F>) -> Self
+
+where F: 'a + [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")(T) -> Message,
+
+Sets the message that should be produced when some text is typed into the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput"), if `Some`.
+
+If this is `None`, and there is no [`on_submit`](struct.NumberInput.html#method.on_submit "method iced_aw::widget::number_input::NumberInput::on_submit") callback, the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput") will be disabled.
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#197-201)
+
+#### pub fn [on\_submit](#method.on_submit)(self, message: Message) -> Self
+
+Sets the message that should be produced when the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput") is focused and the enter key is pressed.
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#208-228)
+
+#### pub fn [on\_submit\_maybe](#method.on_submit_maybe)(self, message: [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<Message>) -> Self
+
+Sets the message that should be produced when the \[`NumbertInput`\] is focused and the enter key is pressed, if `Some`.
+
+If this is `None`, and there is no [`on_change`](struct.NumberInput.html#method.on_input "method iced_aw::widget::number_input::NumberInput::on_input") callback, the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput") will be disabled.
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#232-239)
+
+#### pub fn [on\_paste](#method.on_paste)<F>(self, callback: F) -> Self
+
+where F: 'a + [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")(T) -> Message,
+
+Sets the message that should be produced when some text is pasted into the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput"), resulting in a valid value
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#243-259)
+
+#### pub fn [on\_paste\_maybe](#method.on_paste_maybe)<F>(self, callback: [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<F>) -> Self
+
+where F: 'a + [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")(T) -> Message,
+
+Sets the message that should be produced when some text is pasted into the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput"), resulting in a valid value, if `Some`
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#267-271)
+
+#### pub fn [font](#method.font)(self, font: Renderer::[Font](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/trait.Renderer.html#associatedtype.Font "type iced_core::text::Renderer::Font")) -> Self
+
+Sets the [`Font`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/font/struct.Font.html "struct iced_core::font::Font") of the [`Text`](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text/type.Text.html "type iced_widget::text::Text").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#275-278)
+
+#### pub fn [icon](#method.icon)(self, icon: [Icon](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/struct.Icon.html "struct iced_widget::text_input::Icon")<Renderer::[Font](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/trait.Renderer.html#associatedtype.Font "type iced_core::text::Renderer::Font")\>) -> Self
+
+Sets the [Icon](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/struct.Icon.html "struct iced_widget::text_input::Icon") of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#282-285)
+
+#### pub fn [width](#method.width)(self, width: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Length](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/length/enum.Length.html "enum iced_core::length::Length")\>) -> Self
+
+Sets the width of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#290-292)
+
+#### pub fn [content\_width](#method.content_width)(self, width: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Length](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/length/enum.Length.html "enum iced_core::length::Length")\>) -> Self
+
+👎Deprecated since 0.11.1:
+
+use `width` instead
+
+Sets the width of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#296-301)
+
+#### pub fn [padding](#method.padding)(self, padding: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Padding](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/padding/struct.Padding.html "struct iced_core::padding::Padding")\>) -> Self
+
+Sets the padding of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#305-310)
+
+#### pub fn [set\_size](#method.set_size)(self, size: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Pixels](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/pixels/struct.Pixels.html "struct iced_core::pixels::Pixels")\>) -> Self
+
+Sets the text size of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#314-317)
+
+#### pub fn [line\_height](#method.line_height)(self, line\_height: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[LineHeight](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/enum.LineHeight.html "enum iced_core::text::LineHeight")\>) -> Self
+
+Sets the [`text::LineHeight`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/enum.LineHeight.html "enum iced_core::text::LineHeight") of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#321-324)
+
+#### pub fn [align\_x](#method.align_x)(self, alignment: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<[Horizontal](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/alignment/enum.Horizontal.html "enum iced_core::alignment::Horizontal")\>) -> Self
+
+Sets the horizontal alignment of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#328-334)
+
+#### pub fn [style](#method.style)(self, style: impl [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")([&Theme](https://doc.rust-lang.org/nightly/std/primitive.reference.html), [Status](../../style/status/enum.Status.html "enum iced_aw::style::status::Status")) -> [Style](../../style/number_input/struct.Style.html "struct iced_aw::style::number_input::Style") + 'a) -> Self
+
+where <Theme as [Catalog](../../style/number_input/trait.Catalog.html "trait iced_aw::style::number_input::Catalog")\>::[Class](../../style/number_input/trait.Catalog.html#associatedtype.Class "type iced_aw::style::number_input::Catalog::Class")<'a>: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[StyleFn](../../style/status/type.StyleFn.html "type iced_aw::style::status::StyleFn")<'a, Theme, [Style](../../style/number_input/struct.Style.html "struct iced_aw::style::number_input::Style")\>>,
+
+Sets the style of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#337-346)
+
+#### pub fn [input\_style](#method.input_style)(self, style: impl [Fn](https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html "trait core::ops::function::Fn")([&Theme](https://doc.rust-lang.org/nightly/std/primitive.reference.html), [Status](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/enum.Status.html "enum iced_widget::text_input::Status")) -> [Style](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/struct.Style.html "struct iced_widget::text_input::Style") + 'a) -> Self
+
+where <Theme as [Catalog](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html "trait iced_widget::text_input::Catalog")\>::[Class](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html#associatedtype.Class "type iced_widget::text_input::Catalog::Class")<'a>: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[StyleFn](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/type.StyleFn.html "type iced_widget::text_input::StyleFn")<'a, Theme>>,
+
+Sets the style of the input of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#350-356)
+
+#### pub fn [class](#method.class)(self, class: impl [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<<Theme as [Catalog](../../style/number_input/trait.Catalog.html "trait iced_aw::style::number_input::Catalog")\>::[Class](../../style/number_input/trait.Catalog.html#associatedtype.Class "type iced_aw::style::number_input::Catalog::Class")<'a>>) -> Self
+
+Sets the class of the input of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#366-371)
+
+#### pub fn [bounds](#method.bounds)(self, bounds: impl [RangeBounds](https://doc.rust-lang.org/nightly/core/ops/range/trait.RangeBounds.html "trait core::ops::range::RangeBounds")<T>) -> Self
+
+Sets the minimum & maximum value (bound) of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+##### [§](#example-1)Example
+
+```
+use iced_aw::widget::number_input;
+// Creates a range from -5 till 5.
+let input: iced_aw::NumberInput<'_, _, _, iced_widget::Theme, iced::Renderer> = number_input(&4 /* my_value */, 0..=4, |_| () /* my_message */).bounds(-5..=5);
+```
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#375-378)
+
+#### pub fn [step](#method.step)(self, step: T) -> Self
+
+Sets the step of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#383-386)
+
+#### pub fn [ignore\_buttons](#method.ignore_buttons)(self, ignore: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> Self
+
+Enable or disable increase and decrease buttons of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput"), by default this is set to `false`.
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#391-394)
+
+#### pub fn [ignore\_scroll](#method.ignore_scroll)(self, ignore: [bool](https://doc.rust-lang.org/nightly/std/primitive.bool.html)) -> Self
+
+Enable or disable mouse scrolling events of the [`NumberInput`](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput"), by default this is set to `false`.
+
+## Trait Implementations[§](#trait-implementations)
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#1210-1221)[§](#impl-From%3CNumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E%3E-for-Element%3C'a,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme, Renderer> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<[NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>> for [Element](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/element/struct.Element.html "struct iced_core::element::Element")<'a, Message, Theme, Renderer>
+
+where T: 'a + [Num](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/trait.Num.html "trait num_traits::Num") + [NumAssignOps](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/trait.NumAssignOps.html "trait num_traits::NumAssignOps") + [PartialOrd](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html "trait core::cmp::PartialOrd") + [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display") + [FromStr](https://doc.rust-lang.org/nightly/core/str/traits/trait.FromStr.html "trait core::str::traits::FromStr") + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") + [Bounded](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/bounds/trait.Bounded.html "trait num_traits::bounds::Bounded"), Message: 'a + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"), Renderer: 'a + [Renderer](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/trait.Renderer.html "trait iced_core::text::Renderer")<Font = [Font](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/font/struct.Font.html "struct iced_core::font::Font")\>, Theme: 'a + [ExtendedCatalog](../../style/number_input/trait.ExtendedCatalog.html "trait iced_aw::style::number_input::ExtendedCatalog"),
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#1218-1220)[§](#method.from)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(num\_input: [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>) -> Self
+
+Converts to this type from the input type.
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#487-1199)[§](#impl-Widget%3CMessage,+Theme,+Renderer%3E-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme, Renderer> [Widget](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget")<Message, Theme, Renderer> for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+where T: [Num](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/trait.Num.html "trait num_traits::Num") + [NumAssignOps](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/trait.NumAssignOps.html "trait num_traits::NumAssignOps") + [PartialOrd](https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html "trait core::cmp::PartialOrd") + [Display](https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html "trait core::fmt::Display") + [FromStr](https://doc.rust-lang.org/nightly/core/str/traits/trait.FromStr.html "trait core::str::traits::FromStr") + [ToString](https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html "trait alloc::string::ToString") + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone") + [Bounded](https://docs.rs/num-traits/0.2.19/x86_64-unknown-linux-gnu/num_traits/bounds/trait.Bounded.html "trait num_traits::bounds::Bounded") + 'a, Message: 'a + [Clone](https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html "trait core::clone::Clone"), Renderer: 'a + [Renderer](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/text/trait.Renderer.html "trait iced_core::text::Renderer")<Font = [Font](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/font/struct.Font.html "struct iced_core::font::Font")\>, Theme: [ExtendedCatalog](../../style/number_input/trait.ExtendedCatalog.html "trait iced_aw::style::number_input::ExtendedCatalog"),
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#495-497)[§](#method.tag)
+
+#### fn [tag](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.tag)(&self) -> [Tag](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/tree/struct.Tag.html "struct iced_core::widget::tree::Tag")
+
+Returns the [`Tag`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/tree/struct.Tag.html "struct iced_core::widget::tree::Tag") of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#498-500)[§](#method.state)
+
+#### fn [state](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.state)(&self) -> [State](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/tree/enum.State.html "enum iced_core::widget::tree::State")
+
+Returns the [`State`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/tree/enum.State.html "enum iced_core::widget::tree::State") of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#502-508)[§](#method.children)
+
+#### fn [children](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.children)(&self) -> [Vec](https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html "struct alloc::vec::Vec")<[Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree")\>
+
+Returns the state [`Tree`](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree") of the children of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#510-520)[§](#method.diff)
+
+#### fn [diff](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.diff)(&self, tree: &mut [Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"))
+
+Reconciles the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget") with the provided [`Tree`](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#522-524)[§](#method.size)
+
+#### fn [size](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#tymethod.size)(&self) -> [Size](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/size/struct.Size.html "struct iced_core::size::Size")<[Length](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/length/enum.Length.html "enum iced_core::length::Length")\>
+
+Returns the [`Size`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/size/struct.Size.html "struct iced_core::size::Size") of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget") in lengths.
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#526-585)[§](#method.layout)
+
+#### fn [layout](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#tymethod.layout)( &mut self, tree: &mut [Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"), renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), limits: &[Limits](../custom_layout/struct.Limits.html "struct iced_aw::widget::custom_layout::Limits"), ) -> [Node](../custom_layout/struct.Node.html "struct iced_aw::widget::custom_layout::Node")
+
+Returns the [`layout::Node`](../custom_layout/struct.Node.html "struct iced_aw::widget::custom_layout::Node") of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget"). [Read more](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#tymethod.layout)
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#587-659)[§](#method.operate)
+
+#### fn [operate](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.operate)( &mut self, tree: &mut [Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"), layout: [Layout](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/layout/struct.Layout.html "struct iced_core::layout::Layout")<'\_>, renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), operation: &mut dyn [Operation](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/operation/trait.Operation.html "trait iced_core::widget::operation::Operation")<[()](https://doc.rust-lang.org/nightly/std/primitive.unit.html)\>, )
+
+Applies an [`Operation`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/operation/trait.Operation.html "trait iced_core::widget::operation::Operation") to the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget").
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#662-1023)[§](#method.update)
+
+#### fn [update](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.update)( &mut self, state: &mut [Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"), event: &[Event](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/event/enum.Event.html "enum iced_core::event::Event"), layout: [Layout](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/layout/struct.Layout.html "struct iced_core::layout::Layout")<'\_>, cursor: [Cursor](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/mouse/cursor/enum.Cursor.html "enum iced_core::mouse::cursor::Cursor"), renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), clipboard: &mut dyn [Clipboard](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/clipboard/trait.Clipboard.html "trait iced_core::clipboard::Clipboard"), shell: &mut [Shell](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/shell/struct.Shell.html "struct iced_core::shell::Shell")<'\_, Message>, viewport: &[Rectangle](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/rectangle/struct.Rectangle.html "struct iced_core::rectangle::Rectangle"), )
+
+Processes a runtime [`Event`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/event/enum.Event.html "enum iced_core::event::Event"). [Read more](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.update)
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#1025-1064)[§](#method.mouse_interaction)
+
+#### fn [mouse\_interaction](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.mouse_interaction)( &self, \_state: &[Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"), layout: [Layout](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/layout/struct.Layout.html "struct iced_core::layout::Layout")<'\_>, cursor: [Cursor](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/mouse/cursor/enum.Cursor.html "enum iced_core::mouse::cursor::Cursor"), \_viewport: &[Rectangle](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/rectangle/struct.Rectangle.html "struct iced_core::rectangle::Rectangle"), \_renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), ) -> [Interaction](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/mouse/interaction/enum.Interaction.html "enum iced_core::mouse::interaction::Interaction")
+
+Returns the current [`mouse::Interaction`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/mouse/interaction/enum.Interaction.html "enum iced_core::mouse::interaction::Interaction") of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget"). [Read more](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.mouse_interaction)
+
+[Source](../../../src/iced_aw/widget/number_input.rs.html#1066-1198)[§](#method.draw)
+
+#### fn [draw](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#tymethod.draw)( &self, state: &[Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"), renderer: [&mut Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), theme: [&Theme](https://doc.rust-lang.org/nightly/std/primitive.reference.html), style: &[Style](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/renderer/struct.Style.html "struct iced_core::renderer::Style"), layout: [Layout](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/layout/struct.Layout.html "struct iced_core::layout::Layout")<'\_>, cursor: [Cursor](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/mouse/cursor/enum.Cursor.html "enum iced_core::mouse::cursor::Cursor"), viewport: &[Rectangle](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/rectangle/struct.Rectangle.html "struct iced_core::rectangle::Rectangle"), )
+
+Draws the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget") using the associated `Renderer`.
+
+[Source](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/src/iced_core/widget.rs.html#48)[§](#method.size_hint)
+
+#### fn [size\_hint](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.size_hint)(&self) -> [Size](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/size/struct.Size.html "struct iced_core::size::Size")<[Length](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/length/enum.Length.html "enum iced_core::length::Length")\>
+
+Returns a [`Size`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/size/struct.Size.html "struct iced_core::size::Size") hint for laying out the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget"). [Read more](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.size_hint)
+
+[Source](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/src/iced_core/widget.rs.html#140-147)[§](#method.overlay)
+
+#### fn [overlay](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html#method.overlay)<'a>( &'a mut self, \_tree: &'a mut [Tree](../custom_layout/struct.Tree.html "struct iced_aw::widget::custom_layout::Tree"), \_layout: [Layout](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/layout/struct.Layout.html "struct iced_core::layout::Layout")<'a>, \_renderer: [&Renderer](https://doc.rust-lang.org/nightly/std/primitive.reference.html), \_viewport: &[Rectangle](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/rectangle/struct.Rectangle.html "struct iced_core::rectangle::Rectangle"), \_translation: [Vector](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/vector/struct.Vector.html "struct iced_core::vector::Vector"), ) -> [Option](https://doc.rust-lang.org/nightly/core/option/enum.Option.html "enum core::option::Option")<[Element](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/overlay/element/struct.Element.html "struct iced_core::overlay::element::Element")<'a, Message, Theme, Renderer>>
+
+Returns the overlay of the [`Widget`](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/widget/trait.Widget.html "trait iced_core::widget::Widget"), if there is any.
+
+## Auto Trait Implementations[§](#synthetic-implementations)
+
+[§](#impl-RefUnwindSafe-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme = [Theme](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/theme/enum.Theme.html "enum iced_core::theme::Theme"), Renderer = [()](https://doc.rust-lang.org/nightly/std/primitive.unit.html)\> ![RefUnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.RefUnwindSafe.html "trait core::panic::unwind_safe::RefUnwindSafe") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+[§](#impl-Send-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme = [Theme](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/theme/enum.Theme.html "enum iced_core::theme::Theme"), Renderer = [()](https://doc.rust-lang.org/nightly/std/primitive.unit.html)\> ![Send](https://doc.rust-lang.org/nightly/core/marker/trait.Send.html "trait core::marker::Send") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+[§](#impl-Sync-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme = [Theme](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/theme/enum.Theme.html "enum iced_core::theme::Theme"), Renderer = [()](https://doc.rust-lang.org/nightly/std/primitive.unit.html)\> ![Sync](https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html "trait core::marker::Sync") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+[§](#impl-UnwindSafe-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme = [Theme](https://docs.rs/iced_core/0.14.0/x86_64-unknown-linux-gnu/iced_core/theme/enum.Theme.html "enum iced_core::theme::Theme"), Renderer = [()](https://doc.rust-lang.org/nightly/std/primitive.unit.html)\> ![UnwindSafe](https://doc.rust-lang.org/nightly/core/panic/unwind_safe/trait.UnwindSafe.html "trait core::panic::unwind_safe::UnwindSafe") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+[§](#impl-Freeze-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme, Renderer> [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+where T: [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze"), <Theme as [Catalog](../../style/number_input/trait.Catalog.html "trait iced_aw::style::number_input::Catalog")\>::[Class](../../style/number_input/trait.Catalog.html#associatedtype.Class "type iced_aw::style::number_input::Catalog::Class")<'a>: [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze"), Message: [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze"), <Theme as [Catalog](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html "trait iced_widget::text_input::Catalog")\>::[Class](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html#associatedtype.Class "type iced_widget::text_input::Catalog::Class")<'a>: [Freeze](https://doc.rust-lang.org/nightly/core/marker/trait.Freeze.html "trait core::marker::Freeze"),
+
+[§](#impl-Unpin-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme, Renderer> [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+where T: [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin"), <Theme as [Catalog](../../style/number_input/trait.Catalog.html "trait iced_aw::style::number_input::Catalog")\>::[Class](../../style/number_input/trait.Catalog.html#associatedtype.Class "type iced_aw::style::number_input::Catalog::Class")<'a>: [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin"), Message: [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin"), <Theme as [Catalog](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html "trait iced_widget::text_input::Catalog")\>::[Class](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html#associatedtype.Class "type iced_widget::text_input::Catalog::Class")<'a>: [Unpin](https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html "trait core::marker::Unpin"),
+
+[§](#impl-UnsafeUnpin-for-NumberInput%3C'a,+T,+Message,+Theme,+Renderer%3E)
+
+### impl<'a, T, Message, Theme, Renderer> [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin") for [NumberInput](struct.NumberInput.html "struct iced_aw::widget::number_input::NumberInput")<'a, T, Message, Theme, Renderer>
+
+where T: [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin"), <Theme as [Catalog](../../style/number_input/trait.Catalog.html "trait iced_aw::style::number_input::Catalog")\>::[Class](../../style/number_input/trait.Catalog.html#associatedtype.Class "type iced_aw::style::number_input::Catalog::Class")<'a>: [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin"), Message: [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin"), <Theme as [Catalog](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html "trait iced_widget::text_input::Catalog")\>::[Class](https://docs.rs/iced_widget/0.14.2/x86_64-unknown-linux-gnu/iced_widget/text_input/trait.Catalog.html#associatedtype.Class "type iced_widget::text_input::Catalog::Class")<'a>: [UnsafeUnpin](https://doc.rust-lang.org/nightly/core/marker/trait.UnsafeUnpin.html "trait core::marker::UnsafeUnpin"),
+
+## Blanket Implementations[§](#blanket-implementations)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#141)[§](#impl-Any-for-T)
+
+### impl<T> [Any](https://doc.rust-lang.org/nightly/core/any/trait.Any.html "trait core::any::Any") for T
+
+where T: 'static + ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/any.rs.html#142)[§](#method.type_id)
+
+#### fn [type\_id](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)(&self) -> [TypeId](https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html "struct core::any::TypeId")
+
+Gets the `TypeId` of `self`. [Read more](https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#212)[§](#impl-Borrow%3CT%3E-for-T)
+
+### impl<T> [Borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html "trait core::borrow::Borrow")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#214)[§](#method.borrow)
+
+#### fn [borrow](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)(&self) -> [&T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Immutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#221)[§](#impl-BorrowMut%3CT%3E-for-T)
+
+### impl<T> [BorrowMut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html "trait core::borrow::BorrowMut")<T> for T
+
+where T: ?[Sized](https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html "trait core::marker::Sized"),
+
+[Source](https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#222)[§](#method.borrow_mut)
+
+#### fn [borrow\_mut](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)(&mut self) -> [&mut T](https://doc.rust-lang.org/nightly/std/primitive.reference.html)
+
+Mutably borrows from an owned value. [Read more](https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut)
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#787)[§](#impl-From%3CT%3E-for-T)
+
+### impl<T> [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for T
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#790)[§](#method.from-1)
+
+#### fn [from](https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from)(t: T) -> T
+
+Returns the argument unchanged.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#769-771)[§](#impl-Into%3CU%3E-for-T)
+
+### impl<T, U> [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<U> for T
+
+where U: [From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#779)[§](#method.into)
+
+#### fn [into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into)(self) -> U
+
+Calls `U::from(self)`.
+
+That is, this conversion is whatever the implementation of `[From](https://doc.rust-lang.org/nightly/core/convert/trait.From.html "trait core::convert::From")<T> for U` chooses to do.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#829-831)[§](#impl-TryFrom%3CU%3E-for-T)
+
+### impl<T, U> [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U> for T
+
+where U: [Into](https://doc.rust-lang.org/nightly/core/convert/trait.Into.html "trait core::convert::Into")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#833)[§](#associatedtype.Error)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error) = [Infallible](https://doc.rust-lang.org/nightly/core/convert/enum.Infallible.html "enum core::convert::Infallible")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#836)[§](#method.try_from)
+
+#### fn [try\_from](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#tymethod.try_from)(value: U) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<T, <T as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<U>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#813-815)[§](#impl-TryInto%3CU%3E-for-T)
+
+### impl<T, U> [TryInto](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html "trait core::convert::TryInto")<U> for T
+
+where U: [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>,
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#817)[§](#associatedtype.Error-1)
+
+#### type [Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#associatedtype.Error) = <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")
+
+The type returned in the event of a conversion error.
+
+[Source](https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#820)[§](#method.try_into)
+
+#### fn [try\_into](https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#tymethod.try_into)(self) -> [Result](https://doc.rust-lang.org/nightly/core/result/enum.Result.html "enum core::result::Result")<U, <U as [TryFrom](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html "trait core::convert::TryFrom")<T>>::[Error](https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error "type core::convert::TryFrom::Error")\>
+
+Performs the conversion.

@@ -1,0 +1,2023 @@
+<task id="ses_00b547be4ffeiG5O11hkgLl02E" state="completed">
+<task_result>
+All 22 pages fetched. Here is the full extracted documentation:
+
+---
+
+# iced_aw 0.14.1 Widget Struct Reference
+
+---
+
+## 1. Badge
+
+**Source:** `iced_aw::widget::badge`
+
+```
+pub struct Badge<'a, Message, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: Renderer,
+    Theme: Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: Renderer`, `Theme: Catalog`.
+
+A badge for color highlighting small information.
+
+### Associated Functions
+
+```rust
+pub fn new<T>(content: T) -> Self
+where
+    T: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Creates a new `Badge` with the given content.
+
+### Methods
+
+```rust
+pub fn align_x(self, alignment: Alignment) -> Self
+```
+Sets the horizontal alignment of the content.
+
+```rust
+pub fn align_y(self, alignment: Alignment) -> Self
+```
+Sets the vertical alignment of the content.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `Badge`.
+
+```rust
+pub fn padding(self, units: u16) -> Self
+```
+Sets the padding of the `Badge`.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    Theme::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `Badge`.
+
+```rust
+pub fn class(self, class: impl Into<Theme::Class<'a>>) -> Self
+```
+Sets the class of the input of the `Badge`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `Badge`.
+
+### Trait Implementations
+- `From<Badge<'a, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Message: 'a + Clone`, `Renderer: 'a + Renderer`, `Theme: 'a + Catalog`
+- `Widget<Message, Theme, Renderer> for Badge<'a, Message, Theme, Renderer>`
+
+---
+
+## 2. Card
+
+**Source:** `iced_aw::widget::card`
+
+```
+pub struct Card<'a, Message, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: Renderer,
+    Theme: Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: Renderer`, `Theme: Catalog`.
+
+A card consisting of a head, body and optional foot.
+
+### Associated Functions
+
+```rust
+pub fn new<H, B>(head: H, body: B) -> Self
+where
+    H: Into<Element<'a, Message, Theme, Renderer>>,
+    B: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Creates a new `Card` containing the given head and body.
+
+### Methods
+
+```rust
+pub fn foot<F>(self, foot: F) -> Self
+where
+    F: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Sets the `Element` of the foot of the `Card`.
+
+```rust
+pub fn close_size(self, size: f32) -> Self
+```
+Sets the size of the close icon of the `Card`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `Card`.
+
+```rust
+pub fn max_height(self, height: f32) -> Self
+```
+Sets the maximum height of the `Card`.
+
+```rust
+pub fn max_width(self, width: f32) -> Self
+```
+Sets the maximum width of the `Card`.
+
+```rust
+pub fn on_close(self, msg: Message) -> Self
+where
+    Message: Clone + 'a,
+    Renderer: Renderer<Font = Font> + 'a,
+    Theme: Catalog + Catalog + 'a,
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme>>,
+```
+Sets the message produced when the close icon is pressed (enables close icon drawing).
+
+```rust
+pub fn padding(self, padding: Padding) -> Self
+```
+Sets the padding of the `Card` (head, body, foot all set to same value).
+
+```rust
+pub fn padding_head(self, padding: Padding) -> Self
+```
+Sets the padding of the head.
+
+```rust
+pub fn padding_body(self, padding: Padding) -> Self
+```
+Sets the padding of the body.
+
+```rust
+pub fn padding_foot(self, padding: Padding) -> Self
+```
+Sets the padding of the foot.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    Theme::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `Card`.
+
+```rust
+pub fn class(self, class: impl Into<Theme::Class<'a>>) -> Self
+```
+Sets the class of the input of the `Card`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `Card`.
+
+### Trait Implementations
+- `From<Card<'a, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer + Renderer<Font = Font>`, `Theme: 'a + Catalog`, `Message: Clone + 'a`
+- `Widget<Message, Theme, Renderer> for Card<'a, Message, Theme, Renderer>`
+
+---
+
+## 3. ColorPicker
+
+**Source:** `iced_aw::widget::color_picker`
+
+```
+pub struct ColorPicker<'a, Message, Theme = Theme>
+where
+    Message: Clone,
+    Theme: Catalog + Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme` (default `Theme`). Bounds: `Message: Clone`, `Theme: Catalog + Catalog`.
+
+An input element for picking colors.
+
+### Associated Functions
+
+```rust
+pub fn new<U, F>(
+    show_picker: bool,
+    color: Color,
+    underlay: U,
+    on_cancel: Message,
+    on_submit: F,
+) -> Self
+where
+    U: Into<Element<'a, Message, Theme, Renderer>>,
+    F: 'static + Fn(Color) -> Message,
+```
+Creates a new `ColorPicker` wrapping around the given underlay.
+
+### Methods
+
+```rust
+pub fn on_color_change<F>(self, on_color_change: F) -> Self
+where
+    F: 'static + Fn(Color) -> Message,
+```
+Sets a callback called whenever the color changes during selection (real-time updates).
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `ColorPicker`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `ColorPicker`.
+
+### Trait Implementations
+- `From<ColorPicker<'a, Message, Theme>> for Element<'a, Message, Theme, Renderer>` where `Message: 'static + Clone`, `Theme: 'a + Catalog + Catalog + Catalog`
+- `Widget<Message, Theme, ()> for ColorPicker<'a, Message, Theme>`
+
+---
+
+## 4. DatePicker
+
+**Source:** `iced_aw::widget::date_picker`
+
+```
+pub struct DatePicker<'a, Message, Theme>
+where
+    Message: Clone,
+    Theme: Catalog + Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme`. Bounds: `Message: Clone`, `Theme: Catalog + Catalog`.
+
+An input element for picking dates.
+
+### Associated Functions
+
+```rust
+pub fn new<U, F>(
+    show_picker: bool,
+    date: impl Into<Date>,
+    underlay: U,
+    on_cancel: Message,
+    on_submit: F,
+) -> Self
+where
+    U: Into<Element<'a, Message, Theme, Renderer>>,
+    F: 'static + Fn(Date) -> Message,
+```
+Creates a new `DatePicker` wrapping around the given underlay.
+
+### Methods
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `DatePicker`.
+
+```rust
+pub fn font_size<P: Into<Pixels>>(self, size: P) -> Self
+```
+Sets the font and icon size of the `DatePicker`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `DatePicker`.
+
+### Trait Implementations
+- `From<DatePicker<'a, Message, Theme>> for Element<'a, Message, Theme, Renderer>` where `Message: 'static + Clone`, `Theme: 'a + Catalog (date_picker) + Catalog (button) + Catalog (text) + Catalog (container)`
+- `Widget<Message, Theme, ()> for DatePicker<'_, Message, Theme>`
+
+---
+
+## 5. TimePicker
+
+**Source:** `iced_aw::widget::time_picker`
+
+```
+pub struct TimePicker<'a, Message, Theme>
+where
+    Message: Clone,
+    Theme: Catalog + Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme`. Bounds: `Message: Clone`, `Theme: Catalog + Catalog`.
+
+An input element for picking times.
+
+### Associated Functions
+
+```rust
+pub fn new<U, F>(
+    show_picker: bool,
+    time: impl Into<Time>,
+    underlay: U,
+    on_cancel: Message,
+    on_submit: F,
+) -> Self
+where
+    U: Into<Element<'a, Message, Theme, Renderer>>,
+    F: 'static + Fn(Time) -> Message,
+```
+Creates a new `TimePicker` wrapping around the given underlay.
+
+### Methods
+
+```rust
+pub fn show_seconds(self) -> Self
+```
+Enables the picker to also pick seconds.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `TimePicker`.
+
+```rust
+pub fn use_24h(self) -> Self
+```
+Use 24 hour format instead of AM/PM.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `TimePicker`.
+
+### Trait Implementations
+- `From<TimePicker<'a, Message, Theme>> for Element<'a, Message, Theme, Renderer>` where `Message: 'static + Clone`, `Theme: 'a + Catalog (time_picker) + Catalog (button) + Catalog (text) + Catalog (container)`
+- `Widget<Message, Theme, ()> for TimePicker<'_, Message, Theme>`
+
+---
+
+## 6. NumberInput
+
+**Source:** `iced_aw::widget::number_input`
+
+```
+pub struct NumberInput<'a, T, Message, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: Renderer<Font = Font>,
+    Theme: ExtendedCatalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `T`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: Renderer<Font = Font>`, `Theme: ExtendedCatalog`, and impl bounds `T: Num + NumAssignOps + PartialOrd + Display + FromStr + Clone + Bounded + 'a`, `Message: Clone + 'a`.
+
+A field that can only be filled with numeric type.
+
+### Associated Functions
+
+```rust
+pub fn new<F>(value: &T, bounds: impl RangeBounds<T>, on_change: F) -> Self
+where
+    F: 'a + Fn(T) -> Message + Clone,
+```
+Creates a new `NumberInput`.
+
+### Methods
+
+```rust
+pub fn id(self, id: impl Into<Id>) -> Self
+```
+Sets the `Id` of the underlying `TextInput`.
+
+```rust
+pub fn on_input<F>(self, callback: F) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when valid text is typed. If neither this nor `on_submit` is called, the input is disabled.
+
+```rust
+pub fn on_input_maybe<F>(self, callback: Option<F>) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when text is typed, if `Some`.
+
+```rust
+pub fn on_submit(self, message: Message) -> Self
+```
+Sets the message produced when focused and enter is pressed.
+
+```rust
+pub fn on_submit_maybe(self, message: Option<Message>) -> Self
+```
+Sets the message produced when focused and enter is pressed, if `Some`.
+
+```rust
+pub fn on_paste<F>(self, callback: F) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when text is pasted resulting in a valid value.
+
+```rust
+pub fn on_paste_maybe<F>(self, callback: Option<F>) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when text is pasted resulting in a valid value, if `Some`.
+
+```rust
+pub fn font(self, font: Renderer::Font) -> Self
+```
+Sets the `Font` of the `Text`.
+
+```rust
+pub fn icon(self, icon: Icon<Renderer::Font>) -> Self
+```
+Sets the `Icon` of the `NumberInput`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `NumberInput`.
+
+```rust
+#[deprecated(since = "0.11.1", note = "use `width` instead")]
+pub fn content_width(self, width: impl Into<Length>) -> Self
+```
+Deprecated. Sets the width of the `NumberInput`.
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the `NumberInput`.
+
+```rust
+pub fn set_size(self, size: impl Into<Pixels>) -> Self
+```
+Sets the text size of the `NumberInput`.
+
+```rust
+pub fn line_height(self, line_height: impl Into<LineHeight>) -> Self
+```
+Sets the `text::LineHeight` of the `NumberInput`.
+
+```rust
+pub fn align_x(self, alignment: impl Into<Horizontal>) -> Self
+```
+Sets the horizontal alignment of the `NumberInput`.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `NumberInput`.
+
+```rust
+pub fn input_style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme>>,
+```
+Sets the style of the input of the `NumberInput`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `NumberInput`.
+
+```rust
+pub fn bounds(self, bounds: impl RangeBounds<T>) -> Self
+```
+Sets the minimum & maximum value (bound) of the `NumberInput`.
+
+```rust
+pub fn step(self, step: T) -> Self
+```
+Sets the step of the `NumberInput`.
+
+```rust
+pub fn ignore_buttons(self, ignore: bool) -> Self
+```
+Enable or disable increase/decrease buttons (default `false`).
+
+```rust
+pub fn ignore_scroll(self, ignore: bool) -> Self
+```
+Enable or disable mouse scrolling events (default `false`).
+
+### Trait Implementations
+- `From<NumberInput<'a, T, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` (with `T: Num + NumAssignOps + PartialOrd + Display + FromStr + Clone + Bounded`, `Renderer: Renderer<Font = Font>`, `Theme: ExtendedCatalog`)
+- `Widget<Message, Theme, Renderer> for NumberInput<'a, T, Message, Theme, Renderer>`
+
+---
+
+## 7. TypedInput
+
+**Source:** `iced_aw::widget::typed_input`
+
+```
+pub struct TypedInput<'a, T, Message, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: Renderer,
+    Theme: Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `T`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: Renderer`, `Theme: Catalog`, and impl bounds `T: Display + FromStr`, `Message: Clone`, `Renderer: Renderer`, `Theme: Catalog (text_input)`.
+
+A field that can only be filled with a specific type.
+
+### Associated Functions
+
+```rust
+pub fn new(placeholder: &str, value: &T) -> Self
+where
+    T: 'a + Clone,
+```
+Creates a new `TypedInput`.
+
+### Methods
+
+```rust
+pub fn id(self, id: impl Into<Id>) -> Self
+```
+Sets the `Id` of the internal `TextInput`.
+
+```rust
+pub fn secure(self, is_secure: bool) -> Self
+```
+Convert the `TypedInput` into a secure password input.
+
+```rust
+pub fn on_input<F>(self, callback: F) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when valid text is typed. If neither this nor `on_submit` is called, the input is disabled.
+
+```rust
+pub fn on_input_maybe<F>(self, callback: Option<F>) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when text is typed, if `Some`.
+
+```rust
+pub fn on_submit<F>(self, callback: F) -> Self
+where
+    F: 'a + Fn(Result<T, String>) -> Message,
+```
+Sets the message produced when focused and enter is pressed.
+
+```rust
+pub fn on_submit_maybe<F>(self, callback: Option<F>) -> Self
+where
+    F: 'a + Fn(Result<T, String>) -> Message,
+```
+Sets the message produced when focused and enter is pressed, if `Some`.
+
+```rust
+pub fn on_paste<F>(self, callback: F) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when text is pasted resulting in a valid value.
+
+```rust
+pub fn on_paste_maybe<F>(self, callback: Option<F>) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Sets the message produced when text is pasted resulting in a valid value, if `Some`.
+
+```rust
+pub fn font(self, font: Renderer::Font) -> Self
+```
+Sets the `Font` of the `TypedInput`.
+
+```rust
+pub fn icon(self, icon: Icon<Renderer::Font>) -> Self
+```
+Sets the `Icon` of the `TypedInput`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `TypedInput`.
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the `TypedInput`.
+
+```rust
+pub fn size(self, size: impl Into<Pixels>) -> Self
+```
+Sets the text size of the `TypedInput`.
+
+```rust
+pub fn line_height(self, line_height: impl Into<LineHeight>) -> Self
+```
+Sets the `text::LineHeight` of the `TypedInput`.
+
+```rust
+pub fn align_x(self, alignment: impl Into<Horizontal>) -> Self
+```
+Sets the horizontal alignment of the `TypedInput`.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme>>,
+```
+Sets the style of the input of the `TypedInput`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `TypedInput`.
+
+```rust
+pub fn text(&self) -> &str
+```
+Gets the current text of the `TypedInput`.
+
+### Trait Implementations
+- `From<TypedInput<'a, T, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` (with `T: Display + FromStr + Clone + PartialEq`, `Renderer: Renderer`, `Theme: Catalog`)
+- `Widget<Message, Theme, Renderer> for TypedInput<'a, T, Message, Theme, Renderer>`
+
+---
+
+## 8. SelectionList
+
+**Source:** `iced_aw::widget::selection_list`
+
+```
+pub struct SelectionList<'a, T, Message, Theme = Theme, Renderer = Renderer>
+where
+    T: Clone + ToString + Eq + Hash,
+    [T]: ToOwned<Owned = Vec<T>>,
+    Renderer: Renderer + Renderer<Font = Font>,
+    Theme: Catalog + Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `T`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `T: Clone + ToString + Eq + Hash`, `[T]: ToOwned<Owned = Vec<T>>`, `Renderer: Renderer + Renderer<Font = Font>`, `Theme: Catalog + Catalog`.
+
+A widget for selecting a single value from a dynamic scrollable list of options.
+
+### Associated Functions
+
+```rust
+pub fn new(
+    options: &'a [T],
+    on_selected: impl Fn(usize, T) -> Message + 'static,
+) -> Self
+```
+Creates a new `SelectionList` with default `style`, `text_size` and `padding`.
+
+```rust
+pub fn new_with(
+    options: &'a [T],
+    on_selected: impl Fn(usize, T) -> Message + 'static,
+    text_size: f32,
+    padding: impl Into<Padding>,
+    style: impl Fn(&Theme, Status) -> Style + 'a + Clone,
+    selected: Option<usize>,
+    font: Font,
+) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Creates a new `SelectionList` with the given `style`, `text_size`, `padding` and `font`.
+
+### Methods
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `SelectionList`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `SelectionList`.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `SelectionList`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `SelectionList`.
+
+### Trait Implementations
+- `From<SelectionList<'a, T, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` (with `T: Clone + ToString + Eq + Hash + Display`, `Message: 'static`, `Renderer: Renderer + Renderer<Font = Font>`, `Theme: Catalog (selection_list) + Catalog (container)`)
+- `Widget<Message, Theme, Renderer> for SelectionList<'a, T, Message, Theme, Renderer>`
+
+---
+
+## 9. TabBar
+
+**Source:** `iced_aw::widget::tab_bar`
+
+```
+pub struct TabBar<'a, Message, TabId, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: Renderer + Renderer,
+    Theme: Catalog,
+    TabId: Eq + Clone,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `TabId`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: Renderer + Renderer`, `Theme: Catalog`, `TabId: Eq + Clone`.
+
+A tab bar to show tabs.
+
+### Associated Functions
+
+```rust
+pub fn new<F>(on_select: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Creates a new `TabBar` with the given on-select message function.
+
+```rust
+pub fn with_tab_labels<F>(
+    tab_labels: Vec<(TabId, TabLabel)>,
+    on_select: F,
+) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Similar to `new` but with a given Vector of the `TabLabel`s.
+
+### Methods
+
+```rust
+pub fn close_size(self, close_size: f32) -> Self
+```
+Sets the size of the close icon of the `TabLabel`s.
+
+```rust
+pub fn get_active_tab_id(&self) -> Option<&TabId>
+```
+Gets the id of the currently active tab.
+
+```rust
+pub fn get_active_tab_idx(&self) -> usize
+```
+Gets the index of the currently active tab.
+
+```rust
+pub fn get_height(&self) -> Length
+```
+Gets the height of the `TabBar`.
+
+```rust
+pub fn get_width(&self) -> Length
+```
+Gets the width of the `TabBar`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `TabBar`.
+
+```rust
+pub fn icon_font(self, font: Font) -> Self
+```
+Sets the font of the icons of the `TabLabel`s.
+
+```rust
+pub fn icon_size(self, icon_size: f32) -> Self
+```
+Sets the icon size of the `TabLabel`s.
+
+```rust
+pub fn max_height(self, max_height: f32) -> Self
+```
+Sets the maximum height of the `TabBar`.
+
+```rust
+pub fn on_close<F>(self, on_close: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Sets the message produced when the close icon is pressed (enables close icons).
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the tabs.
+
+```rust
+pub fn push(self, id: TabId, tab_label: TabLabel) -> Self
+```
+Pushes a `TabLabel` to the `TabBar`.
+
+```rust
+pub fn size(&self) -> usize
+```
+Gets the amount of tabs.
+
+```rust
+pub fn spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing between the tabs.
+
+```rust
+pub fn text_font(self, text_font: Font) -> Self
+```
+Sets the font of the text of the `TabLabel`s.
+
+```rust
+pub fn text_size(self, text_size: f32) -> Self
+```
+Sets the text size of the `TabLabel`s.
+
+```rust
+pub fn tab_width(self, width: Length) -> Self
+```
+Sets the width of a tab.
+
+```rust
+pub fn set_active_tab(self, active_tab: &TabId) -> Self
+```
+Sets up the active tab.
+
+```rust
+pub fn set_position(self, position: Position) -> Self
+```
+Sets the `Position` of the Icon next to Text (only used in `TabLabel::IconText`).
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `TabBar`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `TabBar`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `TabBar`.
+
+### Trait Implementations
+- `From<TabBar<'a, Message, TabId, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer + Renderer<Font = Font>`, `Theme: 'a + Catalog (tab_bar) + Catalog (text)`, `Message: 'a`, `TabId: 'a + Eq + Clone`
+- `Widget<Message, Theme, Renderer> for TabBar<'_, Message, TabId, Theme, Renderer>`
+
+---
+
+## 10. Tabs
+
+**Source:** `iced_aw::widget::tabs`
+
+```
+pub struct Tabs<'a, Message, TabId, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: 'a + Renderer + Renderer,
+    Theme: Catalog,
+    TabId: Eq + Clone,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `TabId`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: 'a + Renderer + Renderer`, `Theme: Catalog`, `TabId: Eq + Clone`.
+
+A `Tabs` widget for showing a `TabBar` along with the tab's content.
+
+### Associated Functions
+
+```rust
+pub fn new<F>(on_select: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Creates a new `Tabs` widget.
+
+```rust
+pub fn new_with_tabs<F>(
+    tabs: impl IntoIterator<Item = (TabId, TabLabel, Element<'a, Message, Theme, Renderer>)>,
+    on_select: F,
+) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Similar to `new` but with a given iterator of `TabLabel`s along with tab content.
+
+### Methods
+
+```rust
+pub fn close_size(self, close_size: f32) -> Self
+```
+Sets the size of the close icon of the `TabLabel`.
+
+```rust
+pub fn tab_icon_position(self, position: Position) -> Self
+```
+Sets the Tabs Icon render `Position` of the `TabLabel`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `Tabs`.
+
+```rust
+pub fn icon_font(self, font: Font) -> Self
+```
+Sets the font of the icons of the `TabLabel`s.
+
+```rust
+pub fn icon_size(self, icon_size: f32) -> Self
+```
+Sets the icon size of the `TabLabel`.
+
+```rust
+pub fn on_close<F>(self, on_close: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Sets the message produced when the close icon is pressed (enables close icons).
+
+```rust
+pub fn push<E>(self, id: TabId, tab_label: TabLabel, element: E) -> Self
+where
+    E: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Pushes a `TabLabel` along with the tab's content to the `Tabs`.
+
+```rust
+pub fn set_active_tab(self, id: &TabId) -> Self
+```
+Sets the active tab using the `TabId`.
+
+```rust
+pub fn tab_bar_height(self, height: Length) -> Self
+```
+Sets the height of the `TabBar`.
+
+```rust
+pub fn tab_bar_max_height(self, max_height: f32) -> Self
+```
+Sets the maximum height of the `TabBar`.
+
+```rust
+pub fn tab_bar_width(self, width: Length) -> Self
+```
+Sets the width of the `TabBar`.
+
+```rust
+pub fn tab_bar_position(self, position: TabBarPosition) -> Self
+```
+Sets the `TabBarPosition` of the `TabBar`.
+
+```rust
+pub fn tab_bar_style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `TabBar`.
+
+```rust
+pub fn tab_label_padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the tabs of the `TabBar`.
+
+```rust
+pub fn tab_label_spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing between the tabs of the `TabBar`.
+
+```rust
+pub fn text_font(self, text_font: Font) -> Self
+```
+Sets the font of the text of the `TabLabel`s.
+
+```rust
+pub fn text_size(self, text_size: f32) -> Self
+```
+Sets the text size of the `TabLabel`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `Tabs`.
+
+### Trait Implementations
+- `From<Tabs<'a, Message, TabId, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer + Renderer<Font = Font>`, `Theme: 'a + Catalog (tab_bar) + Catalog (text)`, `Message: 'a`, `TabId: 'a + Eq + Clone`
+- `Widget<Message, Theme, Renderer> for Tabs<'_, Message, TabId, Theme, Renderer>`
+
+---
+
+## 11. Menu
+
+**Source:** `iced_aw::widget::menu` (defined in `menu_tree.rs`)
+
+```
+pub struct Menu<'a, Message, Theme, Renderer>
+where
+    Theme: Catalog,
+    Renderer: Renderer,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme`, `Renderer`. Bounds: `Theme: Catalog`, `Renderer: Renderer`.
+
+Menu.
+
+### Associated Functions
+
+```rust
+pub fn new(items: Vec<Item<'a, Message, Theme, Renderer>>) -> Self
+```
+Creates a `Menu` with the given items.
+
+### Methods
+
+```rust
+pub fn max_width(self, max_width: f32) -> Self
+```
+Sets the maximum width of the `Menu`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `Menu`.
+
+```rust
+pub fn spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing of the `Menu`.
+
+```rust
+pub fn offset(self, offset: f32) -> Self
+```
+The offset from the menu's parent item.
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the `Menu`.
+
+```rust
+pub fn close_on_item_click(self, value: bool) -> Self
+```
+Sets the close on item click option of the `Menu`.
+
+```rust
+pub fn close_on_background_click(self, value: bool) -> Self
+```
+Sets the close on background click option of the `Menu`.
+
+### Trait Implementations
+- No `From`/`Widget` impls documented on this page (only auto/blanket impls).
+
+---
+
+## 12. MenuBar
+
+**Source:** `iced_aw::widget::menu` (defined in `menu_bar.rs`)
+
+```
+pub struct MenuBar<'a, Message, Theme, Renderer>
+where
+    Theme: Catalog,
+    Renderer: Renderer,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme`, `Renderer`. Bounds: `Theme: Catalog`, `Renderer: Renderer`.
+
+menu bar.
+
+### Associated Functions
+
+```rust
+pub fn new(roots: Vec<Item<'a, Message, Theme, Renderer>>) -> Self
+```
+Creates a `MenuBar` with the given root items.
+
+### Methods
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `MenuBar`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `MenuBar`.
+
+```rust
+pub fn spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing of the `MenuBar`.
+
+```rust
+pub fn safe_bounds_margin(self, margin: f32) -> Self
+```
+Sets the margin of the safe bounds of the `Menu`s. Defines a rectangular safe area extending each menu's background bounds; if the cursor moves outside, the menu closes.
+
+```rust
+pub fn draw_path(self, draw_path: DrawPath) -> Self
+```
+Sets the draw path option of the `MenuBar`.
+
+```rust
+pub fn scroll_speed(self, scroll_speed: ScrollSpeed) -> Self
+```
+Sets the scroll speed of the `Menu`s.
+
+```rust
+pub fn close_on_item_click(self, value: bool) -> Self
+```
+Sets the close on item click option of the `MenuBar`.
+
+```rust
+pub fn close_on_background_click(self, value: bool) -> Self
+```
+Sets the close on background click option of the `MenuBar`.
+
+```rust
+pub fn close_on_item_click_global(self, value: bool) -> Self
+```
+Sets the global default close on item click option.
+
+```rust
+pub fn close_on_background_click_global(self, value: bool) -> Self
+```
+Sets the global default close on background click option.
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the `MenuBar`.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    Theme::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `MenuBar`.
+
+```rust
+pub fn class(self, class: impl Into<Theme::Class<'a>>) -> Self
+```
+Sets the class of the input of the `MenuBar`.
+
+### Trait Implementations
+- `From<MenuBar<'a, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Message: 'a`, `Theme: 'a + Catalog`, `Renderer: 'a + Renderer`
+- `Widget<Message, Theme, Renderer> for MenuBar<'_, Message, Theme, Renderer>`
+
+---
+
+## 13. Spinner
+
+**Source:** `iced_aw::widget::spinner`
+
+```
+pub struct Spinner { /* private fields */ }
+```
+
+**Type parameters:** none.
+
+A spinner widget, a circle spinning around the center of the widget.
+
+### Associated Functions
+
+```rust
+pub fn new() -> Self
+```
+Creates a new `Spinner` widget.
+
+### Methods
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `Spinner`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `Spinner`.
+
+```rust
+pub fn circle_radius(self, radius: f32) -> Self
+```
+Sets the circle radius of the spinning circle.
+
+### Trait Implementations
+- `Default for Spinner`
+- `From<Spinner> for Element<'a, Message, Theme, Renderer>` where `Renderer: Renderer + 'a`
+- `Widget<Message, Theme, Renderer> for Spinner` where `Renderer: Renderer`
+
+---
+
+## 14. ContextMenu
+
+**Source:** `iced_aw::widget::context_menu`
+
+```
+pub struct ContextMenu<'a, Overlay, Message, Theme = Theme, Renderer = Renderer>
+where
+    Overlay: Fn() -> Element<'a, Message, Theme, Renderer>,
+    Message: Clone,
+    Renderer: Renderer,
+    Theme: Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Overlay`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Overlay: Fn() -> Element<'a, Message, Theme, Renderer>`, `Message: Clone`, `Renderer: Renderer`, `Theme: Catalog`.
+
+A context menu.
+
+### Associated Functions
+
+```rust
+pub fn new<U>(underlay: U, overlay: Overlay) -> Self
+where
+    U: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Creates a new `ContextMenu`. `underlay`: the underlying element; `overlay`: the content of `ContextMenuOverlay` displayed when underlay is clicked.
+
+### Methods
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    Theme::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `ContextMenu`.
+
+```rust
+pub fn class(self, class: impl Into<Theme::Class<'a>>) -> Self
+```
+Sets the class of the input of the `ContextMenu`.
+
+```rust
+pub fn open(self, open: bool) -> Self
+```
+Forces the menu to be open or closed, overriding internal state (primarily for testing). If `None`, the menu uses its internal state (toggled by right-click).
+
+### Trait Implementations
+- `From<ContextMenu<'a, Content, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Content: 'a + Fn() -> Self`, `Message: 'a + Clone`, `Renderer: 'a + Renderer`, `Theme: 'a + Catalog`
+- `Widget<Message, Theme, Renderer> for ContextMenu<'a, Content, Message, Theme, Renderer>`
+
+---
+
+## 15. SlideBar
+
+**Source:** `iced_aw::widget::slide_bar`
+
+```
+pub struct SlideBar<'a, T, Message>
+where
+    Message: Clone,
+{
+    pub width: Length,
+    pub height: Option<Length>,
+    pub color: Color,
+    pub background: Option<Color>,
+    pub border_radius: f32,
+    pub border_width: f32,
+    pub border_color: Color,
+    pub range: RangeInclusive<T>,
+    /* private fields */
+}
+```
+
+**Type parameters:** `'a`, `T`, `Message`. Bounds: `Message: Clone`, impl bounds `T: Copy + From<u8> + PartialOrd`, `Message: Clone`.
+
+A widget that draws a `SlideBar`.
+
+### Public Fields
+- `width: Length` — Width of the bar
+- `height: Option<Length>` — Height of the bar
+- `color: Color` — Color of the bar
+- `background: Option<Color>` — Background color of the bar
+- `border_radius: f32` — Border radius of the bar
+- `border_width: f32` — Border width of the bar
+- `border_color: Color` — Border color of the bar
+- `range: RangeInclusive<T>` — value Range
+
+### Associated Functions
+
+```rust
+pub fn new<F>(range: RangeInclusive<T>, value: T, on_change: F) -> Self
+where
+    F: 'a + Fn(T) -> Message,
+```
+Creates a new `SlideBar`.
+
+### Methods
+
+```rust
+pub fn on_release(self, on_release: Message) -> Self
+```
+Sets the release message, called when the mouse is released from the slider.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `SlideBar`.
+
+```rust
+pub fn height(self, height: Option<Length>) -> Self
+```
+Sets the height of the `SlideBar`.
+
+```rust
+pub fn step(self, step: impl Into<T>) -> Self
+```
+Sets the step size of the `SlideBar`.
+
+### Trait Implementations
+- `From<SlideBar<'a, T, Message>> for Element<'a, Message, Theme, Renderer>` where `T: 'a + Copy + Into<f64> + FromPrimitive`, `Renderer: 'a + Renderer`, `Message: 'a + Clone`, `Theme: 'a`
+- `Widget<Message, Theme, Renderer> for SlideBar<'_, T, Message>` where `T: Copy + Into<f64> + FromPrimitive`, `Message: Clone`, `Renderer: Renderer`
+
+---
+
+## 16. DropDown
+
+**Source:** `iced_aw::widget::drop_down`
+
+```
+pub struct DropDown<'a, Message, Theme = Theme, Renderer = Renderer>
+where
+    Message: Clone,
+    Renderer: Renderer,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Message: Clone`, `Renderer: Renderer`.
+
+Customizable drop down menu widget.
+
+### Associated Functions
+
+```rust
+pub fn new<U, B>(underlay: U, overlay: B, expanded: bool) -> Self
+where
+    U: Into<Element<'a, Message, Theme, Renderer>>,
+    B: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Create a new `DropDown`.
+
+### Methods
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+The width of the overlay.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+The height of the overlay.
+
+```rust
+pub fn alignment(self, alignment: impl Into<Alignment>) -> Self
+```
+The alignment of the overlay relative to the underlay.
+
+```rust
+pub fn offset(self, offset: impl Into<Offset>) -> Self
+```
+The offset of the overlay.
+
+```rust
+pub fn on_dismiss(self, message: Message) -> Self
+```
+Send a message when a click occurs outside of the overlay when expanded.
+
+### Trait Implementations
+- `From<DropDown<'a, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Message: 'a + Clone`, `Renderer: 'a + Renderer`, `Theme: 'a`
+- `Widget<Message, Theme, Renderer> for DropDown<'a, Message, Theme, Renderer>`
+
+---
+
+## 17. Sidebar
+
+**Source:** `iced_aw::widget::sidebar::sidebar`
+
+```
+pub struct Sidebar<'a, Message, TabId, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: Renderer + Renderer,
+    Theme: Catalog,
+    TabId: Eq + Clone,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `TabId`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: Renderer + Renderer`, `Theme: Catalog`, `TabId: Eq + Clone`.
+
+A sidebar to show tabs.
+
+### Associated Functions
+
+```rust
+pub fn new<F>(on_select: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Creates a new `Sidebar`.
+
+```rust
+pub fn with_tab_labels<F>(
+    tab_labels: Vec<(TabId, TabLabel)>,
+    on_select: F,
+) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Similar to `new` but with a given Vector of the `TabLabel`s.
+
+### Methods
+
+```rust
+pub fn align_tabs(self, align: Alignment) -> Self
+```
+Sets the alignment of the tabs.
+
+```rust
+pub fn close_size(self, close_size: f32) -> Self
+```
+Sets the size of the close icon of the `TabLabel`s.
+
+```rust
+pub fn get_active_tab_id(&self) -> Option<&TabId>
+```
+Gets the id of the currently active tab.
+
+```rust
+pub fn get_active_tab_idx(&self) -> usize
+```
+Gets the index of the currently active tab.
+
+```rust
+pub fn get_height(&self) -> Length
+```
+Gets the height of the `Sidebar`.
+
+```rust
+pub fn get_width(&self) -> Length
+```
+Gets the width of the `Sidebar`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `Sidebar`.
+
+```rust
+pub fn icon_font(self, font: Font) -> Self
+```
+Sets the font of the icons of the `TabLabel`s.
+
+```rust
+pub fn icon_size(self, icon_size: f32) -> Self
+```
+Sets the icon size of the `TabLabel`s.
+
+```rust
+pub fn on_close<F>(self, on_close: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Sets the message produced when the close icon is pressed (enables close icons).
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the tabs.
+
+```rust
+pub fn push(self, id: TabId, tab_label: TabLabel) -> Self
+```
+Pushes a `TabLabel` to the `Sidebar`.
+
+```rust
+pub fn size(&self) -> usize
+```
+Gets the amount of tabs.
+
+```rust
+pub fn spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing between the tabs.
+
+```rust
+pub fn text_font(self, text_font: Font) -> Self
+```
+Sets the font of the text of the `TabLabel`s.
+
+```rust
+pub fn text_size(self, text_size: f32) -> Self
+```
+Sets the text size of the `TabLabel`s.
+
+```rust
+pub fn tab_height(self, height: Length) -> Self
+```
+Sets the height of a tab.
+
+```rust
+pub fn set_active_tab(self, active_tab: &TabId) -> Self
+```
+Sets up the active tab.
+
+```rust
+pub fn set_close_position(self, position: Position) -> Self
+```
+Sets the `Position` of the close icon on the tab (only used when `Sidebar::on_close()` is used).
+
+```rust
+pub fn set_position(self, position: Position) -> Self
+```
+Sets the `Position` of the Icon next to Text (only used in `TabLabel::IconText`).
+
+```rust
+pub fn style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `Sidebar`.
+
+```rust
+pub fn class(self, class: impl Into<<Theme as Catalog>::Class<'a>>) -> Self
+```
+Sets the class of the input of the `Sidebar`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `Sidebar`.
+
+### Trait Implementations
+- `From<Sidebar<'a, Message, TabId, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer + Renderer<Font = Font>`, `Theme: 'a + Catalog (sidebar) + Catalog (text)`, `Message: 'a`, `TabId: 'a + Eq + Clone`
+- `Widget<Message, Theme, Renderer> for Sidebar<'_, Message, TabId, Theme, Renderer>`
+
+---
+
+## 18. SidebarWithContent
+
+**Source:** `iced_aw::widget::sidebar::sidebar`
+
+```
+pub struct SidebarWithContent<'a, Message, TabId, Theme = Theme, Renderer = Renderer>
+where
+    Renderer: 'a + Renderer + Renderer,
+    Theme: Catalog,
+    TabId: Eq + Clone,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `TabId`, `Theme` (default `Theme`), `Renderer` (default `Renderer`). Bounds: `Renderer: 'a + Renderer + Renderer`, `Theme: Catalog`, `TabId: Eq + Clone`.
+
+A `SidebarWithContent` widget for showing a `Sidebar` along with the tab's content.
+
+### Associated Functions
+
+```rust
+pub fn new<F>(on_select: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Creates a new `SidebarWithContent` widget.
+
+```rust
+pub fn new_with_tabs<F>(
+    tabs: Vec<(TabId, TabLabel, Element<'a, Message, Theme, Renderer>)>,
+    on_select: F,
+) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Similar to `new` but with a given vector of `TabLabel`s along with tab content.
+
+### Methods
+
+```rust
+pub fn close_size(self, close_size: f32) -> Self
+```
+Sets the size of the close icon of the `TabLabel`.
+
+```rust
+pub fn align_tabs(self, align: Alignment) -> Self
+```
+Sets the alignment of the tabs for the `Sidebar`.
+
+```rust
+pub fn tab_icon_position(self, position: Position) -> Self
+```
+Sets the Icon render `Position` for the `TabLabel`.
+
+```rust
+pub fn close_icon_position(self, position: Position) -> Self
+```
+Sets the close icon render `Position` for the tab.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `SidebarWithContent`.
+
+```rust
+pub fn icon_font(self, font: Font) -> Self
+```
+Sets the font of the icons of the `TabLabel`s.
+
+```rust
+pub fn icon_size(self, icon_size: f32) -> Self
+```
+Sets the icon size of the `TabLabel`.
+
+```rust
+pub fn on_close<F>(self, on_close: F) -> Self
+where
+    F: 'static + Fn(TabId) -> Message,
+```
+Sets the message produced when the close icon is pressed (enables close icons).
+
+```rust
+pub fn push<E>(self, id: TabId, tab_label: TabLabel, element: E) -> Self
+where
+    E: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Pushes a `TabLabel` along with the tab's content.
+
+```rust
+pub fn set_active_tab(self, id: &TabId) -> Self
+```
+Sets the active tab using the `TabId`.
+
+```rust
+pub fn sidebar_height(self, height: Length) -> Self
+```
+Sets the height of the `Sidebar`.
+
+```rust
+pub fn sidebar_width(self, width: Length) -> Self
+```
+Sets the width of the `Sidebar`.
+
+```rust
+pub fn sidebar_position(self, position: SidebarPosition) -> Self
+```
+Sets the `SidebarPosition` of the `Sidebar`.
+
+```rust
+pub fn sidebar_style(self, style: impl Fn(&Theme, Status) -> Style + 'a) -> Self
+where
+    <Theme as Catalog>::Class<'a>: From<StyleFn<'a, Theme, Style>>,
+```
+Sets the style of the `Sidebar`.
+
+```rust
+pub fn tab_label_padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the tabs of the `Sidebar`.
+
+```rust
+pub fn tab_label_spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing between the tabs of the `Sidebar`.
+
+```rust
+pub fn text_font(self, text_font: Font) -> Self
+```
+Sets the font of the text of the `TabLabel`s.
+
+```rust
+pub fn text_size(self, text_size: f32) -> Self
+```
+Sets the text size of the `TabLabel`.
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `SidebarWithContent`.
+
+### Trait Implementations
+- `From<SidebarWithContent<'a, Message, TabId, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer + Renderer<Font = Font>`, `Theme: 'a + Catalog (sidebar) + Catalog (text)`, `Message: 'a`, `TabId: 'a + Eq + Clone`
+- `Widget<Message, Theme, Renderer> for SidebarWithContent<'_, Message, TabId, Theme, Renderer>`
+
+---
+
+## 19. LabeledFrame
+
+**Source:** `iced_aw::widget::labeled_frame`
+
+```
+pub struct LabeledFrame<'a, Message, Theme, Renderer>
+where
+    Theme: Catalog,
+{ /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme`, `Renderer`. Bounds: `Theme: Catalog`.
+
+A labeled frame widget.
+
+### Associated Functions
+
+```rust
+pub fn new(
+    title: impl Into<Element<'a, Message, Theme, Renderer>>,
+    content: impl Into<Element<'a, Message, Theme, Renderer>>,
+) -> Self
+```
+Creates a new `LabeledFrame`.
+
+### Methods
+
+```rust
+pub fn width(self, width: impl Into<Length>) -> Self
+```
+Sets the width of the `LabeledFrame`.
+
+```rust
+pub fn height(self, height: impl Into<Length>) -> Self
+```
+Sets the height of the `LabeledFrame`.
+
+```rust
+pub fn inset(self, inset: impl Into<Pixels>) -> Self
+```
+Sets the inset between the border and the inner content.
+
+```rust
+pub fn outset(self, outset: impl Into<Pixels>) -> Self
+```
+Sets the outset put around the border.
+
+```rust
+pub fn stroke_width(self, stroke_width: impl Into<Pixels>) -> Self
+```
+Sets the width of the stroke/border drawn around the content.
+
+```rust
+pub fn horizontal_title_padding(self, padding: impl Into<Pixels>) -> Self
+```
+Sets the padding the title gets on the horizontal axis.
+
+```rust
+pub fn style(self, style: impl Fn(&Theme) -> Style + 'a) -> Self
+where
+    Theme::Class<'a>: From<StyleFn<'a, Theme>>,
+```
+Changes the style of the `LabeledFrame`.
+
+### Trait Implementations
+- `From<LabeledFrame<'a, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Message: 'a`, `Theme: 'a + Catalog`, `Renderer: Renderer + 'a`
+- `Widget<Message, Theme, Renderer> for LabeledFrame<'_, Message, Theme, Renderer>` where `Renderer: Renderer`, `Theme: Catalog`
+
+---
+
+## 20. CustomLayout
+
+**Source:** `iced_aw::widget::custom_layout`
+
+```
+pub struct CustomLayout<'a, Message, Theme, Renderer> { /* private fields */ }
+```
+
+**Type parameters:** `'a`, `Message`, `Theme`, `Renderer`. Impl bound: `Renderer: Renderer`.
+
+A container widget that allows you to specify the layout of its children.
+
+### Associated Functions
+
+```rust
+pub fn new(
+    elements: Vec<Element<'b, Message, Theme, Renderer>>,
+    layout: impl Fn(
+        &mut Vec<Element<'b, Message, Theme, Renderer>>,
+        &mut Vec<Tree>,
+        &Renderer,
+        &Limits,
+    ) -> Node + 'static,
+) -> Self
+```
+Creates a new `CustomLayout`.
+
+### Methods
+
+```rust
+pub fn width(self, length: impl Into<Length>) -> Self
+```
+Sets the width of the `CustomLayout`.
+
+```rust
+pub fn height(self, length: impl Into<Length>) -> Self
+```
+Sets the height of the `CustomLayout`.
+
+### Trait Implementations
+- `From<CustomLayout<'b, Message, Theme, Renderer>> for Element<'b, Message, Theme, Renderer>` where `Message: 'b`, `Theme: 'b`, `Renderer: Renderer + 'b`
+- `Widget<Message, Theme, Renderer> for CustomLayout<'_, Message, Theme, Renderer>`
+
+---
+
+## 21. Wrap
+
+**Source:** `iced_aw::widget::wrap`
+
+```
+pub struct Wrap<'a, Message, Direction, Theme = Theme, Renderer = Renderer> {
+    pub elements: Vec<Element<'a, Message, Theme, Renderer>>,
+    pub alignment: Alignment,
+    pub width: Length,
+    pub height: Length,
+    pub max_width: f32,
+    pub max_height: f32,
+    pub padding: Padding,
+    pub spacing: Pixels,
+    pub line_spacing: Pixels,
+    pub line_minimal_length: f32,
+    /* private fields */
+}
+```
+
+**Type parameters:** `'a`, `Message`, `Direction`, `Theme` (default `Theme`), `Renderer` (default `Renderer`).
+
+A container that distributes its contents horizontally.
+
+### Public Fields
+- `elements: Vec<Element<'a, Message, Theme, Renderer>>` — The elements to distribute.
+- `alignment: Alignment` — The alignment of the `Wrap`.
+- `width: Length` — The width of the `Wrap`.
+- `height: Length` — The height of the `Wrap`.
+- `max_width: f32` — The maximum width of the `Wrap`.
+- `max_height: f32` — The maximum height of the `Wrap`.
+- `padding: Padding` — The padding of each element.
+- `spacing: Pixels` — The spacing between each element.
+- `line_spacing: Pixels` — The spacing between each line.
+- `line_minimal_length: f32` — The minimal length of each line.
+
+### Associated Functions
+
+**Horizontal impl block** (`Wrap<'a, Message, Horizontal, Theme, Renderer>`):
+```rust
+pub fn new() -> Self
+```
+Creates an empty horizontal `Wrap`.
+
+```rust
+pub fn with_elements(
+    elements: Vec<Element<'a, Message, Theme, Renderer>>,
+) -> Self
+```
+Creates a `Wrap` with the given elements.
+
+**Vertical impl block** (`Wrap<'a, Message, Vertical, Theme, Renderer>`):
+```rust
+pub fn new_vertical() -> Self
+```
+Creates an empty vertical `Wrap`.
+
+```rust
+pub fn with_elements_vertical(
+    elements: Vec<Element<'a, Message, Theme, Renderer>>,
+) -> Self
+```
+Creates a vertical `Wrap` with the given elements.
+
+### Methods (generic over `Direction`)
+
+```rust
+pub fn spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing of the `Wrap`.
+
+```rust
+pub fn line_spacing(self, spacing: impl Into<Pixels>) -> Self
+```
+Sets the spacing of the lines of the `Wrap`.
+
+```rust
+pub const fn line_minimal_length(self, units: f32) -> Self
+```
+Sets the minimal length of the lines of the `Wrap`.
+
+```rust
+pub fn padding(self, padding: impl Into<Padding>) -> Self
+```
+Sets the padding of the elements in the `Wrap`.
+
+```rust
+pub const fn width_items(self, width: Length) -> Self
+```
+Sets the width of the `Wrap`.
+
+```rust
+pub const fn height_items(self, height: Length) -> Self
+```
+Sets the height of the `Wrap`.
+
+```rust
+pub const fn max_width(self, max_width: f32) -> Self
+```
+Sets the maximum width of the `Wrap`.
+
+```rust
+pub const fn max_height(self, max_height: f32) -> Self
+```
+Sets the maximum height of the `Wrap`.
+
+```rust
+pub const fn align_items(self, align: Alignment) -> Self
+```
+Sets the alignment of the `Wrap`.
+
+```rust
+pub fn push<E>(self, element: E) -> Self
+where
+    E: Into<Element<'a, Message, Theme, Renderer>>,
+```
+Pushes an `Element` to the `Wrap`.
+
+### Trait Implementations
+- `Default for Wrap<'_, Message, Direction, Theme, Renderer>`
+- `From<Wrap<'a, Message, Horizontal, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer`, `Message: 'a`, `Theme: 'a`
+- `From<Wrap<'a, Message, Vertical, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `Renderer: 'a + Renderer`, `Message: 'a`, `Theme: 'a`
+- `Widget<Message, Theme, Renderer> for Wrap<'_, Message, Direction, Theme, Renderer>` where `Self: WrapLayout<Renderer>`, `Renderer: Renderer`
+- `WrapLayout<Renderer> for Wrap<'a, Message, Horizontal, Theme, Renderer>`
+- `WrapLayout<Renderer> for Wrap<'a, Message, Vertical, Theme, Renderer>`
+
+Note: `Direction` is `Horizontal` or `Vertical` (from `wrap::direction`).
+
+---
+
+## 22. List (selection_list::list)
+
+**Source:** `iced_aw::widget::selection_list::list`
+
+```
+pub struct List<'a, T, Message, Theme, Renderer>
+where
+    T: Clone + Display + Eq + Hash + 'a,
+    [T]: ToOwned<Owned = Vec<T>>,
+    Renderer: Renderer + Renderer<Font = Font>,
+    Theme: Catalog,
+{
+    pub options: &'a [T],
+    pub font: Renderer::Font,
+    pub class: <Theme as Catalog>::Class<'a>,
+    pub on_selected: Box<dyn Fn(usize, T) -> Message>,
+    pub padding: Padding,
+    pub text_size: f32,
+    pub selected: Option<usize>,
+    pub phantomdata: PhantomData<Renderer>,
+}
+```
+
+**Type parameters:** `'a`, `T`, `Message`, `Theme`, `Renderer`. Bounds: `T: Clone + Display + Eq + Hash + 'a`, `[T]: ToOwned<Owned = Vec<T>>`, `Renderer: Renderer + Renderer<Font = Font>`, `Theme: Catalog`.
+
+The private `List` handles the actual list rendering.
+
+### Public Fields
+- `options: &'a [T]` — Options pointer to hold all rendered strings.
+- `font: Renderer::Font` — Hovered Item Pointer Label Font.
+- `class: <Theme as Catalog>::Class<'a>` — Style for Font colors and Box hover colors.
+- `on_selected: Box<dyn Fn(usize, T) -> Message>` — Function pointer on select to call on mouse button press.
+- `padding: Padding` — The padding width.
+- `text_size: f32` — The text size.
+- `selected: Option<usize>` — Set the selected ID manually.
+- `phantomdata: PhantomData<Renderer>` — Shadow type holder for Renderer.
+
+### Associated Functions
+None (no inherent impl block documented; fields are public).
+
+### Trait Implementations
+- `From<List<'a, T, Message, Theme, Renderer>> for Element<'a, Message, Theme, Renderer>` where `T: Clone + Display + Eq + Hash`, `Message: 'a`, `Renderer: 'a + Renderer + Renderer<Font = Font>`, `Theme: 'a + Catalog (selection_list) + Catalog (text)`
+- `Widget<Message, Theme, Renderer> for List<'_, T, Message, Theme, Renderer>` where `T: Clone + Display + Eq + Hash`, `Renderer: Renderer + Renderer<Font = Font>`, `Theme: Catalog (selection_list) + Catalog (text)`
+
+---
+
+**Note on the "List" page:** unlike `SelectionList`, `List` has no constructor methods — it is documented as a data-carrying struct (all fields public) without an inherent `impl` block on the docs page.
+
+**Note on the "Menu" page:** `Menu` (`menu_tree.rs`) has no `From<Element>` or `Widget` impls listed on its struct page; those are implemented on the `MenuBar`/`Item` types instead.
+</task_result>
+</task>

@@ -1,0 +1,2935 @@
+{
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:3057",
+      "secret": "82197903983a9da7"
+    },
+    "debug": {
+      "max_threads": null,
+      "panic_on_fault": false,
+      "listen": null
+    },
+    "statistics": {
+      "enabled": false,
+      "data_desensitize": true,
+      "cache_days": 7,
+      "path": "db.db"
+    },
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "store_fakeip": false
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "error",
+    "output": "service_core.log",
+    "timestamp": true
+  },
+  "ntp": null,
+  "dns": {
+    "final": "dns_proxy_out",
+    "servers": [
+      {
+        "tag": "local",
+        "type": "local",
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        }
+      },
+      {
+        "tag": "dhcp://auto",
+        "type": "dhcp",
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        }
+      },
+      {
+        "tag": "udp://8.8.8.8",
+        "type": "udp",
+        "server": "8.8.8.8",
+        "server_port": 53,
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        }
+      },
+      {
+        "tag": "udp://8.8.4.4",
+        "type": "udp",
+        "server": "8.8.4.4",
+        "server_port": 53,
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        }
+      },
+      {
+        "tag": "udp://223.6.6.6",
+        "type": "udp",
+        "server": "223.6.6.6",
+        "server_port": 53,
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        }
+      },
+      {
+        "tag": "https://1.1.1.1/dns-query",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        },
+        "path": "/dns-query"
+      },
+      {
+        "tag": "https://8.8.8.8/dns-query",
+        "type": "https",
+        "server": "8.8.8.8",
+        "server_port": 443,
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        },
+        "path": "/dns-query"
+      },
+      {
+        "tag": "https://dns.google/dns-query",
+        "type": "https",
+        "server": "dns.google",
+        "server_port": 443,
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        },
+        "path": "/dns-query"
+      },
+      {
+        "tag": "detour:https://1.1.1.1/dns-query",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "detour": "🇸🇬新加坡01 | 电信联通推荐",
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        },
+        "path": "/dns-query"
+      },
+      {
+        "tag": "detour:https://8.8.8.8/dns-query",
+        "type": "https",
+        "server": "8.8.8.8",
+        "server_port": 443,
+        "detour": "🇸🇬新加坡01 | 电信联通推荐",
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        },
+        "path": "/dns-query"
+      },
+      {
+        "tag": "detour:https://dns.google/dns-query",
+        "type": "https",
+        "server": "dns.google",
+        "server_port": 443,
+        "detour": "🇸🇬新加坡01 | 电信联通推荐",
+        "domain_resolver": {
+          "server": "dns_resolver_out",
+          "rewrite_ttl": 43200,
+          "strategy": "ipv4_only"
+        },
+        "path": "/dns-query"
+      },
+      {
+        "tag": "dns_hosts_out",
+        "type": "hosts",
+        "predefined": {
+          "dns.google": [
+            "8.8.8.8",
+            "8.8.4.4",
+            "2001:4860:4860::8888",
+            "2001:4860:4860::8844"
+          ],
+          "one.one.one.one": [
+            "1.1.1.1",
+            "1.0.0.1",
+            "2606:4700:4700::1111",
+            "2606:4700:4700::1001"
+          ],
+          "1dot1dot1dot1.cloudflare-dns.com": [
+            "1.1.1.1",
+            "1.0.0.1",
+            "2606:4700:4700::1111",
+            "2606:4700:4700::1001"
+          ],
+          "cloudflare-dns.com": [
+            "104.16.249.249",
+            "104.16.248.249",
+            "2606:4700::6810:f8f9",
+            "2606:4700::6810:f9f9"
+          ],
+          "dns.cloudflare.com": [
+            "104.16.132.229",
+            "104.16.133.229",
+            "2606:4700::6810:84e5",
+            "2606:4700::6810:85e5"
+          ],
+          "dns.alidns.com": [
+            "223.5.5.5",
+            "223.6.6.6",
+            "2400:3200::1",
+            "2400:3200:baba::1"
+          ],
+          "dot.pub": [
+            "1.12.12.12",
+            "120.53.53.53"
+          ],
+          "doh.pub": [
+            "1.12.12.12",
+            "120.53.53.53"
+          ],
+          "dns.quad9.net": [
+            "9.9.9.9",
+            "149.112.112.112",
+            "2620:fe::fe",
+            "2620:fe::9"
+          ],
+          "dns.yandex.net": [
+            "77.88.8.8",
+            "77.88.8.1",
+            "2a02:6b8::feed:0ff",
+            "2a02:6b8:0:1::feed:0ff"
+          ],
+          "dns.sb": [
+            "185.222.222.222",
+            "2a09::"
+          ],
+          "engage.cloudflareclient.com": [
+            "162.159.192.1",
+            "2606:4700:d0::a29f:c001"
+          ],
+          "dns.adguard.com": [
+            "94.140.14.14",
+            "94.140.15.15",
+            "2a10:50c0::ad1:ff",
+            "2a10:50c0::ad2:ff"
+          ]
+        }
+      },
+      {
+        "tag": "dns_block_out",
+        "type": "predefined",
+        "rcode": "NOERROR"
+      },
+      {
+        "tag": "dns_outbound_out",
+        "type": "batch",
+        "servers": [
+          "local",
+          "dhcp://auto",
+          "udp://8.8.8.8",
+          "udp://8.8.4.4",
+          "udp://223.6.6.6"
+        ]
+      },
+      {
+        "tag": "dns_direct_out",
+        "type": "batch",
+        "servers": [
+          "local",
+          "dhcp://auto",
+          "udp://8.8.8.8",
+          "udp://8.8.4.4",
+          "udp://223.6.6.6"
+        ]
+      },
+      {
+        "tag": "dns_proxy_out",
+        "type": "batch",
+        "servers": [
+          "detour:https://1.1.1.1/dns-query",
+          "detour:https://8.8.8.8/dns-query",
+          "detour:https://dns.google/dns-query"
+        ]
+      },
+      {
+        "tag": "dns_resolver_out",
+        "type": "batch",
+        "servers": [
+          "local",
+          "dhcp://auto",
+          "https://1.1.1.1/dns-query",
+          "https://8.8.8.8/dns-query",
+          "udp://223.6.6.6"
+        ]
+      },
+      {
+        "tag": "dns_fakeip_out",
+        "type": "fakeip",
+        "inet4_range": "198.20.0.0/15"
+      }
+    ],
+    "rules": [
+      {
+        "query_type": [
+          0,
+          "A",
+          "AAAA",
+          "NS",
+          "CNAME",
+          "TXT",
+          "MX"
+        ],
+        "invert": true,
+        "action": "reject",
+        "method": "default",
+        "name": "reject[dns]"
+      },
+      {
+        "action": "route-options",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only",
+        "name": "route-options[dns]"
+      },
+      {
+        "domain_suffix": [
+          "o4508911573663744.ingest.sentry.io"
+        ],
+        "server": "dns_direct_out",
+        "client_subnet": "223.73.250.138",
+        "name": "dns_direct_out[karing][dns]",
+        "rewrite_ttl": 43200
+      },
+      {
+        "domain_suffix": [
+          "speed.cloudflare.com"
+        ],
+        "server": "dns_fakeip_out",
+        "name": "dns_fakeip_out[karing][dns]",
+        "rewrite_ttl": 1
+      },
+      {
+        "domain_suffix": [
+          "karing.app"
+        ],
+        "server": "dns_fakeip_out",
+        "name": "dns_fakeip_out[karing][dns]",
+        "rewrite_ttl": 1
+      },
+      {
+        "domain": [
+          "unamecf.xn--ghqu5fm27b67w.com",
+          "unamecf2.xn--ghqu5fm27b67w.com",
+          "downloadcfpro.xn--ghq880n3na965a.com",
+          "pq.aws48.yydjc.top",
+          "pq.aws49.yydjc.top",
+          "pq.aws50.yydjc.top",
+          "pq.aws51.yydjc.top",
+          "pq.aws52.yydjc.top",
+          "pq.aws53.yydjc.top",
+          "pq.aws54.yydjc.top",
+          "pq.aws55.yydjc.top",
+          "pq.aws56.yydjc.top",
+          "pq.aws57.yydjc.top",
+          "pq.aws63.yydjc.top",
+          "pq.aws64.yydjc.top",
+          "pq.aws65.yydjc.top",
+          "pq.aws66.yydjc.top",
+          "pq.aws67.yydjc.top",
+          "pq.aws68.yydjc.top",
+          "pq.us1.globals-download.com",
+          "pq.us2.globals-download.com",
+          "pq.us3.globals-download.com",
+          "pq.us4.globals-download.com",
+          "pq.us5.globals-download.com",
+          "pq.us6.globals-download.com",
+          "pq.us7.globals-download.com",
+          "pq.us8.globals-download.com",
+          "pq-hinet.tw1.yydjc.top",
+          "pq-hinet.tw2.yydjc.top",
+          "pq-hinet.tw3.yydjc.top"
+        ],
+        "server": "dns_outbound_out",
+        "name": "dns_outbound_out[karing][dns]",
+        "rewrite_ttl": 43200
+      },
+      {
+        "domain": [
+          "dns.google",
+          "one.one.one.one",
+          "1dot1dot1dot1.cloudflare-dns.com",
+          "cloudflare-dns.com",
+          "dns.cloudflare.com",
+          "dns.alidns.com",
+          "dot.pub",
+          "doh.pub",
+          "dns.quad9.net",
+          "dns.yandex.net",
+          "dns.sb",
+          "engage.cloudflareclient.com",
+          "dns.adguard.com"
+        ],
+        "server": "dns_hosts_out",
+        "name": "hosts[karing][dns]",
+        "rewrite_ttl": 43200
+      },
+      {
+        "rule_set": [
+          "geosite:cn"
+        ],
+        "server": "dns_direct_out",
+        "client_subnet": "223.73.250.138",
+        "name": "dns_direct_out[geosite:cn][dns]",
+        "rewrite_ttl": 43200
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "action": "route",
+        "server": "dns_fakeip_out",
+        "rewrite_ttl": 1,
+        "disable_cache": true,
+        "name": "dns_fakeip_out[dns-fakeip]"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "cache_capacity": 1024
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun_in",
+      "interface_name": "",
+      "address": [
+        "10.20.0.1/30"
+      ],
+      "route_exclude_address": null,
+      "mtu": 4064,
+      "auto_route": true,
+      "strict_route": false,
+      "loopback_address": "",
+      "stack": "gvisor",
+      "platform": null,
+      "include_package": null,
+      "exclude_package": null,
+      "udp_timeout": "1m"
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed_in_direct",
+      "set_system_proxy": false,
+      "users": null,
+      "listen": "127.0.0.1",
+      "listen_port": 3065
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed_in_proxy",
+      "set_system_proxy": false,
+      "users": null,
+      "listen": "127.0.0.1",
+      "listen_port": 3066
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed_in_rule",
+      "set_system_proxy": false,
+      "users": null,
+      "listen": "127.0.0.1",
+      "listen_port": 3067
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京01-0.1倍 | 电信联通推荐",
+      "server": "unamecf.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp1.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp1",
+        "headers": {
+          "Host": [
+            "ujp1.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京02-0.1倍 | 电信联通推荐",
+      "server": "unamecf.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp2.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp2",
+        "headers": {
+          "Host": [
+            "ujp2.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京03-0.1倍 | 电信联通推荐",
+      "server": "unamecf.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp3.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp3",
+        "headers": {
+          "Host": [
+            "ujp3.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京04-0.1倍 | 电信联通推荐",
+      "server": "unamecf.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp4.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp4",
+        "headers": {
+          "Host": [
+            "ujp4.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京05-0.1倍 | 电信联通推荐",
+      "server": "unamecf.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp5.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp5",
+        "headers": {
+          "Host": [
+            "ujp5.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京06-0.1倍 | 高速专线推荐",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp2.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp2",
+        "headers": {
+          "Host": [
+            "ujp2.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京07-0.1倍 | 高速专线推荐",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp3.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp3",
+        "headers": {
+          "Host": [
+            "ujp3.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京08-0.1倍 | 高速专线推荐",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp4.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp4",
+        "headers": {
+          "Host": [
+            "ujp4.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵日本东京09-0.1倍 | 高速专线推荐",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ujp5.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/jp5",
+        "headers": {
+          "Host": [
+            "ujp5.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡01 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sgp1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg1",
+        "headers": {
+          "Host": [
+            "sgp1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡02 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sgp1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg1",
+        "headers": {
+          "Host": [
+            "sgp1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本01 | 电信移动联通推荐",
+      "server": "pq.aws48.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "ybBxu1pW3O9Me954LCDfXgHW6lIYepAbnla82yaZ5HE",
+          "short_id": "6a1faecb"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本02 | 电信移动联通推荐",
+      "server": "pq.aws49.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "support.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "f1131S_7UjEFSAbjkkPrSp4wdjZwG5otAmHd9Naxcj4",
+          "short_id": "701fcb1f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本03 | 电信移动联通推荐",
+      "server": "pq.aws50.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "pR8CV43xvSgvzSXPVLCVomjw-yZvNyqU32kietO2pEc",
+          "short_id": "a6115a2c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本04 | 电信移动联通推荐",
+      "server": "pq.aws51.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "cdn-dynmedia-1.microsoft.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FrLhPuCVfzdM5rppzxHXQ5BZSGf1YHrXgo-cCtecGSo",
+          "short_id": "f3b38af2"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本05 | 电信移动联通推荐",
+      "server": "pq.aws52.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "cdn-dynmedia-1.microsoft.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FrLhPuCVfzdM5rppzxHXQ5BZSGf1YHrXgo-cCtecGSo",
+          "short_id": "f3b38af2"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本06 | 电信移动联通推荐",
+      "server": "pq.aws53.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "pR8CV43xvSgvzSXPVLCVomjw-yZvNyqU32kietO2pEc",
+          "short_id": "a6115a2c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本07 | 电信移动联通推荐",
+      "server": "pq.aws54.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "ePEdL0MQGHT0BGkhSprooNXTYHgp_mdaxEaOkGTKO3k",
+          "short_id": "195c371d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本08 | 电信移动联通推荐",
+      "server": "pq.aws55.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "Zzn7SxtTRMANwRwOvn87ZpNQ8zjjzcKOznE_sG_7UQU",
+          "short_id": "6b584a0d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本09 | 电信移动联通推荐",
+      "server": "pq.aws56.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "scnmyqQqGfHXAG9Ihe-bzs1xvqwQlMhCc87zJdIzPTs",
+          "short_id": "2edcfbb7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇯🇵AWS日本10 | 电信移动联通推荐",
+      "server": "pq.aws57.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "KeIvEyXB-ftboKdIoaSDyUKJPQpmcZiVaqY2JndkX08",
+          "short_id": "55fbcc37"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡01-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg1p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg1",
+        "headers": {
+          "Host": [
+            "sg1p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡02-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg2p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg2",
+        "headers": {
+          "Host": [
+            "sg2p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡03-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg3p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg3",
+        "headers": {
+          "Host": [
+            "sg3p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡04-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg4p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg4",
+        "headers": {
+          "Host": [
+            "sg4p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬新加坡05-0.1倍 | 电信联通推荐",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "sg5p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/sg5",
+        "headers": {
+          "Host": [
+            "sg5p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬AWS新加坡01 | 电信移动联通推荐",
+      "server": "pq.aws63.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "mnshlVo5tkzYbmEB9xrgmUHwYETnXLAjjlGAssqaDGI",
+          "short_id": "436299c6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬AWS新加坡02 | 电信移动联通推荐",
+      "server": "pq.aws64.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "xjWkdgeetCnB1-kHqwVnAaSUqg4qK9TFWQlamW8FSRI",
+          "short_id": "e2e15173"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬AWS新加坡03 | 电信移动联通推荐",
+      "server": "pq.aws65.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "9076EbD5vM8kATc_08QvDiqZF5KHTM_LaSrMOvcwfHw",
+          "short_id": "57b7989c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬AWS新加坡04 | 电信移动联通推荐",
+      "server": "pq.aws66.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "OmGeSOsHQMl3Rm6G3SzYjmZvgFYBF489vxfbBCNDWjw",
+          "short_id": "289c74e0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬AWS新加坡05 | 电信移动联通推荐",
+      "server": "pq.aws67.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "iusZvFfHH5OJ6sAPFF6e7Km9WP0nmWfjXXfhTQuSR24",
+          "short_id": "8b6e932c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇭🇰香港HKT | 高速专线",
+      "server": "pq.aws68.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "bndMtvjmyCwu1CeYpXYYjOfJI4xvcHwpaakZCQhA114",
+          "short_id": "85caf12f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国01-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us1.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "UcJYcAQaiGjNCAeJOhbevdcfAN2uPSsSFwRfY4dTsJA="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国02-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us2.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "5kcX2Sa8DdKlrb6tiUlQbO7mYggUn12khItnnOCJvXw="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国03-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us3.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "tv.apple.com",
+        "certificate_public_key_sha256": [
+          "8P1whvQPxhjKhLKKr3Kmw5lo/5ftTq44PsadbT2RfuY="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国04-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us4.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "bx/TXODEC/M0kOr4owhJatUlH6RANOq8Sr/N7e8pE5M="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国05-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us5.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "rW5KaTOMl+QMaDdN5SpykYDvHIpJ26apCspY1PSpi18="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国06-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us6.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "QJG5jJ0s2tIFDqj+ovzkXTprfDfw6go/EqInHPl6lhc="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国07-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us7.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "bOSUoVjZF/QUYnKWXHadytInqPDhFVIQDCB92qB/LB0="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇺🇸美国08-0.1倍 | 电信联通移动推荐",
+      "server": "pq.us8.globals-download.com",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "P8DdZvz/J25e+mjj+FOQM7FLUq4QuGreU3+sf5yJV70="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡 | 高速专线-hy2",
+      "server": "67.159.48.147",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "fg1VdI2SlvX9gYj+0t5lv32lDoXk7wHIMvxNHvbasq8="
+        ]
+      },
+      "server_ports": [
+        "60000:63000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡2 | 高速专线-hy2",
+      "server": "67.159.48.147",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "fg1VdI2SlvX9gYj+0t5lv32lDoXk7wHIMvxNHvbasq8="
+        ]
+      },
+      "server_ports": [
+        "60000:63000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡3 | 高速专线-hy2",
+      "server": "203.27.106.148",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "M7u05d8FkIH2Ho6uLj2iS9fEQX9K8/Kdw4Fh2hItLGI="
+        ]
+      },
+      "server_ports": [
+        "60000:63000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡4 | 高速专线-hy2",
+      "server": "203.27.106.148",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "M7u05d8FkIH2Ho6uLj2iS9fEQX9K8/Kdw4Fh2hItLGI="
+        ]
+      },
+      "server_ports": [
+        "60000:63000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡5 | 高速专线-hy2",
+      "server": "152.69.220.212",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "api.push.apple.com",
+        "certificate_public_key_sha256": [
+          "JS3qsOW7x8eIsenT8VF+064hXYxIvG2QVg70OpUC78Q="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡6 | 高速专线-hy2",
+      "server": "140.245.114.136",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.apple.com",
+        "certificate_public_key_sha256": [
+          "eZP9wKrd9cQCk5VQcZl3cuSqdnlbV5oTvEczjYGF0y0="
+        ]
+      },
+      "server_ports": [
+        "35000:39000"
+      ],
+      "password": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "type": "hysteria2",
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞01-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa1s.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us1",
+        "headers": {
+          "Host": [
+            "usa1s.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞02-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa2.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us2",
+        "headers": {
+          "Host": [
+            "usa2.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞03-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa3.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us3",
+        "headers": {
+          "Host": [
+            "usa3.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞04-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa4.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us4",
+        "headers": {
+          "Host": [
+            "usa4.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞05-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa5.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us5",
+        "headers": {
+          "Host": [
+            "usa5.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞06-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa6.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us6",
+        "headers": {
+          "Host": [
+            "usa6.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞07-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa7.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us7",
+        "headers": {
+          "Host": [
+            "usa7.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国洛杉矶08-0.1倍",
+      "server": "unamecf2.xn--ghqu5fm27b67w.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "usa8.xn--ghqu5fm27b67w.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us8",
+        "headers": {
+          "Host": [
+            "usa8.xn--ghqu5fm27b67w.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇼台湾 | 避免晚高峰使用",
+      "server": "pq-hinet.tw1.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "static-snowbreak.amazingseasun.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "kp6ml6xwSt4hTDEKj6U0FR0l-kDy2iUiILiT0XfFwjA",
+          "short_id": "3662ca42"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇼台湾2 | 避免晚高峰使用",
+      "server": "pq-hinet.tw2.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "static-snowbreak.amazingseasun.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "Z-S-J9zDn7pXU7haa9_BeIny-Yp5qtS0R_MnHSgsoGA",
+          "short_id": "0c9347ba"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇼台湾3 | 避免晚高峰使用",
+      "server": "pq-hinet.tw3.yydjc.top",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "static-snowbreak.amazingseasun.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "eECwNaUgTEzRbyaeSaYpZGNTuuf5xZL2UVeGhDNWxTE",
+          "short_id": "c85e4b9b"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国01 | 合适下载使用-0.01倍",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us1p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us1",
+        "headers": {
+          "Host": [
+            "us1p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国02 | 合适下载使用-0.01倍",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us2p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us2",
+        "headers": {
+          "Host": [
+            "us2p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国03 | 合适下载使用-0.01倍",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us3p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us3",
+        "headers": {
+          "Host": [
+            "us3p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国04 | 合适下载使用-0.01倍",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us4p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us4",
+        "headers": {
+          "Host": [
+            "us4p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国05 | 合适下载使用-0.01倍",
+      "server": "downloadcfpro.xn--ghq880n3na965a.com",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "us5p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/pq/us5",
+        "headers": {
+          "Host": [
+            "us5p1.xn--ghq880n3na965a.com"
+          ]
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞01 | 三网推荐",
+      "server": "134.195.101.129",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "XpaYw0-hwSPxgV8K-WUbEaxbAwxjYVpDkDGOMONwUiA",
+          "short_id": "79f44f5c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞02 | 三网推荐",
+      "server": "134.195.101.137",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "AzQlCUikY30iQK5pgK2nW_AiYJkvi2Lm5rDjWGHvzUo",
+          "short_id": "182dc224"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞03 | 三网推荐",
+      "server": "134.195.101.178",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "-Cc9Wduo_L3TI70LPHFamFOaQer2Lzzux-vwAVDn5ns",
+          "short_id": "f0dc50e8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞04 | 三网推荐",
+      "server": "134.195.101.207",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "20zgmuoZYL5ngyWwzwJSaNpfaRAOhX2UdND6RVVswm0",
+          "short_id": "71c05500"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞05 | 三网推荐",
+      "server": "134.195.101.122",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.mi.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "ptYLYuVba16lu-OtadiE8Wd-cGHHVZh0XkxVUqrhmDE",
+          "short_id": "2546d239"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞06 | 三网推荐",
+      "server": "134.195.101.182",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "iosapps.itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "GRpUsIrhrxRKshbSbWFs1YmTyWzhTQXjAyjpRIFo1zs",
+          "short_id": "beadc711"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国圣何塞07 | 三网推荐",
+      "server": "134.195.101.187",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.mi.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "CQqGVFQ65FCLJsqx2xb0RkfjZ6veJNaCsqazSYVvfgQ",
+          "short_id": "d574526d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸美国洛杉矶08 | 三网推荐",
+      "server": "203.10.96.138",
+      "server_port": 443,
+      "uuid": "3a7b8f83-d402-439f-8591-06c732c3d049",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "cdn-dynmedia-1.microsoft.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "VFG2L-3i30fQZg3wd0DF6dEGdaT27S-PKpuYu7Hp8xU",
+          "short_id": "fd26d49a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "domain_resolver": {
+        "server": "dns_outbound_out",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "urltest",
+      "tag": "urltest_out",
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "-1s",
+      "interrupt_exist_connections": false,
+      "tolerance": 0,
+      "idle_timeout": "8h",
+      "outbounds": [
+        "🇯🇵日本东京01-0.1倍 | 电信联通推荐",
+        "🇯🇵日本东京02-0.1倍 | 电信联通推荐",
+        "🇯🇵日本东京03-0.1倍 | 电信联通推荐",
+        "🇯🇵日本东京04-0.1倍 | 电信联通推荐",
+        "🇯🇵日本东京05-0.1倍 | 电信联通推荐",
+        "🇯🇵日本东京06-0.1倍 | 高速专线推荐",
+        "🇯🇵日本东京07-0.1倍 | 高速专线推荐",
+        "🇯🇵日本东京08-0.1倍 | 高速专线推荐",
+        "🇯🇵日本东京09-0.1倍 | 高速专线推荐",
+        "🇸🇬新加坡01 | 电信联通推荐",
+        "🇸🇬新加坡02 | 电信联通推荐",
+        "🇯🇵AWS日本01 | 电信移动联通推荐",
+        "🇯🇵AWS日本02 | 电信移动联通推荐",
+        "🇯🇵AWS日本03 | 电信移动联通推荐",
+        "🇯🇵AWS日本04 | 电信移动联通推荐",
+        "🇯🇵AWS日本05 | 电信移动联通推荐",
+        "🇯🇵AWS日本06 | 电信移动联通推荐",
+        "🇯🇵AWS日本07 | 电信移动联通推荐",
+        "🇯🇵AWS日本08 | 电信移动联通推荐",
+        "🇯🇵AWS日本09 | 电信移动联通推荐",
+        "🇯🇵AWS日本10 | 电信移动联通推荐",
+        "🇸🇬新加坡01-0.1倍 | 电信联通推荐",
+        "🇸🇬新加坡02-0.1倍 | 电信联通推荐",
+        "🇸🇬新加坡03-0.1倍 | 电信联通推荐",
+        "🇸🇬新加坡04-0.1倍 | 电信联通推荐",
+        "🇸🇬新加坡05-0.1倍 | 电信联通推荐",
+        "🇸🇬AWS新加坡01 | 电信移动联通推荐",
+        "🇸🇬AWS新加坡02 | 电信移动联通推荐",
+        "🇸🇬AWS新加坡03 | 电信移动联通推荐",
+        "🇸🇬AWS新加坡04 | 电信移动联通推荐",
+        "🇸🇬AWS新加坡05 | 电信移动联通推荐",
+        "🇭🇰香港HKT | 高速专线",
+        "🇺🇸美国01-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国02-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国03-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国04-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国05-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国06-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国07-0.1倍 | 电信联通移动推荐",
+        "🇺🇸美国08-0.1倍 | 电信联通移动推荐",
+        "🇸🇬新加坡 | 高速专线-hy2",
+        "🇸🇬新加坡2 | 高速专线-hy2",
+        "🇸🇬新加坡3 | 高速专线-hy2",
+        "🇸🇬新加坡4 | 高速专线-hy2",
+        "🇸🇬新加坡5 | 高速专线-hy2",
+        "🇸🇬新加坡6 | 高速专线-hy2",
+        "🇺🇸美国圣何塞01-0.1倍",
+        "🇺🇸美国圣何塞02-0.1倍",
+        "🇺🇸美国圣何塞03-0.1倍",
+        "🇺🇸美国圣何塞04-0.1倍",
+        "🇺🇸美国圣何塞05-0.1倍",
+        "🇺🇸美国圣何塞06-0.1倍",
+        "🇺🇸美国圣何塞07-0.1倍",
+        "🇺🇸美国洛杉矶08-0.1倍",
+        "🇹🇼台湾 | 避免晚高峰使用",
+        "🇹🇼台湾2 | 避免晚高峰使用",
+        "🇹🇼台湾3 | 避免晚高峰使用",
+        "🇺🇸美国01 | 合适下载使用-0.01倍",
+        "🇺🇸美国02 | 合适下载使用-0.01倍",
+        "🇺🇸美国03 | 合适下载使用-0.01倍",
+        "🇺🇸美国04 | 合适下载使用-0.01倍",
+        "🇺🇸美国05 | 合适下载使用-0.01倍",
+        "🇺🇸美国圣何塞01 | 三网推荐",
+        "🇺🇸美国圣何塞02 | 三网推荐",
+        "🇺🇸美国圣何塞03 | 三网推荐",
+        "🇺🇸美国圣何塞04 | 三网推荐",
+        "🇺🇸美国圣何塞05 | 三网推荐",
+        "🇺🇸美国圣何塞06 | 三网推荐",
+        "🇺🇸美国圣何塞07 | 三网推荐",
+        "🇺🇸美国洛杉矶08 | 三网推荐"
+      ]
+    },
+    {
+      "type": "direct",
+      "tag": "direct_out",
+      "domain_resolver": {
+        "server": "dns_direct_out",
+        "client_subnet": "223.73.250.138",
+        "rewrite_ttl": 43200,
+        "strategy": "ipv4_only"
+      }
+    },
+    {
+      "type": "block",
+      "tag": "block_out"
+    }
+  ],
+  "route": {
+    "final": "🇸🇬新加坡01 | 电信联通推荐",
+    "find_process": true,
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "dns_outbound_out",
+      "rewrite_ttl": 43200,
+      "strategy": "ipv4_only"
+    },
+    "rules": [
+      {
+        "inbound": [
+          "tun_in"
+        ],
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "inbound": [
+          "mixed_in_rule"
+        ],
+        "action": "sniff"
+      },
+      {
+        "inbound": [
+          "mixed_in_direct"
+        ],
+        "action": "sniff"
+      },
+      {
+        "inbound": [
+          "mixed_in_proxy"
+        ],
+        "action": "sniff"
+      },
+      {
+        "inbound": [
+          "mixed_in_direct"
+        ],
+        "outbound": "direct_out",
+        "name": "direct[all]"
+      },
+      {
+        "inbound": [
+          "mixed_in_proxy"
+        ],
+        "outbound": "🇸🇬新加坡01 | 电信联通推荐",
+        "name": "proxy[all]"
+      },
+      {
+        "domain_suffix": [
+          "o4508911573663744.ingest.sentry.io"
+        ],
+        "outbound": "direct_out",
+        "name": "direct[karing]"
+      },
+      {
+        "domain_suffix": [
+          "speed.cloudflare.com"
+        ],
+        "outbound": "🇸🇬新加坡01 | 电信联通推荐",
+        "name": "current[karing]"
+      },
+      {
+        "domain_suffix": [
+          "karing.app"
+        ],
+        "outbound": "🇸🇬新加坡01 | 电信联通推荐",
+        "name": "current[karing]"
+      },
+      {
+        "rules": [
+          {
+            "rule_set": [
+              "geosite:apple",
+              "geosite:apple@ads",
+              "geosite:apple-dev",
+              "geosite:apple-pki",
+              "geosite:apple-update"
+            ]
+          }
+        ],
+        "outbound": "direct_out",
+        "action": null,
+        "name": "🍎 苹果服务[自定义]",
+        "type": "logical",
+        "mode": "or"
+      },
+      {
+        "rules": [
+          {
+            "rule_set": [
+              "geosite:google-play"
+            ]
+          }
+        ],
+        "outbound": "🇸🇬新加坡01 | 电信联通推荐",
+        "action": null,
+        "name": "🌏 Google Play[自定义]",
+        "type": "logical",
+        "mode": "or"
+      },
+      {
+        "rules": [
+          {
+            "rule_set": [
+              "geosite:google",
+              "geoip:google"
+            ]
+          }
+        ],
+        "outbound": "🇸🇬新加坡01 | 电信联通推荐",
+        "action": null,
+        "name": "🌏 Google[自定义]",
+        "type": "logical",
+        "mode": "or"
+      },
+      {
+        "rules": [
+          {
+            "rule_set": [
+              "acl:BilibiliHMT",
+              "acl:Bilibili"
+            ]
+          }
+        ],
+        "outbound": "direct_out",
+        "action": null,
+        "name": "📺 哔哩哔哩[自定义]",
+        "type": "logical",
+        "mode": "or"
+      },
+      {
+        "rules": [
+          {
+            "rule_set": [
+              "acl:ChinaIp",
+              "acl:ChinaDomain",
+              "acl:ChinaCompanyIp",
+              "acl:UnBan",
+              "acl:SteamCN",
+              "acl:Download",
+              "acl:ChinaMedia"
+            ]
+          }
+        ],
+        "outbound": "direct_out",
+        "action": null,
+        "name": "🎯 国内直连[自定义]",
+        "type": "logical",
+        "mode": "or"
+      },
+      {
+        "rules": [
+          {
+            "rule_set": [
+              "geosite:geolocation-!cn",
+              "acl:ProxyGFWlist",
+              "acl:ProxyMedia"
+            ]
+          }
+        ],
+        "outbound": "🇸🇬新加坡01 | 电信联通推荐",
+        "action": null,
+        "name": "🌏 国外穿墙[自定义]",
+        "type": "logical",
+        "mode": "or"
+      },
+      {
+        "rule_set": [
+          "geosite:cn"
+        ],
+        "outbound": "direct_out",
+        "name": "cn[geosite]"
+      },
+      {
+        "rule_set": [
+          "geoip:cn"
+        ],
+        "outbound": "direct_out",
+        "name": "cn[geoip]"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct_out",
+        "name": "ip_is_private"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "geosite:apple",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/apple.srs"
+      },
+      {
+        "tag": "geosite:apple@ads",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/apple@ads.srs"
+      },
+      {
+        "tag": "geosite:apple-dev",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/apple-dev.srs"
+      },
+      {
+        "tag": "geosite:apple-pki",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/apple-pki.srs"
+      },
+      {
+        "tag": "geosite:apple-update",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/apple-update.srs"
+      },
+      {
+        "tag": "geosite:google-play",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/google-play.srs"
+      },
+      {
+        "tag": "geosite:google",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/google.srs"
+      },
+      {
+        "tag": "geosite:geolocation-!cn",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/geolocation-!cn.srs"
+      },
+      {
+        "tag": "geosite:cn",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geosite/cn.srs"
+      },
+      {
+        "tag": "geoip:google",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geoip/google.srs"
+      },
+      {
+        "tag": "geoip:cn",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/geoip/cn.srs"
+      },
+      {
+        "tag": "acl:BilibiliHMT",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/BilibiliHMT.srs"
+      },
+      {
+        "tag": "acl:Bilibili",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/Bilibili.srs"
+      },
+      {
+        "tag": "acl:ChinaIp",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/ChinaIp.srs"
+      },
+      {
+        "tag": "acl:ChinaDomain",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/ChinaDomain.srs"
+      },
+      {
+        "tag": "acl:ChinaCompanyIp",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/ChinaCompanyIp.srs"
+      },
+      {
+        "tag": "acl:UnBan",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/UnBan.srs"
+      },
+      {
+        "tag": "acl:SteamCN",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/SteamCN.srs"
+      },
+      {
+        "tag": "acl:Download",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/Download.srs"
+      },
+      {
+        "tag": "acl:ChinaMedia",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/ChinaMedia.srs"
+      },
+      {
+        "tag": "acl:ProxyGFWlist",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/ProxyGFWlist.srs"
+      },
+      {
+        "tag": "acl:ProxyMedia",
+        "type": "local",
+        "format": "binary",
+        "path": "flutter_assets/assets/datas/acl/ProxyMedia.srs"
+      }
+    ]
+  }
+}

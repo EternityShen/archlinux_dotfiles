@@ -1,0 +1,5 @@
+binds {
+    Super+Shift+D { screenshot-window; }
+    Super+Shift+A { screenshot-screen; }
+    Super+Shift+S { screenshot; }
+}

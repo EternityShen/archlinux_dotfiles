@@ -1,0 +1,42 @@
+{
+  "latest_check": "2026-07-22 02:59:19.521943",
+  "forwards": [],
+  "nowarp": [
+    "us",
+    "cn",
+    "ru"
+  ],
+  "sentry_min_version": "1.2.22.2502",
+  "analytics_min_version": "1.2.22.2502",
+  "isp_bind_need_connect": true,
+  "isp_panel_js": "https://harry.karing.app/assets/bind.js?v=250326",
+  "faq_anchor": [
+    "QW4gYXR0ZW1wdCB3YXMgbWFkZSB0byBhY2Nlc3MgYSBzb2NrZXQgaW4gYSB3YXkgZm9yYmlkZGVuIGJ5IGl0cyBhY2Nlc3MgcGVybWlzc2lvbnM=",
+    "Y29uZmlndXJlIHR1biBpbnRlcmZhY2U6IENhbm5vdCBjcmVhdGUgYSBmaWxlIHdoZW4gdGhhdCBmaWxlIGFscmVhZHkgZXhpc3Rz",
+    "bGF1bmNoIHByb2Nlc3Mga2FyaW5nU2VydmljZS5leGUgZmFpbGVkOiBleGNlcHRpb24gUHJvY2Vzc0V4Y2VwdGlvbjogQWNjZXNzIGlzIGRlbmllZA=="
+  ],
+  "get_profile": [],
+  "channel": [
+    {
+      "platform": "ios",
+      "channel": "Apple - Test Flight",
+      "url": "https://testflight.apple.com/join/RLU59OsJ"
+    },
+    {
+      "platform": "ios",
+      "channel": "Apple - App Store",
+      "url": "https://apps.apple.com/us/app/karing/id6472431552"
+    },
+    {
+      "platform": "macos",
+      "channel": "Apple - Test Flight",
+      "url": "https://testflight.apple.com/join/RLU59OsJ"
+    },
+    {
+      "platform": "macos",
+      "channel": "Apple - App Store",
+      "url": "https://apps.apple.com/us/app/karing/id6472431552"
+    }
+  ],
+  "donate_url": "https://harry.karing.app/donate"
+}

@@ -1,0 +1,5 @@
+log_path="/home/eternity/.config/ssy-music/log.log"
+load_db_path="/home/eternity/.config/ssy-music/music_db.toml"
+lyrics_path = "/home/eternity/Music/歌词/"
+play_mode = "Load" # Load本地 Net 网络
+net_link = "127.0.0.1:3000"

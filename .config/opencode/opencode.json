@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "modelscope": {
+      "models": {
+        "Qwen/Qwen3-235B-A22B-Thinking-2507": {
+          "name": ""
+        },
+        "ZhipuAI/GLM-4.7-Flash": {
+          "name": ""
+        },
+        "ZhipuAI/GLM-5.1": {
+          "name": ""
+        }
+      },
+      "name": "ModelScope",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "ms-596d680b-d4a3-4c49-b74d-57c2fe70e97d",
+        "baseURL": "https://api-inference.modelscope.cn/v1",
+        "setCacheKey": true
+      }
+    },
+    "rrx": {
+      "models": {
+        "deepseek-v4-flash": {
+          "name": ""
+        },
+        "glm-5.2": {
+          "name": ""
+        },
+        "sensenova-6.7-flash-lite": {
+          "name": ""
+        },
+        "sensenova-6.8-flash-lite": {
+          "name": ""
+        },
+        "sensenova-u1-fast": {
+          "name": ""
+        }
+      },
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "sk-VxlTfTja5hJtejaRYX3WeFi2vGlLoRyk",
+        "baseURL": "https://token.sensenova.cn/v1",
+        "setCacheKey": true
+      }
+    }
+  }
+}
