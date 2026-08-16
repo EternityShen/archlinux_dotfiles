@@ -1,4 +1,0 @@
-2026/08/06-17:34:10.343 2ec1 Creating DB /home/eternity/.config/Final2x/Local Storage/leveldb since it was missing.
-2026/08/06-17:34:10.359 2ec1 Reusing MANIFEST /home/eternity/.config/Final2x/Local Storage/leveldb/MANIFEST-000001
-2026/08/06-17:35:03.724 2ed1 Level-0 table #5: started
-2026/08/06-17:35:03.731 2ed1 Level-0 table #5: 73905 bytes OK

@@ -103,7 +103,6 @@ CONFIG_ITEMS=(
     "user-dirs.locale"
     "fastfetch"
     "lazygit"
-    "go"
     "Thunar"
     "xfce4"
     "systemd"
@@ -118,11 +117,7 @@ CONFIG_ITEMS=(
     "com.rsplwe.bili-live-hime"
     "obs-studio"
     "inkscape"
-    "Final2x"
     "qqmusic"
-    "noctalia"
-    "Electron"
-    "Android Open Source Project"
 )
 
 for item in "${CONFIG_ITEMS[@]}"; do
@@ -138,8 +133,6 @@ DOTFILE_FILES=(
     ".bashrc"
     ".zshrc"
     ".profile"
-    ".p10k.zsh"
-    ".shell.pre-oh-my-zsh"
     ".gitconfig"
     ".gtkrc-2.0"
     ".nvidia-settings-rc"
@@ -151,14 +144,12 @@ for item in "${DOTFILE_FILES[@]}"; do
 done
 
 DOTFILE_DIRS=(
-    ".oh-my-zsh"
     ".ssh"
     ".gnupg"
     ".cargo"
     ".rustup"
     ".pki"
     ".nv"
-    ".icube-remote-ssh"
 )
 
 for item in "${DOTFILE_DIRS[@]}"; do
