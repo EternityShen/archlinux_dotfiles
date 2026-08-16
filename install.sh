@@ -129,6 +129,7 @@ $SU pacman -S --noconfirm \
     slurp \
     swww-git \
     wofi \
+    rofi \
     xdotool \
     x11vnc \
     xorg-server-xvfb \

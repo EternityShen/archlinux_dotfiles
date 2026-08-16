@@ -85,6 +85,7 @@ CONFIG_ITEMS=(
     "hypr"
     "waybar"
     "wofi"
+    "rofi"
     "niri"
     "fcitx5"
     "fcitx"
@@ -114,10 +115,8 @@ CONFIG_ITEMS=(
     "io.github.clash-verge-rev.clash-verge-rev"
     "opencode"
     "ssy-music"
-    "com.rsplwe.bili-live-hime"
     "obs-studio"
     "inkscape"
-    "qqmusic"
 )
 
 for item in "${CONFIG_ITEMS[@]}"; do
@@ -186,7 +185,6 @@ SHARE_ITEMS=(
     "webkitgtk-4.1"
     "nautilus"
     "com.ccswitch.desktop"
-    "com.rsplwe.bili-live-hime"
     "com.eternity.eternitymusic"
     "com.eternity.eternity_music"
     "com.nebula.karing"

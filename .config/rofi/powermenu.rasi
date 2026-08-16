@@ -1,0 +1,69 @@
+/* Rofi Power Menu Theme - Modern Minimalist */
+configuration {
+    show-icons: false;
+}
+
+* {
+    bg:          #1e1e2ecc; /* 半透明背景 */
+    bg-alt:      #313244;
+    fg:          #cdd6f4;
+    accent:      #89b4fa;
+    urgent:      #f38ba8;
+    
+    background-color: transparent;
+    text-color:       @fg;
+    font:             "JetBrainsMono Nerd Font 24";
+}
+
+window {
+    transparency:       "real";
+    background-color:   @bg;
+    border:             2px solid;
+    border-color:       @accent;
+    border-radius:      16px;
+    width:              600px;
+    location:           center;
+    anchor:             center;
+    padding:            20px;
+}
+
+mainbox {
+    children:           [ listview ];
+    spacing:            15px;
+}
+
+listview {
+    columns:       5;
+    lines:         1;
+    cycle:         true;
+    dynamic:       true;
+    layout:        vertical;
+    flow:          horizontal;
+    reverse:       false;
+    fixed-height:  true;
+    fixed-columns: true;
+    spacing:       15px;
+}
+
+element {
+    background-color: @bg-alt;
+    text-color:       @fg;
+    border-radius:    12px;
+    padding:          20px 0px;
+    cursor:           pointer;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       #11111b;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    font:             "JetBrainsMono Nerd Font 28";
+    expand:           true;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    margin:           0px;
+}
